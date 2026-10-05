@@ -1,10 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#087f3e">
 
 <title>MT Jeunesse</title>
 
@@ -13,76 +11,96 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#f4f7f5;
-    color:#17221b;
+    font-family:Arial, sans-serif;
+    background:#f4f7fb;
+    color:#172033;
 }
 
 header{
-    background:linear-gradient(135deg,#087f3e,#0b5d35);
+    background:#07111f;
     color:white;
-    padding:22px 18px;
+    padding:20px;
     text-align:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 .logo{
-    font-size:32px;
-    font-weight:900;
+    font-size:30px;
+    font-weight:bold;
 }
 
 .slogan{
-    margin-top:5px;
+    color:#b9c7d9;
+    margin:6px 0 15px;
+}
+
+nav{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:6px;
     font-size:14px;
-    opacity:.9;
+}
+
+nav a:hover{
+    background:#0b5cff;
 }
 
 .language{
-    margin-top:18px;
+    margin-top:15px;
     padding:10px 18px;
-    border:1px solid white;
-    border-radius:25px;
-    background:transparent;
-    color:white;
+    border:none;
+    border-radius:8px;
     cursor:pointer;
     font-weight:bold;
 }
 
 .hero{
-    padding:55px 20px;
-    text-align:center;
     background:white;
+    text-align:center;
+    padding:80px 20px;
 }
 
 .hero h1{
-    font-size:42px;
+    font-size:48px;
     line-height:1.15;
-    margin-bottom:18px;
+    margin-bottom:20px;
 }
 
 .hero h1 span{
-    color:#087f3e;
+    color:#0b5cff;
 }
 
 .hero p{
     max-width:700px;
     margin:auto;
-    color:#66736b;
+    color:#5d6878;
+    font-size:18px;
     line-height:1.7;
-    font-size:17px;
 }
 
 .buttons{
-    margin-top:28px;
+    margin-top:30px;
 }
 
-.btn{
+.button{
     display:inline-block;
     padding:14px 22px;
-    margin:6px;
-    border-radius:10px;
+    margin:5px;
+    border-radius:8px;
     text-decoration:none;
     font-weight:bold;
     border:none;
@@ -90,48 +108,48 @@ header{
 }
 
 .primary{
-    background:#087f3e;
+    background:#0b5cff;
     color:white;
 }
 
 .secondary{
-    background:#e8eee9;
-    color:#17221b;
+    background:#eaf0f8;
+    color:#172033;
 }
 
-.container{
-    width:92%;
-    max-width:1150px;
+.section{
+    max-width:1100px;
     margin:auto;
+    padding:70px 20px;
 }
 
-.title{
+.section h2{
     text-align:center;
-    font-size:30px;
-    margin:50px 0 25px;
-    color:#087f3e;
+    font-size:34px;
+    margin-bottom:35px;
 }
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    grid-template-columns:repeat(3,1fr);
     gap:20px;
 }
 
 .card{
     background:white;
-    padding:25px;
-    border-radius:18px;
-    box-shadow:0 5px 18px rgba(0,0,0,.07);
+    padding:28px;
+    border-radius:16px;
+    border:1px solid #e0e6ef;
     transition:.2s;
 }
 
 .card:hover{
     transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
-.icon{
-    font-size:42px;
+.card-icon{
+    font-size:40px;
     margin-bottom:15px;
 }
 
@@ -140,101 +158,116 @@ header{
 }
 
 .card p{
-    color:#69756d;
+    color:#687386;
     line-height:1.6;
 }
 
 .card button{
     margin-top:18px;
-    padding:10px 15px;
+    background:#0b5cff;
+    color:white;
     border:none;
-    border-radius:8px;
-    background:#087f3e;
-    color:white;
+    padding:10px 15px;
+    border-radius:7px;
     cursor:pointer;
+    font-weight:bold;
 }
 
-.about{
-    background:#101714;
-    color:white;
-    padding:45px 25px;
-    border-radius:20px;
-    margin:50px 0;
-    text-align:center;
+.info-section{
+    background:white;
+    margin-top:30px;
+    padding:35px;
+    border-radius:18px;
 }
 
-.about h2{
-    color:#f5d000;
+.info-section h3{
+    font-size:28px;
     margin-bottom:15px;
 }
 
-.about p{
-    max-width:750px;
-    margin:auto;
-    line-height:1.7;
-    color:#d3ddd7;
+.info-section p{
+    color:#5d6878;
+    line-height:1.8;
+    margin-bottom:12px;
 }
 
 .quiz{
-    background:white;
-    padding:30px;
-    border-radius:18px;
-    margin-bottom:50px;
-    box-shadow:0 5px 18px rgba(0,0,0,.07);
+    background:#07111f;
+    color:white;
+    padding:40px 25px;
+    border-radius:20px;
+    margin-top:50px;
 }
 
-.quiz h2{
-    color:#087f3e;
-    margin-bottom:15px;
+.quiz-intro{
+    text-align:center;
 }
 
 .question{
+    background:white;
+    color:#172033;
+    padding:25px;
     margin-top:20px;
-    padding:20px;
-    background:#f1f5f2;
-    border-radius:12px;
+    border-radius:14px;
 }
 
-.question label{
+.question h3{
+    margin-bottom:15px;
+}
+
+.option{
     display:block;
-    margin:10px 0;
+    width:100%;
+    text-align:left;
+    margin:8px 0;
+    padding:12px;
+    border:1px solid #dce2eb;
+    background:#f7f9fc;
+    border-radius:8px;
     cursor:pointer;
 }
 
-.result{
-    margin-top:20px;
+.option:hover{
+    background:#eaf0ff;
+}
+
+.option.selected{
+    background:#dbe7ff;
+    border-color:#0b5cff;
+}
+
+#result{
+    text-align:center;
+    margin-top:25px;
+    font-size:22px;
     font-weight:bold;
-    font-size:18px;
 }
 
 footer{
-    background:#07100b;
+    background:#030912;
     color:white;
     text-align:center;
-    padding:35px 15px;
+    padding:40px 20px;
+    margin-top:50px;
 }
 
 footer p{
-    margin-top:8px;
-    color:#9ba9a1;
+    color:#9caabd;
+    margin-top:10px;
 }
 
-.hidden{
-    display:none;
-}
+@media(max-width:800px){
 
-@media(max-width:600px){
+    .cards{
+        grid-template-columns:1fr;
+    }
 
     .hero h1{
-        font-size:34px;
+        font-size:38px;
     }
 
-    .title{
-        font-size:26px;
-    }
-
-    .btn{
-        width:90%;
+    nav a{
+        font-size:13px;
     }
 }
 </style>
@@ -246,11 +279,21 @@ footer p{
 
 <div class="logo">MT Jeunesse</div>
 
-<div class="slogan">
+<div class="slogan" id="slogan">
 Apprendre • Créer • Entreprendre • Innover
 </div>
 
-<button class="language" onclick="changerLangue()">
+<nav>
+<a href="#jeunesse" data-fr="Jeunesse" data-en="Youth">Jeunesse</a>
+<a href="#entrepreneuriat" data-fr="Entrepreneuriat" data-en="Entrepreneurship">Entrepreneuriat</a>
+<a href="#technologie" data-fr="Technologie" data-en="Technology">Technologie</a>
+<a href="#histoire" data-fr="Histoire" data-en="History">Histoire</a>
+<a href="#education" data-fr="Éducation" data-en="Education">Éducation</a>
+<a href="#monde" data-fr="Le monde" data-en="World">Le monde</a>
+<a href="#quiz" data-fr="Quiz" data-en="Quiz">Quiz</a>
+</nav>
+
+<button class="language" onclick="changeLanguage()" id="languageButton">
 🇫🇷 Français / 🇬🇧 English
 </button>
 
@@ -260,23 +303,26 @@ Apprendre • Créer • Entreprendre • Innover
 <section class="hero">
 
 <h1 id="heroTitle">
-Construisons <span>l'avenir</span> ensemble.
+Apprendre.<br>
+<span>Créer.</span><br>
+Entreprendre.<br>
+Innover.
 </h1>
 
 <p id="heroText">
-MT Jeunesse est une plateforme destinée aux jeunes
-pour apprendre, découvrir la technologie, développer
-des projets et découvrir l'entrepreneuriat.
+MT Jeunesse est une plateforme destinée aux jeunes pour apprendre,
+développer leurs compétences, découvrir la technologie,
+comprendre l'histoire et préparer leur avenir.
 </p>
 
 <div class="buttons">
 
-<a href="#domaines" class="btn primary" id="startBtn">
-Commencer
+<a href="#education" class="button primary" id="learnButton">
+Commencer à apprendre
 </a>
 
-<a href="#quiz" class="btn secondary" id="quizBtn">
-Faire un quiz
+<a href="#quiz" class="button secondary" id="quizButton">
+Faire le quiz
 </a>
 
 </div>
@@ -284,237 +330,258 @@ Faire un quiz
 </section>
 
 
-<div class="container">
+<section class="section">
 
-<h2 class="title" id="domainTitle">
-Découvre nos domaines
+<h2 id="discoverTitle">
+Découvre MT Jeunesse
 </h2>
 
-<section class="cards" id="domaines">
+<div class="cards">
 
 
-<div class="card">
+<div class="card" id="jeunesse">
 
-<div class="icon">👨‍🎓</div>
+<div class="card-icon">👨‍🎓</div>
 
-<h3 id="youthTitle">
-Jeunesse
-</h3>
+<h3 data-fr="Jeunesse" data-en="Youth">Jeunesse</h3>
 
-<p id="youthText">
-Conseils, orientation, motivation et compétences
-utiles pour construire ton avenir.
+<p data-fr="Conseils, orientation, motivation et compétences utiles pour construire ton avenir."
+data-en="Advice, guidance, motivation and useful skills to build your future.">
+Conseils, orientation, motivation et compétences utiles pour construire ton avenir.
 </p>
 
-<button onclick="message('Jeunesse')">
-Découvrir →
+<button onclick="showInfo('jeunesseInfo')">
+<span data-fr="Découvrir" data-en="Discover">Découvrir</span>
 </button>
 
 </div>
 
 
-<div class="card">
+<div class="card" id="entrepreneuriat">
 
-<div class="icon">💼</div>
+<div class="card-icon">💼</div>
 
-<h3 id="businessTitle">
+<h3 data-fr="Entrepreneuriat" data-en="Entrepreneurship">
 Entrepreneuriat
 </h3>
 
-<p id="businessText">
-Découvre comment trouver une idée, créer un projet,
-faire connaître ton activité et mieux la gérer.
+<p data-fr="Apprends à trouver une idée, créer un projet, vendre et gérer ton activité."
+data-en="Learn how to find an idea, create a project, sell and manage your activity.">
+Apprends à trouver une idée, créer un projet, vendre et gérer ton activité.
 </p>
 
-<button onclick="message('Entrepreneuriat')">
-Découvrir →
+<button onclick="showInfo('entrepreneuriatInfo')">
+<span data-fr="Découvrir" data-en="Discover">Découvrir</span>
 </button>
 
 </div>
 
 
-<div class="card">
+<div class="card" id="technologie">
 
-<div class="icon">💻</div>
+<div class="card-icon">💻</div>
 
-<h3 id="techTitle">
+<h3 data-fr="Technologie" data-en="Technology">
 Technologie
 </h3>
 
-<p id="techText">
-Informatique, programmation, intelligence artificielle,
-Internet et nouvelles technologies.
+<p data-fr="Découvre l'informatique, la programmation, Internet et l'intelligence artificielle."
+data-en="Discover computing, programming, the Internet and artificial intelligence.">
+Découvre l'informatique, la programmation, Internet et l'intelligence artificielle.
 </p>
 
-<button onclick="message('Technologie')">
-Découvrir →
+<button onclick="showInfo('technologieInfo')">
+<span data-fr="Découvrir" data-en="Discover">Découvrir</span>
 </button>
 
 </div>
 
 
-<div class="card">
+<div class="card" id="histoire">
 
-<div class="icon">🇨🇲</div>
+<div class="card-icon">🇨🇲</div>
 
-<h3 id="historyTitle">
+<h3 data-fr="Histoire du Cameroun" data-en="History of Cameroon">
 Histoire du Cameroun
 </h3>
 
-<p id="historyText">
-Découvre les origines, les peuples, les royaumes,
-les grandes figures et les événements historiques.
+<p data-fr="Découvre les origines, les peuples, les royaumes et les grandes étapes de l'histoire du Cameroun."
+data-en="Discover the origins, peoples, kingdoms and major events in Cameroon's history.">
+Découvre les origines, les peuples, les royaumes et les grandes étapes de l'histoire du Cameroun.
 </p>
 
-<button onclick="message('Histoire du Cameroun')">
-Découvrir →
+<button onclick="showInfo('histoireInfo')">
+<span data-fr="Découvrir" data-en="Discover">Découvrir</span>
 </button>
 
 </div>
 
 
-<div class="card">
+<div class="card" id="education">
 
-<div class="icon">📚</div>
+<div class="card-icon">📚</div>
 
-<h3 id="educationTitle">
+<h3 data-fr="Éducation" data-en="Education">
 Éducation
 </h3>
 
-<p id="educationText">
-Cours, connaissances générales, exercices,
-révisions et apprentissage.
+<p data-fr="Cours, exercices, révisions, connaissances générales et préparation scolaire."
+data-en="Lessons, exercises, revision, general knowledge and school preparation.">
+Cours, exercices, révisions, connaissances générales et préparation scolaire.
 </p>
 
-<button onclick="message('Éducation')">
-Découvrir →
+<button onclick="showInfo('educationInfo')">
+<span data-fr="Découvrir" data-en="Discover">Découvrir</span>
 </button>
 
 </div>
 
 
-<div class="card">
+<div class="card" id="monde">
 
-<div class="icon">🌍</div>
+<div class="card-icon">🌍</div>
 
-<h3 id="worldTitle">
+<h3 data-fr="Le monde" data-en="World">
 Le monde
 </h3>
 
-<p id="worldText">
-Découvre les pays, les cultures, les inventions
-et les grandes connaissances du monde.
+<p data-fr="Découvre les pays, les cultures, les inventions et les grandes connaissances du monde."
+data-en="Discover countries, cultures, inventions and important knowledge about the world.">
+Découvre les pays, les cultures, les inventions et les grandes connaissances du monde.
 </p>
 
-<button onclick="message('Le monde')">
-Découvrir →
+<button onclick="showInfo('mondeInfo')">
+<span data-fr="Découvrir" data-en="Discover">Découvrir</span>
 </button>
 
 </div>
 
+</div>
 
-</section>
 
-
-<section class="about">
-
-<h2 id="aboutTitle">
-Notre mission
-</h2>
-
-<p id="aboutText">
-Donner aux jeunes l'envie d'apprendre, de créer,
-d'innover et de croire en leurs capacités.
-MT Jeunesse veut devenir un espace où la jeunesse
-peut découvrir des connaissances utiles pour son avenir.
+<div class="info-section" id="jeunesseInfo">
+<h3>👨‍🎓 Jeunesse</h3>
+<p>
+La jeunesse est une période importante pour apprendre,
+développer ses talents et préparer son avenir.
 </p>
+<p>
+MT Jeunesse veut aider les jeunes à découvrir leurs possibilités
+et à transformer leurs idées en projets.
+</p>
+</div>
 
-</section>
+
+<div class="info-section" id="entrepreneuriatInfo">
+<h3>💼 Entrepreneuriat</h3>
+<p>
+Entreprendre commence souvent par une idée qui répond à un besoin.
+</p>
+<p>
+Apprends à identifier un problème, proposer une solution,
+connaître tes clients et gérer ton projet.
+</p>
+</div>
 
 
-<section id="quiz" class="quiz">
+<div class="info-section" id="technologieInfo">
+<h3>💻 Technologie</h3>
+<p>
+La technologie transforme notre manière d'apprendre,
+de communiquer et de travailler.
+</p>
+<p>
+Tu peux apprendre la programmation, la création de sites web,
+l'intelligence artificielle et les outils numériques.
+</p>
+</div>
+
+
+<div class="info-section" id="histoireInfo">
+<h3>🇨🇲 Histoire du Cameroun</h3>
+<p>
+L'histoire permet de comprendre les origines et l'évolution
+d'un peuple et d'un pays.
+</p>
+<p>
+Cette rubrique présentera progressivement les peuples,
+royaumes, personnages et événements importants du Cameroun.
+</p>
+</div>
+
+
+<div class="info-section" id="educationInfo">
+<h3>📚 Éducation</h3>
+<p>
+Apprendre régulièrement permet de mieux comprendre ses cours
+et de développer ses compétences.
+</p>
+<p>
+MT Jeunesse proposera progressivement des cours,
+exercices et révisions.
+</p>
+</div>
+
+
+<div class="info-section" id="mondeInfo">
+<h3>🌍 Le monde</h3>
+<p>
+Le monde est composé de nombreux pays et cultures.
+</p>
+<p>
+Découvre la géographie, les cultures, les inventions,
+les sciences et les grandes connaissances internationales.
+</p>
+</div>
+
+
+<div class="quiz" id="quiz">
+
+<div class="quiz-intro">
 
 <h2 id="quizTitle">
-🧠 Mini Quiz
+🧠 Quiz MT Jeunesse
 </h2>
 
-<p id="quizIntro">
-Teste tes connaissances.
+<p id="quizDescription">
+Teste tes connaissances avec 10 questions.
+Choisis une réponse pour chaque question.
 </p>
 
-
-<div class="question">
-
-<strong>
-1. Quelle technologie permet notamment aux ordinateurs
-d'apprendre à partir de données ?
-</strong>
-
-<label>
-<input type="radio" name="q1" value="1">
-Intelligence artificielle
-</label>
-
-<label>
-<input type="radio" name="q1" value="0">
-Lampe électrique
-</label>
-
-<label>
-<input type="radio" name="q1" value="0">
-Papier
-</label>
-
 </div>
 
 
-<div class="question">
+<div id="questions"></div>
 
-<strong>
-2. Quelle qualité est importante pour un entrepreneur ?
-</strong>
+<div style="text-align:center">
 
-<label>
-<input type="radio" name="q2" value="1">
-La créativité
-</label>
-
-<label>
-<input type="radio" name="q2" value="0">
-Ne jamais apprendre
-</label>
-
-<label>
-<input type="radio" name="q2" value="0">
-Abandonner rapidement
-</label>
-
-</div>
-
-
-<button class="btn primary" onclick="corrigerQuiz()">
+<button class="button primary" onclick="finishQuiz()" id="finishButton">
 Voir mon score
 </button>
 
-<div id="resultat" class="result"></div>
-
-</section>
+<button class="button secondary" onclick="restartQuiz()" id="restartButton">
+Recommencer
+</button>
 
 </div>
+
+<div id="result"></div>
+
+</div>
+
+</section>
 
 
 <footer>
 
-<strong>
-🇨🇲 MT Jeunesse
-</strong>
+<strong>MT Jeunesse</strong>
 
-<p>
-Apprendre aujourd'hui. Construire demain.
+<p id="footerSlogan">
+Apprendre • Créer • Entreprendre • Innover
 </p>
 
 <p>
-© 2026 MT Jeunesse
+© 2026 MT Jeunesse — Tous droits réservés.
 </p>
 
 </footer>
@@ -522,123 +589,435 @@ Apprendre aujourd'hui. Construire demain.
 
 <script>
 
-let anglais=false;
+let currentLanguage = "fr";
+
+const questions = [
+
+{
+questionFr:"Quel est le rôle principal de l'éducation ?",
+questionEn:"What is the main purpose of education?",
+optionsFr:[
+"Développer les connaissances et les compétences",
+"Empêcher les jeunes d'apprendre",
+"Éviter toutes les responsabilités",
+"Ne rien apprendre"
+],
+optionsEn:[
+"Develop knowledge and skills",
+"Prevent young people from learning",
+"Avoid all responsibilities",
+"Learn nothing"
+],
+answer:0
+},
+
+{
+questionFr:"Que signifie entreprendre ?",
+questionEn:"What does entrepreneurship mean?",
+optionsFr:[
+"Créer et développer un projet ou une activité",
+"Ne jamais travailler",
+"Refuser toute idée",
+"Arrêter d'apprendre"
+],
+optionsEn:[
+"Create and develop a project or activity",
+"Never work",
+"Reject every idea",
+"Stop learning"
+],
+answer:0
+},
+
+{
+questionFr:"Quel langage est principalement utilisé pour structurer une page web ?",
+questionEn:"Which language is mainly used to structure a web page?",
+optionsFr:[
+"HTML",
+"MP3",
+"JPEG",
+"PDF"
+],
+optionsEn:[
+"HTML",
+"MP3",
+"JPEG",
+"PDF"
+],
+answer:0
+},
+
+{
+questionFr:"Que signifie IA ?",
+questionEn:"What does AI mean?",
+optionsFr:[
+"Intelligence artificielle",
+"Internet automatique",
+"Installation avancée",
+"Information africaine"
+],
+optionsEn:[
+"Artificial intelligence",
+"Automatic Internet",
+"Advanced installation",
+"African information"
+],
+answer:0
+},
+
+{
+questionFr:"Quelle est la capitale du Cameroun ?",
+questionEn:"What is the capital of Cameroon?",
+optionsFr:[
+"Yaoundé",
+"Douala",
+"Bertoua",
+"Bafoussam"
+],
+optionsEn:[
+"Yaoundé",
+"Douala",
+"Bertoua",
+"Bafoussam"
+],
+answer:0
+},
+
+{
+questionFr:"Pourquoi est-il important de connaître son histoire ?",
+questionEn:"Why is it important to know history?",
+optionsFr:[
+"Pour comprendre le passé et mieux construire l'avenir",
+"Pour oublier le passé",
+"Pour éviter l'éducation",
+"Pour ne jamais apprendre"
+],
+optionsEn:[
+"To understand the past and build the future better",
+"To forget the past",
+"To avoid education",
+"To never learn"
+],
+answer:0
+},
+
+{
+questionFr:"Quelle compétence est utile pour un entrepreneur ?",
+questionEn:"Which skill is useful for an entrepreneur?",
+optionsFr:[
+"La gestion",
+"Le refus d'apprendre",
+"L'inaction",
+"L'abandon"
+],
+optionsEn:[
+"Management",
+"Refusing to learn",
+"Inaction",
+"Giving up"
+],
+answer:0
+},
+
+{
+questionFr:"Internet permet principalement de quoi ?",
+questionEn:"What does the Internet mainly allow?",
+optionsFr:[
+"Échanger et accéder à des informations",
+"Empêcher toute communication",
+"Supprimer les connaissances",
+"Arrêter les ordinateurs"
+],
+optionsEn:[
+"Exchange and access information",
+"Prevent all communication",
+"Delete knowledge",
+"Stop computers"
+],
+answer:0
+},
+
+{
+questionFr:"Quelle attitude aide un jeune à progresser ?",
+questionEn:"Which attitude helps a young person progress?",
+optionsFr:[
+"La curiosité et la persévérance",
+"L'abandon",
+"Le refus d'apprendre",
+"La paresse permanente"
+],
+optionsEn:[
+"Curiosity and perseverance",
+"Giving up",
+"Refusing to learn",
+"Permanent laziness"
+],
+answer:0
+},
+
+{
+questionFr:"Quel est l'objectif de MT Jeunesse ?",
+questionEn:"What is the goal of MT Jeunesse?",
+optionsFr:[
+"Apprendre, créer, entreprendre et innover",
+"Empêcher les jeunes d'apprendre",
+"Supprimer la technologie",
+"Éviter les projets"
+],
+optionsEn:[
+"Learn, create, undertake and innovate",
+"Prevent young people from learning",
+"Remove technology",
+"Avoid projects"
+],
+answer:0
+}
+
+];
+
+let selectedAnswers = new Array(questions.length).fill(null);
 
 
-function message(section){
+function loadQuiz(){
 
-    alert(
-        "La section " + section +
-        " sera développée dans la prochaine étape."
-    );
+const container = document.getElementById("questions");
+
+container.innerHTML = "";
+
+questions.forEach((q,index)=>{
+
+const div = document.createElement("div");
+
+div.className = "question";
+
+const title = document.createElement("h3");
+
+title.textContent =
+(currentLanguage === "fr" ? "Question " : "Question ")
++ (index + 1) + " : "
++ (currentLanguage === "fr" ? q.questionFr : q.questionEn);
+
+div.appendChild(title);
+
+const options =
+currentLanguage === "fr"
+? q.optionsFr
+: q.optionsEn;
+
+options.forEach((option,optionIndex)=>{
+
+const button = document.createElement("button");
+
+button.className = "option";
+
+button.textContent = option;
+
+if(selectedAnswers[index] === optionIndex){
+button.classList.add("selected");
+}
+
+button.onclick = function(){
+
+selectedAnswers[index] = optionIndex;
+
+const all =
+div.querySelectorAll(".option");
+
+all.forEach(b=>b.classList.remove("selected"));
+
+button.classList.add("selected");
+
+};
+
+div.appendChild(button);
+
+});
+
+container.appendChild(div);
+
+});
 
 }
 
 
-function corrigerQuiz(){
+function finishQuiz(){
 
-    let score=0;
+let score = 0;
 
-    let q1=document.querySelector(
-        'input[name="q1"]:checked'
-    );
+let unanswered = 0;
 
-    let q2=document.querySelector(
-        'input[name="q2"]:checked'
-    );
+questions.forEach((q,index)=>{
 
-    if(q1){
-        score += Number(q1.value);
-    }
+if(selectedAnswers[index] === null){
 
-    if(q2){
-        score += Number(q2.value);
-    }
+unanswered++;
 
-    document.getElementById("resultat").innerText =
-        "Ton score : " + score + "/2 🎉";
+}
+
+else if(selectedAnswers[index] === q.answer){
+
+score++;
+
+}
+
+});
+
+const result = document.getElementById("result");
+
+if(unanswered > 0){
+
+result.textContent =
+currentLanguage === "fr"
+? "⚠️ Réponds à toutes les questions avant de voir ton score."
+: "⚠️ Answer all questions before seeing your score.";
+
+return;
+
+}
+
+if(currentLanguage === "fr"){
+
+result.textContent =
+"🎉 Ton score : " + score + " / " + questions.length;
+
+}else{
+
+result.textContent =
+"🎉 Your score: " + score + " / " + questions.length;
+
+}
 
 }
 
 
-function changerLangue(){
+function restartQuiz(){
 
-    anglais=!anglais;
+selectedAnswers =
+new Array(questions.length).fill(null);
 
-    if(anglais){
+document.getElementById("result").textContent = "";
 
-        document.documentElement.lang="en";
-
-        document.getElementById("heroTitle").innerHTML =
-            'Let\'s build <span>the future</span> together.';
-
-        document.getElementById("heroText").innerText =
-            "MT Jeunesse is a platform for young people to learn, discover technology, develop projects and explore entrepreneurship.";
-
-        document.getElementById("startBtn").innerText =
-            "Get started";
-
-        document.getElementById("quizBtn").innerText =
-            "Take a quiz";
-
-        document.getElementById("domainTitle").innerText =
-            "Discover our areas";
-
-        document.getElementById("youthTitle").innerText =
-            "Youth";
-
-        document.getElementById("youthText").innerText =
-            "Advice, guidance, motivation and useful skills to build your future.";
-
-        document.getElementById("businessTitle").innerText =
-            "Entrepreneurship";
-
-        document.getElementById("businessText").innerText =
-            "Learn how to find an idea, create a project, promote your activity and manage it.";
-
-        document.getElementById("techTitle").innerText =
-            "Technology";
-
-        document.getElementById("techText").innerText =
-            "Computing, programming, artificial intelligence, Internet and new technologies.";
-
-        document.getElementById("historyTitle").innerText =
-            "Cameroon History";
-
-        document.getElementById("historyText").innerText =
-            "Discover origins, peoples, kingdoms, great figures and historical events.";
-
-        document.getElementById("educationTitle").innerText =
-            "Education";
-
-        document.getElementById("educationText").innerText =
-            "Courses, general knowledge, exercises, revision and learning.";
-
-        document.getElementById("worldTitle").innerText =
-            "The World";
-
-        document.getElementById("worldText").innerText =
-            "Discover countries, cultures, inventions and knowledge from around the world.";
-
-        document.getElementById("aboutTitle").innerText =
-            "Our mission";
-
-        document.getElementById("aboutText").innerText =
-            "To give young people the desire to learn, create, innovate and believe in their abilities.";
-
-        document.getElementById("quizTitle").innerText =
-            "🧠 Mini Quiz";
-
-        document.getElementById("quizIntro").innerText =
-            "Test your knowledge.";
-
-    }else{
-
-        location.reload();
-
-    }
+loadQuiz();
 
 }
+
+
+function showInfo(id){
+
+const section = document.getElementById(id);
+
+section.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+function changeLanguage(){
+
+currentLanguage =
+currentLanguage === "fr"
+? "en"
+: "fr";
+
+updateLanguage();
+
+loadQuiz();
+
+document.getElementById("result").textContent = "";
+
+}
+
+
+function updateLanguage(){
+
+const elements =
+document.querySelectorAll("[data-fr]");
+
+elements.forEach(element=>{
+
+element.textContent =
+currentLanguage === "fr"
+? element.getAttribute("data-fr")
+: element.getAttribute("data-en");
+
+});
+
+
+if(currentLanguage === "fr"){
+
+document.documentElement.lang = "fr";
+
+document.getElementById("slogan").textContent =
+"Apprendre • Créer • Entreprendre • Innover";
+
+document.getElementById("heroText").textContent =
+"MT Jeunesse est une plateforme destinée aux jeunes pour apprendre, développer leurs compétences, découvrir la technologie, comprendre l'histoire et préparer leur avenir.";
+
+document.getElementById("learnButton").textContent =
+"Commencer à apprendre";
+
+document.getElementById("quizButton").textContent =
+"Faire le quiz";
+
+document.getElementById("discoverTitle").textContent =
+"Découvre MT Jeunesse";
+
+document.getElementById("quizTitle").textContent =
+"🧠 Quiz MT Jeunesse";
+
+document.getElementById("quizDescription").textContent =
+"Teste tes connaissances avec 10 questions. Choisis une réponse pour chaque question.";
+
+document.getElementById("finishButton").textContent =
+"Voir mon score";
+
+document.getElementById("restartButton").textContent =
+"Recommencer";
+
+document.getElementById("footerSlogan").textContent =
+"Apprendre • Créer • Entreprendre • Innover";
+
+}else{
+
+document.documentElement.lang = "en";
+
+document.getElementById("slogan").textContent =
+"Learn • Create • Build • Innovate";
+
+document.getElementById("heroText").textContent =
+"MT Jeunesse is a platform for young people to learn, develop their skills, discover technology, understand history and prepare for their future.";
+
+document.getElementById("learnButton").textContent =
+"Start learning";
+
+document.getElementById("quizButton").textContent =
+"Take the quiz";
+
+document.getElementById("discoverTitle").textContent =
+"Discover MT Jeunesse";
+
+document.getElementById("quizTitle").textContent =
+"🧠 MT Jeunesse Quiz";
+
+document.getElementById("quizDescription").textContent =
+"Test your knowledge with 10 questions. Choose one answer for each question.";
+
+document.getElementById("finishButton").textContent =
+"See my score";
+
+document.getElementById("restartButton").textContent =
+"Restart";
+
+document.getElementById("footerSlogan").textContent =
+"Learn • Create • Build • Innovate";
+
+}
+
+}
+
+
+loadQuiz();
 
 </script>
 
