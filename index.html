@@ -3,32 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description" content="MT Jeunesse - Apprendre, Créer, Entreprendre et Innover.">
+<meta name="description" content="MT Jeunesse - Apprendre, créer, entreprendre et innover. Une plateforme simple pour les jeunes.">
 <meta name="theme-color" content="#07111f">
-
-<link rel="manifest" href="manifest.json">
-
 <title>MT Jeunesse | Apprendre • Créer • Entreprendre • Innover</title>
-
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: #f4f7fb;
     color: #172033;
     line-height: 1.6;
 }
-
 header {
     background: #07111f;
     color: white;
@@ -37,7 +23,6 @@ header {
     z-index: 1000;
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
-
 .header-container {
     max-width: 1200px;
     margin: auto;
@@ -47,35 +32,12 @@ header {
     justify-content: space-between;
     gap: 20px;
 }
-
-.logo-area {
-    cursor: pointer;
-}
-
-.logo {
-    font-size: 25px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-.logo span {
-    color: #4d8dff;
-}
-
-.slogan-small {
-    font-size: 11px;
-    color: #aebbd0;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-nav button {
+.logo-area { cursor: pointer; }
+.logo { font-size: 25px; font-weight: 800; letter-spacing: 1px; }
+.logo span { color: #4d8dff; }
+.slogan-small { font-size: 11px; color: #aebbd0; }
+nav { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; justify-content: center; }
+nav button, .language-btn {
     border: none;
     background: transparent;
     color: white;
@@ -84,34 +46,20 @@ nav button {
     cursor: pointer;
     font-size: 14px;
 }
-
-nav button:hover {
-    background: #13243b;
-    color: #72a6ff;
-}
-
+nav button:hover, nav button.active { background: #13243b; color: #72a6ff; }
 .language-btn {
     border: 1px solid #42658f;
     background: #10233b;
-    color: white;
     padding: 9px 13px;
     border-radius: 8px;
-    cursor: pointer;
     font-weight: bold;
 }
-
 .hero {
     background: linear-gradient(135deg, #07111f 0%, #0c2340 55%, #0b5cff 150%);
     color: white;
     padding: 90px 20px;
 }
-
-.hero-container {
-    max-width: 1100px;
-    margin: auto;
-    text-align: center;
-}
-
+.hero-container { max-width: 1100px; margin: auto; text-align: center; }
 .badge {
     display: inline-block;
     background: rgba(255,255,255,0.1);
@@ -121,28 +69,10 @@ nav button:hover {
     font-size: 13px;
     margin-bottom: 22px;
 }
-
-.hero h1 {
-    font-size: clamp(40px, 7vw, 70px);
-    line-height: 1.05;
-    margin-bottom: 22px;
-}
-
-.hero h1 span {
-    color: #65a0ff;
-}
-
-.hero p {
-    max-width: 720px;
-    margin: auto;
-    color: #d1dbea;
-    font-size: 18px;
-}
-
-.hero-buttons {
-    margin-top: 32px;
-}
-
+.hero h1 { font-size: clamp(40px, 7vw, 70px); line-height: 1.05; margin-bottom: 22px; }
+.hero h1 span { color: #65a0ff; }
+.hero p { max-width: 720px; margin: auto; color: #d1dbea; font-size: 18px; }
+.hero-buttons { margin-top: 32px; }
 .btn {
     display: inline-block;
     border: none;
@@ -150,53 +80,17 @@ nav button:hover {
     margin: 5px;
     border-radius: 9px;
     font-weight: bold;
-    text-decoration: none;
     cursor: pointer;
     transition: 0.2s;
 }
-
-.btn:hover {
-    transform: translateY(-2px);
-}
-
-.btn-primary {
-    background: #0b5cff;
-    color: white;
-}
-
-.btn-light {
-    background: white;
-    color: #172033;
-}
-
-.section {
-    max-width: 1150px;
-    margin: auto;
-    padding: 75px 20px;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 45px;
-}
-
-.section-title h2 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.section-title p {
-    color: #687386;
-    max-width: 650px;
-    margin: auto;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: #0b5cff; color: white; }
+.btn-light { background: white; color: #172033; }
+.section { max-width: 1150px; margin: auto; padding: 75px 20px; scroll-margin-top: 90px; }
+.section-title { text-align: center; margin-bottom: 45px; }
+.section-title h2 { font-size: 36px; margin-bottom: 10px; }
+.section-title p { color: #687386; max-width: 650px; margin: auto; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .card {
     background: white;
     border: 1px solid #e1e6ee;
@@ -205,610 +99,291 @@ nav button:hover {
     transition: 0.25s;
     cursor: pointer;
 }
-
-.card:hover {
+.card:hover, .card.open {
     transform: translateY(-6px);
     box-shadow: 0 15px 35px rgba(18,35,60,0.1);
+    border-color: #b9d0ff;
 }
-
 .icon {
-    width: 55px;
-    height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #edf3ff;
-    border-radius: 13px;
-    font-size: 28px;
-    margin-bottom: 18px;
+    width: 55px; height: 55px;
+    display: flex; align-items: center; justify-content: center;
+    background: #edf3ff; border-radius: 13px; font-size: 28px; margin-bottom: 18px;
 }
-
-.card h3 {
-    margin-bottom: 9px;
-    font-size: 21px;
-}
-
-.card p {
-    color: #687386;
-    font-size: 15px;
-}
-
-.card-link {
-    display: inline-block;
-    margin-top: 17px;
-    color: #0b5cff;
-    font-weight: bold;
-}
-
-.about {
+.card h3 { margin-bottom: 9px; font-size: 21px; }
+.card p { color: #687386; font-size: 15px; }
+.card-link { display: inline-block; margin-top: 17px; color: #0b5cff; font-weight: bold; }
+.detail {
+    display: none;
+    margin-top: 22px;
     background: white;
+    border: 1px solid #d7e3f8;
+    border-radius: 16px;
+    padding: 26px;
 }
-
-.about-box {
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
+.detail.show { display: block; }
+.detail h3 { margin-bottom: 8px; font-size: 24px; }
+.detail .lead { color: #687386; margin-bottom: 16px; }
+.detail ul { margin: 0 0 16px 18px; }
+.detail li { margin: 8px 0; }
+.detail .close-detail {
+    border: none; background: #edf3ff; color: #0b5cff;
+    font-weight: bold; padding: 8px 12px; border-radius: 8px; cursor: pointer;
 }
-
-.about-box h2 {
-    font-size: 34px;
-    margin-bottom: 18px;
-}
-
-.about-box p {
-    color: #687386;
-    margin-bottom: 12px;
-}
-
-.features {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-}
-
+.about { background: white; }
+.about-box { max-width: 900px; margin: auto; text-align: center; }
+.about-box h2 { font-size: 34px; margin-bottom: 18px; }
+.about-box p { color: #687386; margin-bottom: 12px; }
+.features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
 .feature {
-    background: white;
-    padding: 25px;
-    border-radius: 14px;
-    border: 1px solid #e1e6ee;
-    text-align: center;
+    background: white; padding: 25px; border-radius: 14px;
+    border: 1px solid #e1e6ee; text-align: center;
 }
-
-.feature-icon {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.feature h3 {
-    font-size: 17px;
-    margin-bottom: 7px;
-}
-
-.feature p {
-    color: #687386;
-    font-size: 14px;
-}
-
-.quiz-section {
-    background: #07111f;
-    color: white;
-}
-
-.quiz-box {
-    max-width: 850px;
-    margin: auto;
-}
-
-.quiz-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.quiz-header h2 {
-    font-size: 35px;
-}
-
-.quiz-header p {
-    color: #aebbd0;
-}
-
+.feature-icon { font-size: 32px; margin-bottom: 10px; }
+.feature h3 { font-size: 17px; margin-bottom: 7px; }
+.feature p { color: #687386; font-size: 14px; }
+.quiz-section { background: #07111f; color: white; }
+.quiz-box { max-width: 850px; margin: auto; }
+.quiz-header { text-align: center; margin-bottom: 30px; }
+.quiz-header h2 { font-size: 35px; }
+.quiz-header p { color: #aebbd0; }
 .question {
-    background: #0e1d31;
-    border: 1px solid #203653;
-    padding: 25px;
-    border-radius: 14px;
-    margin-bottom: 20px;
+    background: #0e1d31; border: 1px solid #203653;
+    padding: 25px; border-radius: 14px; margin-bottom: 20px;
 }
-
-.question h3 {
-    margin-bottom: 16px;
-    font-size: 18px;
-}
-
+.question h3 { margin-bottom: 16px; font-size: 18px; }
 .answer {
-    display: block;
-    width: 100%;
-    text-align: left;
-    padding: 13px 15px;
-    margin: 8px 0;
-    border: 1px solid #304965;
-    background: #13243a;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
+    display: block; width: 100%; text-align: left;
+    padding: 13px 15px; margin: 8px 0;
+    border: 1px solid #304965; background: #13243a; color: white;
+    border-radius: 8px; cursor: pointer;
 }
-
-.answer:hover {
-    background: #1b3554;
-}
-
-.answer.selected {
-    background: #0b5cff;
-    border-color: #0b5cff;
-}
-
+.answer:hover { background: #1b3554; }
+.answer.selected { background: #0b5cff; border-color: #0b5cff; }
+.answer.good { background: #157347; border-color: #157347; }
+.answer.bad { background: #a33b3b; border-color: #a33b3b; }
+.quiz-actions { text-align: center; margin-top: 8px; }
 .quiz-result {
     display: none;
-    background: white;
-    color: #172033;
-    padding: 25px;
-    border-radius: 13px;
-    text-align: center;
-    margin-top: 25px;
+    background: white; color: #172033;
+    padding: 25px; border-radius: 13px;
+    text-align: center; margin-top: 25px;
 }
-
-.quiz-result h3 {
-    font-size: 28px;
-    margin-bottom: 8px;
-}
-
-.install-box {
-    max-width: 900px;
-    margin: 40px auto 0;
-    padding: 30px;
-    background: #0e1d31;
-    border: 1px solid #203653;
-    border-radius: 16px;
-    text-align: center;
-}
-
-.install-box h2 {
-    margin-bottom: 10px;
-}
-
-.install-box p {
-    color: #aebbd0;
-}
-
-#installButton {
-    display: none;
-    margin-top: 20px;
-}
-
-footer {
-    background: #030912;
-    color: white;
-    padding: 45px 20px;
-    text-align: center;
-}
-
-footer strong {
-    font-size: 20px;
-}
-
-footer p {
-    color: #8e9bb0;
-    margin-top: 8px;
-}
-
-.footer-links {
-    margin: 20px 0;
-}
-
+.quiz-result.show { display: block; }
+.quiz-result h3 { font-size: 28px; margin-bottom: 8px; }
+footer { background: #030912; color: white; padding: 45px 20px; text-align: center; }
+footer strong { font-size: 20px; }
+footer p { color: #8e9bb0; margin-top: 8px; }
+.footer-links { margin: 20px 0; }
 .footer-links button {
-    background: none;
-    border: none;
-    color: #b7c4d7;
-    cursor: pointer;
-    margin: 5px 10px;
+    background: none; border: none; color: #b7c4d7;
+    cursor: pointer; margin: 5px 10px;
 }
-
-.footer-links button:hover {
-    color: white;
-}
-
+.footer-links button:hover { color: white; }
 @media (max-width: 900px) {
-
-    .header-container {
-        flex-direction: column;
-    }
-
-    .cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .features {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .header-container { flex-direction: column; }
+    .cards { grid-template-columns: repeat(2, 1fr); }
+    .features { grid-template-columns: repeat(2, 1fr); }
 }
-
 @media (max-width: 600px) {
-
-    .header-container {
-        padding: 13px 12px;
-    }
-
-    nav {
-        width: 100%;
-    }
-
-    nav button {
-        font-size: 12px;
-        padding: 7px;
-    }
-
-    .language-btn {
-        font-size: 12px;
-    }
-
-    .hero {
-        padding: 65px 18px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .features {
-        grid-template-columns: 1fr;
-    }
-
-    .section {
-        padding: 55px 16px;
-    }
-
-    .section-title h2 {
-        font-size: 29px;
-    }
+    .header-container { padding: 13px 12px; }
+    nav { width: 100%; }
+    nav button, .language-btn { font-size: 12px; padding: 7px; }
+    .hero { padding: 65px 18px; }
+    .hero p { font-size: 16px; }
+    .cards, .features { grid-template-columns: 1fr; }
+    .section { padding: 55px 16px; }
+    .section-title h2 { font-size: 29px; }
 }
 </style>
 </head>
-
 <body>
 
 <header>
-
     <div class="header-container">
-
-        <div class="logo-area" onclick="goHome()">
+        <div class="logo-area" onclick="goTo('accueil')">
             <div class="logo">MT <span>Jeunesse</span></div>
-
-            <div class="slogan-small">
-                Apprendre • Créer • Entreprendre • Innover
-            </div>
+            <div class="slogan-small" data-i18n="slogan">Apprendre • Créer • Entreprendre • Innover</div>
         </div>
-
         <nav>
-            <button onclick="goHome()">Accueil</button>
-            <button onclick="goTo('programmes')">Programmes</button>
-            <button onclick="goTo('apropos')">À propos</button>
-            <button onclick="goTo('quiz')">Quiz</button>
+            <button onclick="goTo('accueil')" data-i18n="navHome">Accueil</button>
+            <button onclick="goTo('programmes')" data-i18n="navPrograms">Programmes</button>
+            <button onclick="goTo('apropos')" data-i18n="navAbout">À propos</button>
+            <button onclick="goTo('quiz')" data-i18n="navQuiz">Quiz</button>
         </nav>
-
-        <button class="language-btn" onclick="changeLanguage()">
-            🇫🇷 FR / 🇬🇧 EN
-        </button>
-
+        <button class="language-btn" id="langBtn" onclick="changeLanguage()">🇬🇧 EN</button>
     </div>
-
 </header>
 
-
 <section class="hero" id="accueil">
-
     <div class="hero-container">
-
-        <div class="badge">
-            MT JEUNESSE • ÉDUCATION • AVENIR
-        </div>
-
+        <div class="badge" data-i18n="badge">MT JEUNESSE • ÉDUCATION • AVENIR</div>
         <h1>
-            Apprendre.<br>
-            <span>Créer.</span><br>
-            Entreprendre.
+            <span data-i18n="hLearn">Apprendre.</span><br>
+            <span data-i18n="hCreate">Créer.</span><br>
+            <span data-i18n="hStart">Entreprendre.</span>
         </h1>
-
-        <p id="heroText">
-            Une plateforme pensée pour les jeunes qui veulent apprendre,
-            développer leurs compétences, découvrir la technologie,
-            entreprendre et construire leur avenir.
-        </p>
-
+        <p data-i18n="heroText">Une plateforme pensée pour les jeunes qui veulent apprendre, développer leurs compétences, découvrir la technologie, entreprendre et construire leur avenir.</p>
         <div class="hero-buttons">
-
-            <button class="btn btn-primary"
-                    onclick="goTo('programmes')">
-                Découvrir les programmes
-            </button>
-
-            <button class="btn btn-light"
-                    onclick="goTo('quiz')">
-                Tester mes connaissances
-            </button>
-
+            <button class="btn btn-primary" onclick="goTo('programmes')" data-i18n="btnPrograms">Découvrir les programmes</button>
+            <button class="btn btn-light" onclick="goTo('quiz')" data-i18n="btnQuiz">Tester mes connaissances</button>
         </div>
-
     </div>
-
 </section>
-
 
 <section class="section" id="programmes">
-
     <div class="section-title">
-
-        <h2 id="programmesTitle">
-            Explore ton potentiel
-        </h2>
-
-        <p>
-            Découvre différents domaines pour développer tes connaissances
-            et préparer ton avenir.
-        </p>
-
+        <h2 data-i18n="programsTitle">Explore ton potentiel</h2>
+        <p data-i18n="programsLead">Choisis un domaine. Chaque carte ouvre une mini-leçon pour commencer tout de suite.</p>
     </div>
-
-
-    <div class="cards">
-
-        <div class="card" onclick="showMessage('Jeunesse')">
-
-            <div class="icon">👥</div>
-
-            <h3>Jeunesse</h3>
-
-            <p>
-                Motivation, développement personnel, projets et compétences
-                pour préparer ton avenir.
-            </p>
-
-            <span class="card-link">Découvrir →</span>
-
-        </div>
-
-
-        <div class="card" onclick="showMessage('Éducation')">
-
-            <div class="icon">📚</div>
-
-            <h3>Éducation</h3>
-
-            <p>
-                Cours, révisions, connaissances générales et préparation
-                scolaire.
-            </p>
-
-            <span class="card-link">Découvrir →</span>
-
-        </div>
-
-
-        <div class="card" onclick="showMessage('Technologie')">
-
-            <div class="icon">💻</div>
-
-            <h3>Technologie</h3>
-
-            <p>
-                Informatique, programmation, numérique, électronique
-                et nouvelles technologies.
-            </p>
-
-            <span class="card-link">Découvrir →</span>
-
-        </div>
-
-
-        <div class="card" onclick="showMessage('Entrepreneuriat')">
-
-            <div class="icon">💼</div>
-
-            <h3>Entrepreneuriat</h3>
-
-            <p>
-                Idées de business, marketing, vente, gestion et création
-                de projets.
-            </p>
-
-            <span class="card-link">Découvrir →</span>
-
-        </div>
-
-
-        <div class="card" onclick="showMessage('Histoire')">
-
-            <div class="icon">🇨🇲</div>
-
-            <h3>Histoire</h3>
-
-            <p>
-                Découvre l'histoire du Cameroun, de l'Afrique et du monde.
-            </p>
-
-            <span class="card-link">Découvrir →</span>
-
-        </div>
-
-
-        <div class="card" onclick="showMessage('Le monde')">
-
-            <div class="icon">🌍</div>
-
-            <h3>Le monde</h3>
-
-            <p>
-                Culture, sciences, géographie, découvertes et connaissances
-                sur le monde.
-            </p>
-
-            <span class="card-link">Découvrir →</span>
-
-        </div>
-
+    <div class="cards" id="cards"></div>
+    <div class="detail" id="detail">
+        <h3 id="detailTitle"></h3>
+        <p class="lead" id="detailLead"></p>
+        <ul id="detailList"></ul>
+        <button class="close-detail" onclick="closeDetail()" data-i18n="close">Fermer</button>
     </div>
-
 </section>
-
 
 <section class="about" id="apropos">
-
     <div class="section">
-
         <div class="about-box">
-
-            <h2>Notre mission</h2>
-
-            <p>
-                MT Jeunesse a pour objectif d'aider les jeunes à apprendre,
-                développer leurs compétences et transformer leurs idées
-                en projets.
-            </p>
-
-            <p>
-                Nous voulons créer un espace simple, moderne et accessible
-                où chaque jeune peut découvrir quelque chose de nouveau.
-            </p>
-
+            <h2 data-i18n="missionTitle">Notre mission</h2>
+            <p data-i18n="mission1">MT Jeunesse aide les jeunes à apprendre, à développer des compétences utiles et à transformer une idée en petit projet.</p>
+            <p data-i18n="mission2">L'espace reste simple : une leçon courte, un quiz, puis une action concrète. Pas besoin d'attendre d'avoir tout compris pour commencer.</p>
         </div>
-
     </div>
-
 </section>
 
-
-<section class="section">
-
+<section class="section" id="pourquoi">
     <div class="section-title">
-
-        <h2>Pourquoi MT Jeunesse ?</h2>
-
+        <h2 data-i18n="whyTitle">Pourquoi MT Jeunesse ?</h2>
     </div>
-
     <div class="features">
-
         <div class="feature">
             <div class="feature-icon">📖</div>
-            <h3>Apprendre</h3>
-            <p>Développe tes connaissances.</p>
+            <h3 data-i18n="f1t">Apprendre</h3>
+            <p data-i18n="f1p">Des repères clairs en histoire, sciences, école et culture générale.</p>
         </div>
-
         <div class="feature">
             <div class="feature-icon">💡</div>
-            <h3>Créer</h3>
-            <p>Transforme tes idées en projets.</p>
+            <h3 data-i18n="f2t">Créer</h3>
+            <p data-i18n="f2p">Passe de l'idée à un premier essai : page web, affiche ou mini-projet.</p>
         </div>
-
         <div class="feature">
             <div class="feature-icon">🚀</div>
-            <h3>Entreprendre</h3>
-            <p>Découvre l'esprit entrepreneurial.</p>
+            <h3 data-i18n="f3t">Entreprendre</h3>
+            <p data-i18n="f3p">Repère un besoin réel, propose une solution simple, puis teste-la.</p>
         </div>
-
         <div class="feature">
             <div class="feature-icon">🌟</div>
-            <h3>Innover</h3>
-            <p>Imagine les solutions de demain.</p>
+            <h3 data-i18n="f4t">Innover</h3>
+            <p data-i18n="f4p">Améliore ce qui existe déjà au lieu de copier une idée toute faite.</p>
         </div>
-
     </div>
-
 </section>
 
-
 <section class="quiz-section" id="quiz">
-
     <div class="section">
-
         <div class="quiz-box">
-
             <div class="quiz-header">
-
-                <h2>🧠 Quiz MT Jeunesse</h2>
-
-                <p>
-                    Teste tes connaissances et découvre ton score.
-                </p>
-
+                <h2 data-i18n="quizTitle">🧠 Quiz MT Jeunesse</h2>
+                <p data-i18n="quizLead">Réponds aux 4 questions, puis affiche ton score.</p>
             </div>
-
-
-            <div class="question">
-
-                <h3>1. Quelle est la capitale du Cameroun ?</h3>
-
-                <button class="answer" onclick="answer(this,false)">
-                    A. Douala
-                </button>
-
-                <button class="answer" onclick="answer(this,true)">
-                    B. Yaoundé
-                </button>
-
-                <button class="answer" onclick="answer(this,false)">
-                    C. Bertoua
-                </button>
-
-                <button class="answer" onclick="answer(this,false)">
-                    D. Bafoussam
-                </button>
-
+            <div id="quizQuestions"></div>
+            <div class="quiz-actions">
+                <button class="btn btn-primary" onclick="showScore()" data-i18n="seeScore">Voir mon score</button>
+                <button class="btn btn-light" onclick="resetQuiz()" data-i18n="resetQuiz">Recommencer</button>
             </div>
-
-
-            <div class="question">
-
-                <h3>2. Que signifie HTML ?</h3>
-
-                <button class="answer" onclick="answer(this,true)">
-                    A. HyperText Markup Language
-                </button>
-
-                <button class="answer" onclick="answer(this,false)">
-                    B. High Technology Machine Language
-                </button>
-
-                <button class="answer" onclick="answer(this,false)">
-                    C. Home Tool Management Language
-                </button>
-
-                <button class="answer" onclick="answer(this,false)">
-                    D. Hyper Transfer Main Link
-                </button>
-
+            <div class="quiz-result" id="quizResult">
+                <h3 id="scoreTitle"></h3>
+                <p id="scoreText"></p>
             </div>
+        </div>
+    </div>
+</section>
 
+<footer>
+    <strong>MT Jeunesse</strong>
+    <div class="footer-links">
+        <button onclick="goTo('accueil')" data-i18n="navHome">Accueil</button>
+        <button onclick="goTo('programmes')" data-i18n="navPrograms">Programmes</button>
+        <button onclick="goTo('apropos')" data-i18n="navAbout">À propos</button>
+        <button onclick="goTo('quiz')" data-i18n="navQuiz">Quiz</button>
+    </div>
+    <p data-i18n="footer">Projet éducatif pour les jeunes. Apprendre, créer, entreprendre, innover. 2026.</p>
+</footer>
 
-            <div class="question">
+<script>
+const copy = {
+    fr: {
+        slogan: "Apprendre • Créer • Entreprendre • Innover",
+        navHome: "Accueil", navPrograms: "Programmes", navAbout: "À propos", navQuiz: "Quiz",
+        badge: "MT JEUNESSE • ÉDUCATION • AVENIR",
+        hLearn: "Apprendre.", hCreate: "Créer.", hStart: "Entreprendre.",
+        heroText: "Une plateforme pensée pour les jeunes qui veulent apprendre, développer leurs compétences, découvrir la technologie, entreprendre et construire leur avenir.",
+        btnPrograms: "Découvrir les programmes", btnQuiz: "Tester mes connaissances",
+        programsTitle: "Explore ton potentiel",
+        programsLead: "Choisis un domaine. Chaque carte ouvre une mini-leçon pour commencer tout de suite.",
+        close: "Fermer",
+        missionTitle: "Notre mission",
+        mission1: "MT Jeunesse aide les jeunes à apprendre, à développer des compétences utiles et à transformer une idée en petit projet.",
+        mission2: "L'espace reste simple : une leçon courte, un quiz, puis une action concrète. Pas besoin d'attendre d'avoir tout compris pour commencer.",
+        whyTitle: "Pourquoi MT Jeunesse ?",
+        f1t: "Apprendre", f1p: "Des repères clairs en histoire, sciences, école et culture générale.",
+        f2t: "Créer", f2p: "Passe de l'idée à un premier essai : page web, affiche ou mini-projet.",
+        f3t: "Entreprendre", f3p: "Repère un besoin réel, propose une solution simple, puis teste-la.",
+        f4t: "Innover", f4p: "Améliore ce qui existe déjà au lieu de copier une idée toute faite.",
+        quizTitle: "🧠 Quiz MT Jeunesse",
+        quizLead: "Réponds aux 4 questions, puis affiche ton score.",
+        seeScore: "Voir mon score", resetQuiz: "Recommencer",
+        footer: "Projet éducatif pour les jeunes. Apprendre, créer, entreprendre, innover. 2026.",
+        scoreNeed: "Réponds d'abord aux 4 questions.",
+        scoreTitle: "Ton score : ",
+        scoreHigh: "Très bien. Tu peux ouvrir un programme et transformer une réponse en mini-projet.",
+        scoreMid: "Bon début. Relis la mini-leçon du domaine qui t'a posé problème, puis recommence.",
+        scoreLow: "Pas grave. Ouvre Histoire ou Technologie, lis les 3 points, puis retente le quiz."
+    },
+    en: {
+        slogan: "Learn • Create • Build • Innovate",
+        navHome: "Home", navPrograms: "Programs", navAbout: "About", navQuiz: "Quiz",
+        badge: "MT JEUNESSE • EDUCATION • FUTURE",
+        hLearn: "Learn.", hCreate: "Create.", hStart: "Build.",
+        heroText: "A simple platform for young people who want to learn, build skills, explore technology, start projects and shape their future.",
+        btnPrograms: "Explore the programs", btnQuiz: "Test my knowledge",
+        programsTitle: "Explore your potential",
+        programsLead: "Pick a topic. Each card opens a short lesson you can start right away.",
+        close: "Close",
+        missionTitle: "Our mission",
+        mission1: "MT Jeunesse helps young people learn useful skills and turn an idea into a small project.",
+        mission2: "Keep it simple: a short lesson, a quiz, then one concrete action. You do not need to know everything before you start.",
+        whyTitle: "Why MT Jeunesse?",
+        f1t: "Learn", f1p: "Clear markers in history, science, school and general knowledge.",
+        f2t: "Create", f2p: "Go from an idea to a first try: a web page, a poster or a mini-project.",
+        f3t: "Build", f3p: "Spot a real need, offer a simple solution, then test it.",
+        f4t: "Innovate", f4p: "Improve what already exists instead of copying a ready-made idea.",
+        quizTitle: "🧠 MT Jeunesse Quiz",
+        quizLead: "Answer the 4 questions, then see your score.",
+        seeScore: "See my score", resetQuiz: "Try again",
+        footer: "An education project for young people. Learn, create, build, innovate. 2026.",
+        scoreNeed: "Answer all 4 questions first.",
+        scoreTitle: "Your score: ",
+        scoreHigh: "Nice work. Open a program and turn one answer into a mini-project.",
+        scoreMid: "Good start. Reread the short lesson for the topic you missed, then try again.",
+        scoreLow: "No problem. Open History or Technology, read the 3 points, then retake the quiz."
+    }
+};
 
-                <h3>
-                    3. Quel composant est principalement utilisé
-                    pour stocker une charge électrique ?
-                </h3>
-
-                <button class="answer" onclick="answer(this,false)">
-                    A. Diode
-                </button>
-
-                <button class="answer" onclick="answer(this,true)">
-                    B. Condensateur
-                </button>
-
-                <button class="answer" onclick="answer(this,false)">
-                    C. Transformateur
-                </button>
-
-                <button class="
+const programs = {
+    fr: [
+        { id: "jeunesse", icon: "👥", title: "Jeunesse", text: "Fixe un petit objectif, organise ton temps et avance un peu chaque jour.", lead: "Un grand projet commence par une action de 20 minutes.", points: ["Écris un objectif précis pour cette semaine, pas pour toute l'année.", "Découpe-le en 3 tâches courtes.", "Note ce qui a bloqué, puis change une seule chose la fois suivante."] },
+        { id: "education", icon: "📚", title: "Éducation", text: "Révise mieux : rappelle-toi la leçon avant de relire ton cahier.", lead: "Relire n'est pas la même chose que savoir.", points: ["Ferme le cahier et écris ce dont tu te souviens.", "Vérifie ensuite seulement les trous.", "Refais 5 questions le lendemain, pas seulement le jour du contrôle."] },
+        { id: "technologie", icon: "💻", title: "Technologie", text: "Découvre HTML, la structure d'une page web, et le rôle d'un condensateur.", lead: "Une page web commence par trois balises.", points: ["HTML décrit le contenu : titre, paragraphe, bouton.", "Une balise s'ouvre et se ferme, comme <p> et </p>.", "En électronique, un condensateur stocke une charge électrique."] },
+        { id: "entrepreneuriat", icon: "💼", title: "Entrepreneuriat", text: "Trouve un besoin autour de toi avant de parler d'argent ou de logo.", lead: "Une idée utile répond à un problème clair.", points: ["Qui a le problème, et quand ?", "Quelle petite solution peux-tu tester cette semaine ?", "Demande à 3 personnes si elles s'en serviraient vraiment."] },
+        { id: "histoire", icon: "🇨🇲", title: "Histoire", text: "Le Cameroun, l'Afrique et quelques repères pour situer les événements.", lead: "Quelques faits simples pour commencer.", points: ["Yaoundé est la capitale politique du Cameroun. Douala est la grande ville économique.", "Le Cameroun devient indépendant le 1er janvier 1960.", "Le pays a deux langues officielles : le français et l'anglais."] },
+        { id: "monde", icon: "🌍", title: "Le monde", text: "Culture, sciences et géographie pour relier le Cameroun au reste du monde.", lead: "Observer le monde aide à mieux comprendre son propre pays.", points: ["La Terre a 5 océans et plusieurs continents, dont l'Afrique.", "Un fait scientifique se vérifie, il ne se croit pas seulement.", "Compare une coutume d'ici avec une coutume d'ailleurs sans la juger trop vite."] }
+    ],
+    en: [
+        { id: "jeunesse", icon: "👥", title: "Youth", text: "Set a small goal, organize your time and move forward a little each day.", lead: "A big project starts with a 20-minute action.", points: ["Write one clear goal for this week, not for the whole year.", "Split it into 3 short tasks.", "Note what blocked you, then change only one thing next time."] },
+        { id: "education", icon: "📚", title: "Education", text: "Revise better: recall the lesson before rereading your notebook.", lead: "Rereading is not the same as knowing.", points: ["Close the notebook and write what you remember.", "Then check only the gaps.", "Redo 5 questions the next day, not only on test day."] },
+        { id: "technologie", icon: "💻", title: "Technology", text: "Discover HTML, the structure of a web page, and what a capacitor does.", lead: "A web page starts with three tags.", points: ["HTML describes content: title, paragraph, button.", "A tag opens and closes, like <p> and </p>.", "In electronics, a capacitor stores electric charge."] },
+        { id: "entrepreneuriat", icon: "💼", title: "Entrepreneurship", text: "Find a need around you before talking about money or a logo.", lead: "A useful idea answers a clear problem.", points: ["Who has the problem, and when?", "What small solution
