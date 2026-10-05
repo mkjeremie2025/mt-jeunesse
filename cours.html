@@ -1,1044 +1,943 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MT Jeunesse — Cours</title>
+<title>MT Jeunesse - Cours</title>
 
 <meta name="description"
-content="MT Jeunesse — Cours, éducation, technologie, entrepreneuriat, histoire, informatique et culture générale.">
+content="MT Jeunesse - Plateforme éducative pour apprendre, réviser et progresser.">
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+    line-height: 1.6;
 }
 
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f4f7fb;
-    color:#172033;
-    line-height:1.6;
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: linear-gradient(135deg, #071952, #0b4f9c);
+    color: white;
+    padding: 18px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0,0,0,.15);
 }
 
-/* ================= HEADER ================= */
-
-header{
-    background:linear-gradient(135deg,#07111f,#0b2340);
-    color:white;
-    padding:18px 20px;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 4px 20px rgba(0,0,0,.18);
+.header-content {
+    max-width: 1150px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
 }
 
-.header-container{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
+.logo {
+    font-size: 24px;
+    font-weight: 800;
 }
 
-.logo{
-    font-size:26px;
-    font-weight:800;
+.logo span {
+    color: #ffd43b;
 }
 
-.logo span{
-    color:#4d8dff;
+.language {
+    padding: 9px 12px;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    color: #071952;
+    font-weight: bold;
 }
 
-.slogan{
-    font-size:12px;
-    color:#b9c7d9;
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    max-width: 1150px;
+    margin: 35px auto 25px;
+    padding: 35px 20px;
+    text-align: center;
 }
 
-nav{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-    justify-content:center;
+.hero h1 {
+    font-size: 36px;
+    color: #071952;
+    margin-bottom: 10px;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    padding:8px 12px;
-    border-radius:8px;
-    font-size:14px;
-    transition:.2s;
+.hero p {
+    color: #5d6678;
+    max-width: 700px;
+    margin: auto;
 }
 
-nav a:hover,
-nav a.active{
-    background:#0b5cff;
+/* =========================
+   RECHERCHE
+========================= */
+
+.search-box {
+    max-width: 700px;
+    margin: 20px auto 35px;
+    padding: 0 20px;
 }
 
-.language-btn{
-    border:none;
-    background:white;
-    color:#172033;
-    padding:9px 13px;
-    border-radius:8px;
-    cursor:pointer;
-    font-weight:bold;
+.search-box input {
+    width: 100%;
+    padding: 15px 18px;
+    border: 1px solid #d6dce5;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
 }
 
-/* ================= HERO ================= */
-
-.hero{
-    background:
-        radial-gradient(circle at top right,rgba(11,92,255,.25),transparent 35%),
-        linear-gradient(135deg,#07111f,#102b4c);
-    color:white;
-    text-align:center;
-    padding:75px 20px;
+.search-box input:focus {
+    border-color: #0b4f9c;
+    box-shadow: 0 0 0 3px rgba(11,79,156,.12);
 }
 
-.hero-content{
-    max-width:850px;
-    margin:auto;
+/* =========================
+   COURS
+========================= */
+
+.courses {
+    max-width: 1150px;
+    margin: auto;
+    padding: 0 20px 50px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-.hero h1{
-    font-size:46px;
-    margin-bottom:18px;
+.course-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.07);
+    border: 1px solid #e8edf4;
+    transition: .25s;
 }
 
-.hero h1 span{
-    color:#4d8dff;
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.12);
 }
 
-.hero p{
-    color:#c8d4e5;
-    font-size:18px;
-    max-width:700px;
-    margin:auto;
+.course-icon {
+    font-size: 38px;
+    margin-bottom: 12px;
 }
 
-/* ================= SEARCH ================= */
-
-.search-section{
-    max-width:900px;
-    margin:-30px auto 0;
-    padding:0 20px;
-    position:relative;
-    z-index:10;
+.course-card h2 {
+    color: #071952;
+    margin-bottom: 8px;
+    font-size: 21px;
 }
 
-.search-box{
-    background:white;
-    padding:12px;
-    border-radius:14px;
-    box-shadow:0 10px 30px rgba(0,0,0,.12);
-    display:flex;
-    align-items:center;
-    gap:10px;
+.course-card p {
+    color: #687386;
+    margin-bottom: 18px;
 }
 
-.search-box span{
-    font-size:22px;
+.course-btn {
+    width: 100%;
+    border: none;
+    padding: 13px;
+    border-radius: 10px;
+    background: #0b4f9c;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
 }
 
-.search-box input{
-    border:none;
-    outline:none;
-    width:100%;
-    font-size:16px;
+.course-btn:hover {
+    background: #071952;
 }
 
-/* ================= MAIN ================= */
+/* =========================
+   PANNEAU DU COURS
+========================= */
 
-main{
-    max-width:1200px;
-    margin:auto;
-    padding:60px 20px;
+#lessonPanel {
+    display: none;
+    max-width: 900px;
+    margin: 10px auto 50px;
+    padding: 30px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.12);
+    border: 1px solid #e2e7ef;
 }
 
-.section-title{
-    text-align:center;
-    margin-bottom:40px;
+.lesson-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #e5e9ef;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-.section-title h2{
-    font-size:34px;
-    margin-bottom:8px;
+.lesson-header h2 {
+    color: #071952;
+    font-size: 28px;
 }
 
-.section-title p{
-    color:#687386;
+.close-btn {
+    border: none;
+    background: #f0f2f5;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
 }
 
-/* ================= COURSES ================= */
-
-.course-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
+.close-btn:hover {
+    background: #e0e4ea;
 }
 
-.course-card{
-    background:white;
-    border:1px solid #e2e7ef;
-    border-radius:18px;
-    padding:26px;
-    transition:.25s;
-    box-shadow:0 4px 12px rgba(0,0,0,.04);
+#lessonBody p {
+    margin-bottom: 15px;
+    color: #3e4858;
 }
 
-.course-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 15px 35px rgba(0,0,0,.10);
+#lessonBody h3 {
+    color: #071952;
+    margin: 25px 0 10px;
 }
 
-.course-icon{
-    width:58px;
-    height:58px;
-    border-radius:14px;
-    background:#edf4ff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:29px;
-    margin-bottom:18px;
+#lessonBody ul {
+    padding-left: 22px;
 }
 
-.course-card h3{
-    font-size:20px;
-    margin-bottom:8px;
+#lessonBody li {
+    margin-bottom: 8px;
 }
 
-.course-card p{
-    color:#687386;
-    min-height:70px;
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #071952;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
 }
 
-.course-button{
-    margin-top:18px;
-    border:none;
-    background:#0b5cff;
-    color:white;
-    padding:11px 17px;
-    border-radius:9px;
-    cursor:pointer;
-    font-weight:bold;
-    transition:.2s;
+footer strong {
+    color: #ffd43b;
 }
 
-.course-button:hover{
-    background:#0847c7;
-}
+/* =========================
+   MOBILE
+========================= */
 
-/* ================= LESSON ================= */
+@media (max-width: 600px) {
 
-.lesson-panel{
-    display:none;
-    margin-top:45px;
-    background:white;
-    border-radius:20px;
-    border:1px solid #e0e6ef;
-    box-shadow:0 10px 35px rgba(0,0,0,.08);
-    overflow:hidden;
-}
-
-.lesson-header{
-    background:linear-gradient(135deg,#07111f,#0b5cff);
-    color:white;
-    padding:30px;
-}
-
-.lesson-header h2{
-    font-size:30px;
-}
-
-.lesson-content{
-    padding:30px;
-}
-
-.lesson-content h3{
-    margin:25px 0 10px;
-}
-
-.lesson-content p{
-    color:#4f5d70;
-    margin-bottom:15px;
-}
-
-.lesson-list{
-    padding-left:22px;
-    color:#4f5d70;
-}
-
-.lesson-list li{
-    margin-bottom:8px;
-}
-
-.close-btn{
-    margin-top:25px;
-    background:#eef2f8;
-    color:#172033;
-    border:none;
-    padding:11px 18px;
-    border-radius:8px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-/* ================= MINI QUIZ ================= */
-
-.mini-quiz{
-    margin-top:35px;
-    background:#f5f8fd;
-    border:1px solid #dfe6f0;
-    border-radius:15px;
-    padding:25px;
-}
-
-.mini-quiz h3{
-    margin-top:0;
-}
-
-.quiz-question{
-    font-weight:bold;
-    margin:15px 0;
-}
-
-.quiz-option{
-    display:block;
-    width:100%;
-    text-align:left;
-    padding:13px;
-    margin:9px 0;
-    border:1px solid #d8dfeb;
-    background:white;
-    border-radius:9px;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.quiz-option:hover{
-    border-color:#0b5cff;
-    background:#f1f6ff;
-}
-
-.quiz-option.correct{
-    background:#d9f8e5;
-    border-color:#21a65a;
-}
-
-.quiz-option.wrong{
-    background:#ffe0e0;
-    border-color:#dc3545;
-}
-
-.quiz-result{
-    margin-top:15px;
-    font-weight:bold;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-    background:#030912;
-    color:white;
-    text-align:center;
-    padding:45px 20px;
-    margin-top:30px;
-}
-
-footer h3{
-    margin-bottom:8px;
-}
-
-footer p{
-    color:#9caabd;
-    margin:6px 0;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:950px){
-
-    .course-grid{
-        grid-template-columns:repeat(2,1fr);
+    .header-content {
+        flex-direction: column;
     }
 
-    .header-container{
-        flex-direction:column;
+    .hero {
+        margin-top: 20px;
+        padding-top: 20px;
     }
 
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .courses {
+        grid-template-columns: 1fr;
+    }
+
+    #lessonPanel {
+        margin: 10px 15px 40px;
+        padding: 20px;
+    }
+
+    .lesson-header h2 {
+        font-size: 22px;
+    }
 }
-
-@media(max-width:600px){
-
-    .hero{
-        padding:55px 18px;
-    }
-
-    .hero h1{
-        font-size:35px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    .course-grid{
-        grid-template-columns:1fr;
-    }
-
-    .section-title h2{
-        font-size:28px;
-    }
-
-    nav{
-        width:100%;
-    }
-
-    nav a{
-        font-size:13px;
-    }
-
-    .lesson-content{
-        padding:20px;
-    }
-
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
+    <div class="header-content">
 
-<div class="header-container">
+        <div class="logo">
+            MT <span>Jeunesse</span>
+        </div>
 
-<div>
-<div class="logo">MT <span>Jeunesse</span></div>
-<div class="slogan">
-Apprendre • Créer • Entreprendre • Innover
-</div>
-</div>
+        <select id="languageSelect"
+                class="language"
+                onchange="changeLanguage(this.value)">
+            <option value="fr">🇫🇷 Français</option>
+            <option value="en">🇬🇧 English</option>
+        </select>
 
-<nav>
-<a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
-<a href="cours.html" class="active" data-fr="Cours" data-en="Courses">Cours</a>
-<a href="quiz.html" data-fr="Quiz" data-en="Quiz">Quiz</a>
-</nav>
-
-<button class="language-btn" onclick="changeLanguage()">
-🇬🇧 English
-</button>
-
-</div>
-
+    </div>
 </header>
 
-<!-- ================= HERO ================= -->
+
+<!-- =========================
+     INTRODUCTION
+========================= -->
 
 <section class="hero">
 
-<div class="hero-content">
+    <h1 id="pageTitle">
+        Nos cours
+    </h1>
 
-<h1>
-<span data-fr="Apprends." data-en="Learn.">Apprends.</span><br>
-<span data-fr="Développe tes compétences." data-en="Develop your skills.">
-Développe tes compétences.
-</span>
-</h1>
-
-<p
-data-fr="Découvre des cours simples, pratiques et accessibles pour développer tes connaissances et préparer ton avenir."
-data-en="Discover simple, practical and accessible courses to develop your knowledge and prepare for your future."
->
-Découvre des cours simples, pratiques et accessibles pour développer tes connaissances et préparer ton avenir.
-</p>
-
-</div>
+    <p id="pageDescription">
+        Découvre nos cours, apprends à ton rythme et développe tes compétences.
+    </p>
 
 </section>
 
-<!-- ================= SEARCH ================= -->
 
-<div class="search-section">
+<!-- =========================
+     RECHERCHE
+========================= -->
 
 <div class="search-box">
 
-<span>🔎</span>
-
-<input
-type="search"
-id="searchInput"
-placeholder="Rechercher un cours..."
-oninput="searchCourses()"
->
+    <input
+        type="search"
+        id="searchInput"
+        placeholder="🔎 Rechercher une matière..."
+        oninput="searchCourses()"
+    >
 
 </div>
 
-</div>
 
-<!-- ================= MAIN ================= -->
+<!-- =========================
+     LISTE DES COURS
+========================= -->
 
-<main>
+<main class="courses" id="coursesContainer">
 
-<div class="section-title">
+    <article class="course-card"
+             data-search="mathématiques mathematics">
 
-<h2
-data-fr="Explore nos cours"
-data-en="Explore our courses">
-Explore nos cours
-</h2>
+        <div class="course-icon">📐</div>
 
-<p
-data-fr="Choisis une matière et commence ton apprentissage."
-data-en="Choose a subject and start learning.">
-Choisis une matière et commence ton apprentissage.
-</p>
+        <h2>Mathématiques</h2>
 
-</div>
+        <p class="card-description">
+            Développe tes compétences en calcul et en raisonnement.
+        </p>
 
-<div class="course-grid" id="courseGrid">
+        <button class="course-btn"
+                onclick="openLesson('math')">
+            Voir le cours →
+        </button>
 
-<!-- 1 -->
+    </article>
 
-<div class="course-card">
 
-<div class="course-icon">📐</div>
+    <article class="course-card"
+             data-search="technique technical électricité electronics">
 
-<h3 data-fr="Mathématiques" data-en="Mathematics">
-Mathématiques
-</h3>
+        <div class="course-icon">⚡</div>
 
-<p
-data-fr="Algèbre, calcul, géométrie, fonctions et résolution de problèmes."
-data-en="Algebra, calculations, geometry, functions and problem solving.">
-Algèbre, calcul, géométrie, fonctions et résolution de problèmes.
-</p>
+        <h2>Technique</h2>
 
-<button class="course-button" onclick="openLesson('math')">
-Voir le cours →
-</button>
+        <p class="card-description">
+            Découvre les bases des sciences et métiers techniques.
+        </p>
 
-</div>
+        <button class="course-btn"
+                onclick="openLesson('technique')">
+            Voir le cours →
+        </button>
 
-<!-- 2 -->
+    </article>
 
-<div class="course-card">
 
-<div class="course-icon">⚡</div>
+    <article class="course-card"
+             data-search="anglais english">
 
-<h3 data-fr="Technique" data-en="Technical Studies">
-Technique
-</h3>
+        <div class="course-icon">🇬🇧</div>
 
-<p
-data-fr="Électricité, électronique, électrotechnique et connaissances pratiques."
-data-en="Electricity, electronics, electrical engineering and practical knowledge.">
-Électricité, électronique, électrotechnique et connaissances pratiques.
-</p>
+        <h2>Anglais</h2>
 
-<button class="course-button" onclick="openLesson('technique')">
-Voir le cours →
-</button>
+        <p class="card-description">
+            Améliore ton vocabulaire, ta grammaire et ta communication.
+        </p>
 
-</div>
+        <button class="course-btn"
+                onclick="openLesson('anglais')">
+            Voir le cours →
+        </button>
 
-<!-- 3 -->
+    </article>
 
-<div class="course-card">
 
-<div class="course-icon">🇬🇧</div>
+    <article class="course-card"
+             data-search="français french grammaire">
 
-<h3 data-fr="Anglais" data-en="English">
-Anglais
-</h3>
+        <div class="course-icon">📖</div>
 
-<p
-data-fr="Vocabulaire, grammaire, communication et anglais professionnel."
-data-en="Vocabulary, grammar, communication and professional English.">
-Vocabulaire, grammaire, communication et anglais professionnel.
-</p>
+        <h2>Français</h2>
 
-<button class="course-button" onclick="openLesson('anglais')">
-Voir le cours →
-</button>
+        <p class="card-description">
+            Travaille la grammaire, la conjugaison et l'expression.
+        </p>
 
-</div>
+        <button class="course-btn"
+                onclick="openLesson('francais')">
+            Voir le cours →
+        </button>
 
-<!-- 4 -->
+    </article>
 
-<div class="course-card">
 
-<div class="course-icon">📖</div>
+    <article class="course-card"
+             data-search="histoire history cameroun">
 
-<h3 data-fr="Français" data-en="French">
-Français
-</h3>
+        <div class="course-icon">🏛️</div>
 
-<p
-data-fr="Grammaire, conjugaison, vocabulaire, rédaction et expression."
-data-en="Grammar, conjugation, vocabulary, writing and communication.">
-Grammaire, conjugaison, vocabulaire, rédaction et expression.
-</p>
+        <h2>Histoire</h2>
 
-<button class="course-button" onclick="openLesson('francais')">
-Voir le cours →
-</button>
+        <p class="card-description">
+            Découvre les événements importants du passé.
+        </p>
 
-</div>
+        <button class="course-btn"
+                onclick="openLesson('histoire')">
+            Voir le cours →
+        </button>
 
-<!-- 5 -->
+    </article>
 
-<div class="course-card">
 
-<div class="course-icon">🇨🇲</div>
+    <article class="course-card"
+             data-search="entrepreneuriat entrepreneurship business">
 
-<h3 data-fr="Histoire" data-en="History">
-Histoire
-</h3>
+        <div class="course-icon">💼</div>
 
-<p
-data-fr="Histoire du Cameroun, de l'Afrique et du monde."
-data-en="History of Cameroon, Africa and the world.">
-Histoire du Cameroun, de l'Afrique et du monde.
-</p>
+        <h2>Entrepreneuriat</h2>
 
-<button class="course-button" onclick="openLesson('histoire')">
-Voir le cours →
-</button>
+        <p class="card-description">
+            Apprends les bases de la création et de la gestion d'une activité.
+        </p>
 
-</div>
+        <button class="course-btn"
+                onclick="openLesson('entrepreneuriat')">
+            Voir le cours →
+        </button>
 
-<!-- 6 -->
+    </article>
 
-<div class="course-card">
 
-<div class="course-icon">💼</div>
+    <article class="course-card"
+             data-search="gouvernement government citoyenneté">
 
-<h3 data-fr="Entrepreneuriat" data-en="Entrepreneurship">
-Entrepreneuriat
-</h3>
+        <div class="course-icon">🏛️</div>
 
-<p
-data-fr="Idées de business, marketing, vente, gestion et projets."
-data-en="Business ideas, marketing, sales, management and projects.">
-Idées de business, marketing, vente, gestion et projets.
-</p>
+        <h2>Gouvernement</h2>
 
-<button class="course-button" onclick="openLesson('entrepreneuriat')">
-Voir le cours →
-</button>
+        <p class="card-description">
+            Comprends les institutions, l'État et la citoyenneté.
+        </p>
 
-</div>
+        <button class="course-btn"
+                onclick="openLesson('gouvernement')">
+            Voir le cours →
+        </button>
 
-<!-- 7 -->
+    </article>
 
-<div class="course-card">
 
-<div class="course-icon">🏛️</div>
+    <article class="course-card"
+             data-search="informatique computer science programming">
 
-<h3 data-fr="Gouvernement" data-en="Government">
-Gouvernement
-</h3>
+        <div class="course-icon">💻</div>
 
-<p
-data-fr="Institutions publiques, administration et fonctionnement de l'État."
-data-en="Public institutions, administration and how government works.">
-Institutions publiques, administration et fonctionnement de l'État.
-</p>
+        <h2>Informatique</h2>
 
-<button class="course-button" onclick="openLesson('gouvernement')">
-Voir le cours →
-</button>
+        <p class="card-description">
+            Découvre les ordinateurs, les logiciels et la programmation.
+        </p>
 
-</div>
+        <button class="course-btn"
+                onclick="openLesson('informatique')">
+            Voir le cours →
+        </button>
 
-<!-- 8 -->
-
-<div class="course-card">
-
-<div class="course-icon">⚖️</div>
-
-<h3 data-fr="Politique et citoyenneté" data-en="Politics and Citizenship">
-Politique et citoyenneté
-</h3>
-
-<p
-data-fr="Droits, devoirs, institutions et participation citoyenne."
-data-en="Rights, duties, institutions and civic participation.">
-Droits, devoirs, institutions et participation citoyenne.
-</p>
-
-<button class="course-button" onclick="openLesson('citoyennete')">
-Voir le cours →
-</button>
-
-</div>
-
-<!-- 9 -->
-
-<div class="course-card">
-
-<div class="course-icon">💻</div>
-
-<h3 data-fr="Informatique" data-en="Computer Science">
-Informatique
-</h3>
-
-<p
-data-fr="Programmation, Internet, création de sites et outils numériques."
-data-en="Programming, Internet, website creation and digital tools.">
-Programmation, Internet, création de sites et outils numériques.
-</p>
-
-<button class="course-button" onclick="openLesson('informatique')">
-Voir le cours →
-</button>
-
-</div>
-
-<!-- 10 -->
-
-<div class="course-card">
-
-<div class="course-icon">🔬</div>
-
-<h3 data-fr="Sciences" data-en="Science">
-Sciences
-</h3>
-
-<p
-data-fr="Physique, chimie, biologie et découverte du monde scientifique."
-data-en="Physics, chemistry, biology and scientific discovery.">
-Physique, chimie, biologie et découverte du monde scientifique.
-</p>
-
-<button class="course-button" onclick="openLesson('sciences')">
-Voir le cours →
-</button>
-
-</div>
-
-<!-- 11 -->
-
-<div class="course-card">
-
-<div class="course-icon">🌍</div>
-
-<h3 data-fr="Culture générale" data-en="General Knowledge">
-Culture générale
-</h3>
-
-<p
-data-fr="Géographie, sciences, inventions, monde et connaissances générales."
-data-en="Geography, science, inventions, world knowledge and general knowledge.">
-Géographie, sciences, inventions, monde et connaissances générales.
-</p>
-
-<button class="course-button" onclick="openLesson('culture')">
-Voir le cours →
-</button>
-
-</div>
-
-<!-- 12 -->
-
-<div class="course-card">
-
-<div class="course-icon">📰</div>
-
-<h3 data-fr="Articles" data-en="Articles">
-Articles
-</h3>
-
-<p
-data-fr="Articles éducatifs, découvertes, conseils et sujets intéressants."
-data-en="Educational articles, discoveries, advice and interesting topics.">
-Articles éducatifs, découvertes, conseils et sujets intéressants.
-</p>
-
-<button class="course-button" onclick="openLesson('articles')">
-Voir le cours →
-</button>
-
-</div>
-
-<!-- 13 -->
-
-<div class="course-card">
-
-<div class="course-icon">🚀</div>
-
-<h3 data-fr="Projets et innovation" data-en="Projects and Innovation">
-Projets et innovation
-</h3>
-
-<p
-data-fr="Apprends à transformer tes idées en projets utiles et créatifs."
-data-en="Learn how to turn your ideas into useful and creative projects.">
-Apprends à transformer tes idées en projets utiles et créatifs.
-</p>
-
-<button class="course-button" onclick="openLesson('projets')">
-Voir le cours →
-</button>
-
-</div>
-
-</div>
-
-<!-- ================= LESSON PANEL ================= -->
-
-<div class="lesson-panel" id="lessonPanel">
-
-<div class="lesson-header">
-
-<h2 id="lessonTitle"></h2>
-
-</div>
-
-<div class="lesson-content">
-
-<div id="lessonBody"></div>
-
-<button class="close-btn" onclick="closeLesson()">
-✕ Fermer le cours
-</button>
-
-</div>
-
-</div>
+    </article>
 
 </main>
 
-<!-- ================= FOOTER ================= -->
+
+<!-- =========================
+     PANNEAU DE COURS
+========================= -->
+
+<section id="lessonPanel">
+
+    <div class="lesson-header">
+
+        <h2 id="lessonTitle">
+            Cours
+        </h2>
+
+        <button class="close-btn"
+                onclick="closeLesson()"
+                aria-label="Fermer">
+            ✕
+        </button>
+
+    </div>
+
+    <div id="lessonBody"></div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-<h3>MT Jeunesse</h3>
+    <p>
+        © 2026 <strong>MT Jeunesse</strong>
+    </p>
 
-<p>
-Apprendre aujourd'hui. Construire demain.
-</p>
-
-<p>
-Créateur : M K Jérémie
-</p>
-
-<p>
-© 2026 MT Jeunesse — Tous droits réservés.
-</p>
+    <p>
+        Apprendre aujourd'hui pour construire demain.
+    </p>
 
 </footer>
 
+
 <script>
 
-/* ================= LANGUAGE ================= */
+/* =====================================================
+   CONFIGURATION DE LA LANGUE
+===================================================== */
 
 let lang = "fr";
 
-function changeLanguage(){
 
-    lang = lang === "fr" ? "en" : "fr";
-
-    document.documentElement.lang = lang;
-
-    document.querySelectorAll("[data-fr]").forEach(element => {
-
-        element.textContent = element.dataset[lang];
-
-    });
-
-    const button = document.querySelector(".language-btn");
-
-    button.textContent =
-        lang === "fr" ? "🇬🇧 English" : "🇫🇷 Français";
-
-    document.getElementById("searchInput").placeholder =
-        lang === "fr"
-        ? "Rechercher un cours..."
-        : "Search for a course...";
-
-    closeLesson();
-}
-
-/* ================= LESSON DATA ================= */
+/* =====================================================
+   CONTENU DES COURS
+===================================================== */
 
 const lessons = {
 
-math:{
-fr:{
-title:"Mathématiques",
-text:[
-"Les mathématiques permettent de résoudre des problèmes et de comprendre les relations entre les nombres, les formes et les grandeurs.",
-"L'algèbre utilise des lettres pour représenter des nombres inconnus. Par exemple, dans 2x + 4 = 10, on cherche la valeur de x.",
-"La géométrie étudie les figures, les angles, les longueurs, les surfaces et les volumes."
-],
-points:[
-"Calcul numérique",
-"Algèbre",
-"Géométrie",
-"Équations",
-"Résolution de problèmes"
-],
-q:"Combien vaut x dans 2x + 4 = 10 ?",
-options:["2","3","4","5"],
-answer:1
-},
-en:{
-title:"Mathematics",
-text:[
-"Mathematics helps us solve problems and understand relationships between numbers, shapes and quantities.",
-"Algebra uses letters to represent unknown numbers. For example, in 2x + 4 = 10, we look for x.",
-"Geometry studies shapes, angles, lengths, areas and volumes."
-],
-points:[
-"Numerical calculations",
-"Algebra",
-"Geometry",
-"Equations",
-"Problem solving"
-],
-q:"What is x in 2x + 4 = 10?",
-options:["2","3","4","5"],
-answer:1
-}
-},
+    math: {
 
-technique:{
-fr:{
-title:"Technique et électricité",
-text:[
-"L'électricité est une forme d'énergie liée au déplacement des charges électriques.",
-"Un circuit électrique simple peut comprendre une source, des conducteurs, un appareil récepteur et parfois un interrupteur.",
-"La sécurité est essentielle : il faut respecter les règles de travail et utiliser des équipements adaptés."
-],
-points:[
-"Tension électrique",
-"Courant électrique",
-"Résistance",
-"Circuits",
-"Sécurité électrique"
-],
-q:"Quelle unité mesure la tension électrique ?",
-options:["Ampère","Volt","Ohm","Watt"],
-answer:1
-},
-en:{
-title:"Technical Studies and Electricity",
-text:[
-"Electricity is a form of energy related to the movement of electric charges.",
-"A simple electrical circuit can contain a source, conductors, a load and sometimes a switch.",
-"Safety is essential when working with electricity."
-],
-points:[
-"Voltage",
-"Current",
-"Resistance",
-"Circuits",
-"Electrical safety"
-],
-q:"Which unit measures voltage?",
-options:["Ampere","Volt","Ohm","Watt"],
-answer:1
-}
-},
+        fr: {
+            title: "Mathématiques",
 
-anglais:{
-fr:{
-title:"Anglais",
-text:[
-"L'anglais est une langue internationale utilisée dans l'éducation, les affaires, les sciences et la technologie.",
-"Pour progresser, il faut apprendre du vocabulaire, pratiquer la grammaire et développer la compréhension.",
-"La pratique régulière de la lecture, de l'écoute et de la conversation améliore progressivement le niveau."
-],
-points:[
-"Vocabulary",
-"Grammar",
-"Reading",
-"Listening",
-"Communication"
-],
-q:"Que signifie le mot 'book' ?",
-options:["Maison","Livre","École","Table"],
-answer:1
-},
-en:{
-title:"English",
-text:[
-"English is an international language used in education, business, science and technology.",
-"To improve, learners need vocabulary, grammar practice and comprehension skills.",
-"Regular reading, listening and speaking practice helps improve language skills."
-],
-points:[
-"Vocabulary",
-"Grammar",
-"Reading",
-"Listening",
-"Communication"
-],
-q:"What does the word 'book' mean?",
-options:["House","Book","School","Table"],
-answer:1
-}
-},
+            text: [
+                "Les mathématiques permettent de résoudre des problèmes grâce aux nombres, aux calculs et au raisonnement.",
+                "Elles sont utilisées dans la vie quotidienne, les sciences et les métiers techniques."
+            ],
 
-francais:{
-fr:{
-title:"Français",
-text:[
-"Le français permet de communiquer clairement à l'oral et à l'écrit.",
-"La grammaire étudie les règles qui permettent de construire correctement les phrases.",
-"La conjugaison permet de placer une action dans le temps : présent, passé ou futur."
-],
-points:[
-"Grammaire",
-"Conjugaison",
-"Orthographe",
-"Vocabulaire",
-"Expression écrite"
-],
-q:"Dans « Nous faisons nos devoirs », quel est le verbe ?",
-options:["Nous","faisons","nos","devoirs"],
-answer:1
-},
-en:{
-title:"French",
-text:[
-"French helps people communicate clearly in speaking and writing.",
-"Grammar studies the rules used to build correct sentences.",
-"Conjugation helps place an action in time."
-],
-points:[
-"Grammar",
-"Conjugation",
-"Spelling",
-"Vocabulary",
-"Writing"
-],
-q:"In the sentence 'Nous faisons nos devoirs', which word is the verb?",
-options:["Nous","faisons","nos","devoirs"],
-answer:1
-}
-},
+            points: [
+                "Nombres et opérations",
+                "Fractions",
+                "Équations",
+                "Géométrie",
+                "Pourcentages"
+            ]
+        },
 
-histoire:{
-fr:{
-title:"Histoire du Cameroun",
-text:[
-"Le Cameroun est un pays d'Afrique centrale. Son histoire est marquée par différentes populations, royaumes, administrations coloniales et étapes vers l'indépendance.",
-"Après la Première Guerre mondiale, le territoire camerounais est administré sous mandat puis tutelle principalement par la France et le Royaume-Uni.",
-"Le Cameroun sous administration française accède à l'indépendance le 1er janvier 1960. Ahmadou Ahidjo devien
+        en: {
+            title: "Mathematics",
+
+            text: [
+                "Mathematics helps us solve problems using numbers, calculations and reasoning.",
+                "It is used in everyday life, science and technical professions."
+            ],
+
+            points: [
+                "Numbers and operations",
+                "Fractions",
+                "Equations",
+                "Geometry",
+                "Percentages"
+            ]
+        }
+
+    },
+
+
+    technique: {
+
+        fr: {
+            title: "Technique",
+
+            text: [
+                "Les études techniques développent les connaissances nécessaires pour comprendre, installer, utiliser et réparer différents systèmes.",
+                "Elles sont particulièrement importantes dans les métiers de l'électricité, de l'électronique et de la maintenance."
+            ],
+
+            points: [
+                "Électricité",
+                "Électronique",
+                "Machines électriques",
+                "Mesures électriques",
+                "Sécurité au travail"
+            ]
+        },
+
+        en: {
+            title: "Technical Studies",
+
+            text: [
+                "Technical studies develop the knowledge needed to understand, install, use and repair different systems.",
+                "They are especially important in electricity, electronics and maintenance."
+            ],
+
+            points: [
+                "Electricity",
+                "Electronics",
+                "Electrical machines",
+                "Electrical measurements",
+                "Workplace safety"
+            ]
+        }
+
+    },
+
+
+    anglais: {
+
+        fr: {
+            title: "Anglais",
+
+            text: [
+                "L'anglais est une langue internationale utilisée dans les études, le travail et la communication.",
+                "Apprendre l'anglais permet d'améliorer sa compréhension et son expression."
+            ],
+
+            points: [
+                "Vocabulaire",
+                "Grammaire",
+                "Conjugaison",
+                "Conversation",
+                "Compréhension"
+            ]
+        },
+
+        en: {
+            title: "English",
+
+            text: [
+                "English is an international language used in education, work and communication.",
+                "Learning English improves communication and understanding."
+            ],
+
+            points: [
+                "Vocabulary",
+                "Grammar",
+                "Conjugation",
+                "Conversation",
+                "Comprehension"
+            ]
+        }
+
+    },
+
+
+    francais: {
+
+        fr: {
+            title: "Français",
+
+            text: [
+                "Le français permet de communiquer clairement à l'oral et à l'écrit.",
+                "Sa maîtrise repose notamment sur la grammaire, la conjugaison, l'orthographe et le vocabulaire."
+            ],
+
+            points: [
+                "Grammaire",
+                "Conjugaison",
+                "Orthographe",
+                "Vocabulaire",
+                "Expression écrite"
+            ]
+        },
+
+        en: {
+            title: "French",
+
+            text: [
+                "French helps people communicate clearly in spoken and written language.",
+                "Learning French includes grammar, conjugation, spelling and vocabulary."
+            ],
+
+            points: [
+                "Grammar",
+                "Conjugation",
+                "Spelling",
+                "Vocabulary",
+                "Written expression"
+            ]
+        }
+
+    },
+
+
+    histoire: {
+
+        fr: {
+            title: "Histoire",
+
+            text: [
+                "L'histoire étudie les événements du passé et leur influence sur le monde actuel.",
+                "L'histoire du Cameroun permet de comprendre les grandes étapes de la construction du pays."
+            ],
+
+            points: [
+                "Les peuples du Cameroun",
+                "La colonisation",
+                "L'indépendance",
+                "Ahmadou Ahidjo devient le premier président du Cameroun",
+                "La construction du Cameroun moderne"
+            ]
+        },
+
+        en: {
+            title: "History",
+
+            text: [
+                "History studies events from the past and their influence on the present world.",
+                "The history of Cameroon helps us understand the major stages in the development of the country."
+            ],
+
+            points: [
+                "Peoples of Cameroon",
+                "Colonization",
+                "Independence",
+                "Ahmadou Ahidjo becomes the first president of Cameroon",
+                "Modern Cameroon"
+            ]
+        }
+
+    },
+
+
+    entrepreneuriat: {
+
+        fr: {
+            title: "Entrepreneuriat",
+
+            text: [
+                "L'entrepreneuriat consiste à créer et développer une activité afin de répondre à un besoin.",
+                "L'entrepreneur doit être capable d'identifier une opportunité et de prendre des décisions."
+            ],
+
+            points: [
+                "Idée d'entreprise",
+                "Business plan",
+                "Gestion",
+                "Marketing",
+                "Innovation"
+            ]
+        },
+
+        en: {
+            title: "Entrepreneurship",
+
+            text: [
+                "Entrepreneurship involves creating and developing an activity to meet a need.",
+                "An entrepreneur must identify opportunities and make decisions."
+            ],
+
+            points: [
+                "Business idea",
+                "Business plan",
+                "Management",
+                "Marketing",
+                "Innovation"
+            ]
+        }
+
+    },
+
+
+    gouvernement: {
+
+        fr: {
+            title: "Gouvernement",
+
+            text: [
+                "Le gouvernement participe à la direction de l'État et à la mise en œuvre des politiques publiques.",
+                "La citoyenneté permet à chaque personne de comprendre ses droits et ses responsabilités."
+            ],
+
+            points: [
+                "État",
+                "Institutions",
+                "Citoyenneté",
+                "Droits et devoirs",
+                "Administration"
+            ]
+        },
+
+        en: {
+            title: "Government",
+
+            text: [
+                "The government participates in directing the state and implementing public policies.",
+                "Citizenship helps people understand their rights and responsibilities."
+            ],
+
+            points: [
+                "State",
+                "Institutions",
+                "Citizenship",
+                "Rights and duties",
+                "Administration"
+            ]
+        }
+
+    },
+
+
+    informatique: {
+
+        fr: {
+            title: "Informatique",
+
+            text: [
+                "L'informatique concerne le traitement automatique de l'information à l'aide des ordinateurs et des logiciels.",
+                "Elle est aujourd'hui présente dans l'éducation, les entreprises, les communications et de nombreux métiers."
+            ],
+
+            points: [
+                "Ordinateurs",
+                "Logiciels",
+                "Internet",
+                "Programmation",
+                "Sécurité informatique"
+            ]
+        },
+
+        en: {
+            title: "Computer Science",
+
+            text: [
+                "Computer science deals with the automatic processing of information using computers and software.",
+                "It is used in education, businesses, communication and many professions."
+            ],
+
+            points: [
+                "Computers",
+                "Software",
+                "Internet",
+                "Programming",
+                "Cybersecurity"
+            ]
+        }
+
+    }
+
+};
+
+
+/* =====================================================
+   OUVRIR UN COURS
+===================================================== */
+
+function openLesson(id) {
+
+    const lesson = lessons[id];
+
+    if (!lesson || !lesson[lang]) {
+        alert(
+            lang === "fr"
+            ? "Ce cours n'est pas encore disponible."
+            : "This course is not available yet."
+        );
+
+        return;
+    }
+
+    const currentLesson = lesson[lang];
+
+    const title = document.getElementById("lessonTitle");
+    const body = document.getElementById("lessonBody");
+    const panel = document.getElementById("lessonPanel");
+
+    title.textContent = currentLesson.title;
+
+    body.innerHTML = "";
+
+    currentLesson.text.forEach(paragraph => {
+
+        const p = document.createElement("p");
+
+        p.textContent = paragraph;
+
+        body.appendChild(p);
+
+    });
+
+
+    const heading = document.createElement("h3");
+
+    heading.textContent =
+        lang === "fr"
+        ? "Points importants"
+        : "Key points";
+
+    body.appendChild(heading);
+
+
+    const list = document.createElement("ul");
+
+    currentLesson.points.forEach(point => {
+
+        const li = document.createElement("li");
+
+        li.textContent = point;
+
+        list.appendChild(li);
+
+    });
+
+    body.appendChild(list);
+
+
+    panel.style.display = "block";
+
+
+    panel.sc
