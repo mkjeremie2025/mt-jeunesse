@@ -6,338 +6,173 @@
 
 <title>MT Jeunesse - Cours</title>
 
-<meta name="description"
-content="MT Jeunesse - Plateforme éducative pour apprendre, réviser et développer ses compétences.">
-
 <style>
 *{
-    margin:0;
-    padding:0;
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
-    font-family:Arial,Helvetica,sans-serif;
+    margin:0;
+    font-family:Arial,sans-serif;
     background:#f4f7fb;
-    color:#172033;
-    line-height:1.7;
+    color:#222;
 }
 
-/* HEADER */
 header{
-    background:linear-gradient(135deg,#071952,#0b4f9c);
+    background:linear-gradient(135deg,#0066ff,#673ab7);
     color:white;
-    padding:16px 20px;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 3px 15px rgba(0,0,0,.18);
-}
-
-.header-content{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
-}
-
-.logo{
-    font-size:25px;
-    font-weight:800;
-}
-
-.logo span{
-    color:#ffd43b;
-}
-
-.language{
-    padding:10px 13px;
-    border:none;
-    border-radius:9px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* HERO */
-.hero{
-    max-width:1100px;
-    margin:35px auto 20px;
-    padding:35px 20px;
     text-align:center;
+    padding:30px 15px;
 }
 
-.hero h1{
-    font-size:38px;
-    color:#071952;
-    margin-bottom:10px;
-}
-
-.hero p{
-    max-width:750px;
-    margin:auto;
-    color:#5d6678;
-}
-
-/* SEARCH */
-.search-box{
-    max-width:700px;
-    margin:10px auto 35px;
-    padding:0 20px;
-}
-
-.search-box input{
-    width:100%;
-    padding:16px 18px;
-    border:1px solid #d6dce5;
-    border-radius:12px;
-    font-size:16px;
-    outline:none;
-}
-
-.search-box input:focus{
-    border-color:#0b4f9c;
-    box-shadow:0 0 0 3px rgba(11,79,156,.12);
-}
-
-/* COURSES */
-.courses{
-    max-width:1200px;
-    margin:auto;
-    padding:0 20px 50px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:22px;
-}
-
-.course-card{
-    background:white;
-    border:1px solid #e4e9f0;
-    border-radius:18px;
-    padding:24px;
-    box-shadow:0 6px 22px rgba(0,0,0,.07);
-    transition:.25s;
-}
-
-.course-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 12px 30px rgba(0,0,0,.12);
-}
-
-.course-icon{
-    font-size:42px;
-    margin-bottom:10px;
-}
-
-.course-card h2{
-    color:#071952;
-    margin-bottom:8px;
-}
-
-.course-card p{
-    color:#687386;
-    margin-bottom:18px;
-}
-
-.course-btn{
-    width:100%;
-    padding:13px;
-    border:none;
-    border-radius:10px;
-    background:#0b4f9c;
-    color:white;
-    font-size:15px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.course-btn:hover{
-    background:#071952;
-}
-
-/* LESSON */
-#lessonPanel{
-    display:none;
-    max-width:1000px;
-    margin:10px auto 55px;
-    padding:30px;
-    background:white;
-    border-radius:20px;
-    box-shadow:0 10px 35px rgba(0,0,0,.12);
-    border:1px solid #e1e6ee;
-}
-
-.lesson-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
-    border-bottom:1px solid #e5e9ef;
-    padding-bottom:18px;
-    margin-bottom:25px;
-}
-
-.lesson-header h2{
-    color:#071952;
+header h1{
+    margin:0 0 8px;
     font-size:30px;
 }
 
-.close-btn{
-    width:42px;
-    height:42px;
-    border:none;
-    border-radius:50%;
-    background:#f0f2f5;
-    cursor:pointer;
-    font-size:20px;
+header p{
+    margin:0;
 }
 
-.close-btn:hover{
-    background:#dfe4eb;
+.top{
+    max-width:1000px;
+    margin:20px auto;
+    padding:0 15px;
+    display:flex;
+    gap:10px;
 }
 
-/* COURSE CONTENT */
-.lesson-section{
-    margin-bottom:30px;
+#search{
+    flex:1;
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+}
+
+select{
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    background:white;
+}
+
+.courses{
+    max-width:1000px;
+    margin:auto;
+    padding:0 15px 30px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+
+.card{
+    background:white;
+    border-radius:16px;
     padding:22px;
-    border-radius:15px;
-    background:#f8faff;
-    border-left:5px solid #0b4f9c;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    transition:.2s;
 }
 
-.lesson-section h3{
-    color:#071952;
-    margin-bottom:12px;
+.card:hover{
+    transform:translateY(-3px);
+}
+
+.card h2{
+    margin-top:0;
     font-size:21px;
 }
 
-.lesson-section p{
-    margin-bottom:10px;
-    color:#394456;
+.card p{
+    color:#666;
+    min-height:45px;
 }
 
-.lesson-section ul{
-    padding-left:25px;
-}
-
-.lesson-section li{
-    margin-bottom:7px;
-}
-
-.definition{
-    background:#eef5ff;
-    border-left-color:#2563eb;
-}
-
-.example{
-    background:#f3faf5;
-    border-left-color:#198754;
-}
-
-.important{
-    background:#fff9e6;
-    border-left-color:#f0ad00;
-}
-
-.note{
-    background:#fff1f2;
-    border-left-color:#dc3545;
-}
-
-.quiz-box{
-    margin-top:30px;
-    padding:25px;
-    border-radius:16px;
-    background:#071952;
+.btn{
+    width:100%;
+    border:0;
+    padding:12px;
+    border-radius:10px;
+    background:#0066ff;
     color:white;
+    font-size:15px;
+    cursor:pointer;
 }
 
-.quiz-box h3{
-    margin-bottom:15px;
+.btn:hover{
+    background:#004dcc;
 }
 
-.quiz-question{
+/* COURS */
+
+#lesson{
+    display:none;
+    max-width:900px;
+    margin:10px auto 40px;
+    padding:0 15px;
+}
+
+.lesson-box{
     background:white;
-    color:#172033;
+    border-radius:16px;
+    padding:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.lesson-box h2{
+    color:#0066ff;
+}
+
+.section{
+    margin:20px 0;
     padding:18px;
-    border-radius:12px;
-    margin-bottom:15px;
+    background:#f5f8ff;
+    border-left:4px solid #0066ff;
+    border-radius:8px;
 }
 
-.quiz-question p{
-    font-weight:bold;
-    margin-bottom:10px;
+.exercise{
+    background:#fff8e1;
+    border-left:4px solid #ff9800;
 }
 
-.quiz-question label{
-    display:block;
-    margin:7px 0;
-    cursor:pointer;
-}
-
-.quiz-btn{
-    border:none;
-    background:#ffd43b;
-    color:#071952;
-    padding:12px 20px;
-    border-radius:9px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.quiz-result{
-    margin-top:15px;
-    font-weight:bold;
-}
-
-/* FOOTER */
-footer{
-    background:#071952;
+.exercise button{
+    background:#ff9800;
     color:white;
+    border:0;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.answer{
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.close{
+    background:#222;
+    color:white;
+    border:0;
+    padding:10px 16px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+footer{
     text-align:center;
-    padding:28px 15px;
+    background:#111;
+    color:white;
+    padding:20px;
 }
 
-footer strong{
-    color:#ffd43b;
-}
-
-/* MOBILE */
 @media(max-width:600px){
-
-    .header-content{
+    .top{
         flex-direction:column;
     }
 
-    .hero{
-        margin-top:15px;
-        padding:25px 18px;
-    }
-
-    .hero h1{
-        font-size:29px;
-    }
-
-    .courses{
-        grid-template-columns:1fr;
-    }
-
-    #lessonPanel{
-        margin:10px 15px 40px;
-        padding:20px;
-    }
-
-    .lesson-header h2{
-        font-size:23px;
-    }
-
-    .lesson-section{
-        padding:18px;
+    header h1{
+        font-size:25px;
     }
 }
 </style>
@@ -346,2265 +181,689 @@ footer strong{
 <body>
 
 <header>
-    <div class="header-content">
-
-        <div class="logo">
-            MT <span>Jeunesse</span>
-        </div>
-
-        <select id="languageSelect"
-                class="language"
-                onchange="changeLanguage(this.value)">
-
-            <option value="fr">🇫🇷 Français</option>
-            <option value="en">🇬🇧 English</option>
-
-        </select>
-
-    </div>
+    <h1>📚 MT Jeunesse</h1>
+    <p id="subtitle">Apprendre aujourd'hui pour construire demain.</p>
 </header>
 
-
-<section class="hero">
-
-    <h1 id="pageTitle">Nos cours</h1>
-
-    <p id="pageDescription">
-        Apprends, révise et développe tes compétences avec MT Jeunesse.
-    </p>
-
-</section>
-
-
-<div class="search-box">
+<div class="top">
 
     <input
-        id="searchInput"
-        type="search"
+        type="text"
+        id="search"
         placeholder="🔎 Rechercher une matière..."
-        oninput="searchCourses()">
+        oninput="searchCourses()"
+    >
+
+    <select onchange="changeLanguage(this.value)">
+        <option value="fr">🇫🇷 Français</option>
+        <option value="en">🇬🇧 English</option>
+    </select>
 
 </div>
 
+<main class="courses" id="courses">
 
-<main class="courses" id="coursesContainer">
-
-    <article class="course-card"
-             data-search="mathématiques mathematics">
-
-        <div class="course-icon">📐</div>
-
-        <h2 data-title="math">Mathématiques</h2>
-
-        <p data-description="math">
-            Développe tes compétences en calcul et en raisonnement.
-        </p>
-
-        <button class="course-btn"
-                type="button"
-                onclick="openLesson('math')">
+    <!-- MATHS -->
+    <div class="card" data-name="mathématiques mathematics">
+        <h2>📐 <span>Mathématiques</span></h2>
+        <p>Calcul, algèbre et raisonnement.</p>
+        <button class="btn" onclick="openLesson('math')">
             Voir le cours →
         </button>
+    </div>
 
-    </article>
-
-
-    <article class="course-card"
-             data-search="technique technical électricité electronics">
-
-        <div class="course-icon">⚡</div>
-
-        <h2 data-title="technique">Technique</h2>
-
-        <p data-description="technique">
-            Découvre les bases de l'électricité, de l'électronique et des métiers techniques.
-        </p>
-
-        <button class="course-btn"
-                type="button"
-                onclick="openLesson('technique')">
+    <!-- TECHNIQUE -->
+    <div class="card" data-name="technique technical electricity electronics">
+        <h2>⚡ <span>Technique</span></h2>
+        <p>Électricité, électronique et technologie.</p>
+        <button class="btn" onclick="openLesson('technique')">
             Voir le cours →
         </button>
+    </div>
 
-    </article>
-
-
-    <article class="course-card"
-             data-search="anglais english">
-
-        <div class="course-icon">🇬🇧</div>
-
-        <h2 data-title="anglais">Anglais</h2>
-
-        <p data-description="anglais">
-            Améliore ton vocabulaire, ta grammaire et ta communication.
-        </p>
-
-        <button class="course-btn"
-                type="button"
-                onclick="openLesson('anglais')">
+    <!-- ANGLAIS -->
+    <div class="card" data-name="anglais english">
+        <h2>🇬🇧 <span>Anglais</span></h2>
+        <p>Vocabulaire, grammaire et communication.</p>
+        <button class="btn" onclick="openLesson('anglais')">
             Voir le cours →
         </button>
+    </div>
 
-    </article>
-
-
-    <article class="course-card"
-             data-search="français french grammaire">
-
-        <div class="course-icon">📖</div>
-
-        <h2 data-title="francais">Français</h2>
-
-        <p data-description="francais">
-            Travaille la grammaire, la conjugaison, l'orthographe et l'expression.
-        </p>
-
-        <button class="course-btn"
-                type="button"
-                onclick="openLesson('francais')">
+    <!-- FRANCAIS -->
+    <div class="card" data-name="français french grammar">
+        <h2>🇫🇷 <span>Français</span></h2>
+        <p>Grammaire, conjugaison et orthographe.</p>
+        <button class="btn" onclick="openLesson('francais')">
             Voir le cours →
         </button>
+    </div>
 
-    </article>
-
-
-    <article class="course-card"
-             data-search="histoire history cameroun">
-
-        <div class="course-icon">🏛️</div>
-
-        <h2 data-title="histoire">Histoire</h2>
-
-        <p data-description="histoire">
-            Découvre les événements importants du passé et l'histoire du Cameroun.
-        </p>
-
-        <button class="course-btn"
-                type="button"
-                onclick="openLesson('histoire')">
+    <!-- HISTOIRE -->
+    <div class="card" data-name="histoire history">
+        <h2>🏛️ <span>Histoire</span></h2>
+        <p>Événements historiques et histoire du Cameroun.</p>
+        <button class="btn" onclick="openLesson('histoire')">
             Voir le cours →
         </button>
+    </div>
 
-    </article>
-
-
-    <article class="course-card"
-             data-search="entrepreneuriat entrepreneurship business">
-
-        <div class="course-icon">💼</div>
-
-        <h2 data-title="entrepreneuriat">Entrepreneuriat</h2>
-
-        <p data-description="entrepreneuriat">
-            Apprends à transformer une idée en activité organisée.
-        </p>
-
-        <button class="course-btn"
-                type="button"
-                onclick="openLesson('entrepreneuriat')">
+    <!-- ENTREPRENEURIAT -->
+    <div class="card" data-name="entrepreneuriat entrepreneurship business">
+        <h2>💼 <span>Entrepreneuriat</span></h2>
+        <p>Idées, projets et création d'activité.</p>
+        <button class="btn" onclick="openLesson('entrepreneuriat')">
             Voir le cours →
         </button>
+    </div>
 
-    </article>
-
-
-    <article class="course-card"
-             data-search="gouvernement government citoyenneté">
-
-        <div class="course-icon">🏛️</div>
-
-        <h2 data-title="gouvernement">Gouvernement</h2>
-
-        <p data-description="gouvernement">
-            Comprends l'État, les institutions, les droits et les responsabilités.
-        </p>
-
-        <button class="course-btn"
-                type="button"
-                onclick="openLesson('gouvernement')">
+    <!-- GOUVERNEMENT -->
+    <div class="card" data-name="gouvernement government citizenship">
+        <h2>🏛️ <span>Gouvernement</span></h2>
+        <p>État, institutions, droits et devoirs.</p>
+        <button class="btn" onclick="openLesson('gouvernement')">
             Voir le cours →
         </button>
+    </div>
 
-    </article>
-
-
-    <article class="course-card"
-             data-search="informatique computer science programming">
-
-        <div class="course-icon">💻</div>
-
-        <h2 data-title="informatique">Informatique</h2>
-
-        <p data-description="informatique">
-            Découvre les ordinateurs, les logiciels, Internet et la programmation.
-        </p>
-
-        <button class="course-btn"
-                type="button"
-                onclick="openLesson('informatique')">
+    <!-- INFORMATIQUE -->
+    <div class="card" data-name="informatique computer science coding">
+        <h2>💻 <span>Informatique</span></h2>
+        <p>Ordinateurs, Internet et programmation.</p>
+        <button class="btn" onclick="openLesson('informatique')">
             Voir le cours →
         </button>
-
-    </article>
+    </div>
 
 </main>
 
 
-<section id="lessonPanel">
+<!-- ZONE DU COURS -->
 
-    <div class="lesson-header">
+<section id="lesson">
 
-        <h2 id="lessonTitle">Cours</h2>
+    <div class="lesson-box">
 
-        <button class="close-btn"
-                type="button"
-                onclick="closeLesson()"
-                aria-label="Fermer">
-            ✕
+        <button class="close" onclick="closeLesson()">
+            ✕ Fermer
         </button>
 
-    </div>
+        <h2 id="lessonTitle"></h2>
 
-    <div id="lessonBody"></div>
+        <div id="lessonContent"></div>
+
+    </div>
 
 </section>
 
 
 <footer>
-
-    <p>© 2026 <strong>MT Jeunesse</strong></p>
-
+    <p>MT Jeunesse © 2026</p>
     <p id="footerText">
         Apprendre aujourd'hui pour construire demain.
     </p>
-
 </footer>
 
 
 <script>
 
-/* =====================================================
-   DONNÉES DES COURS
-===================================================== */
+/* =========================
+   COURS
+========================= */
 
-let lang = "fr";
-
-const lessons = {
-
-/* =====================================================
-   MATHÉMATIQUES
-===================================================== */
+const courses = {
 
 math: {
-
 fr: {
+title:"📐 Mathématiques",
+content:`
+<div class="section">
+<h3>📘 Leçon</h3>
+<p>Les mathématiques permettent de résoudre des problèmes à l'aide des nombres, des calculs et du raisonnement.</p>
+</div>
 
-title:"Mathématiques",
+<div class="section">
+<h3>➕ Exemple</h3>
+<p>2 + 3 = 5</p>
+<p>4 × 5 = 20</p>
+<p>20 ÷ 4 = 5</p>
+</div>
 
-sections:[
-
-{
-type:"definition",
-title:"📘 Définition",
-text:[
-"Les mathématiques sont une discipline qui étudie les nombres, les formes, les relations, les grandeurs et les raisonnements logiques.",
-"Les mathématiques permettent de résoudre des problèmes dans la vie quotidienne, les sciences, l'économie et les métiers techniques."
-]
-},
-
-{
-title:"1. Les opérations",
-text:[
-"Les quatre opérations fondamentales sont l'addition, la soustraction, la multiplication et la division.",
-"L'addition permet de réunir des quantités. La soustraction permet de trouver une différence. La multiplication représente une répétition d'une même quantité. La division permet de partager une quantité."
-],
-points:[
-"Addition : 8 + 5 = 13",
-"Soustraction : 15 - 7 = 8",
-"Multiplication : 6 × 4 = 24",
-"Division : 20 ÷ 5 = 4"
-]
-},
-
-{
-title:"2. Les fractions",
-text:[
-"Une fraction représente une partie d'un tout.",
-"Le nombre situé au-dessus s'appelle le numérateur. Le nombre situé en dessous s'appelle le dénominateur."
-],
-points:[
-"1/2 signifie une partie sur deux.",
-"3/4 signifie trois parties sur quatre.",
-"Le dénominateur ne peut pas être égal à zéro."
-]
-},
-
-{
-type:"example",
-title:"✏️ Exemple",
-text:[
-"Si une classe compte 30 élèves et que 15 sont des filles, la fraction représentant les filles est 15/30.",
-"Cette fraction peut être simplifiée en 1/2."
-]
-},
-
-{
-title:"3. Les équations",
-text:[
-"Une équation est une égalité contenant généralement une inconnue.",
-"L'objectif est de trouver la valeur de l'inconnue qui rend l'égalité vraie."
-],
-points:[
-"x + 5 = 12 donne x = 7.",
-"2x = 10 donne x = 5.",
-"Il faut effectuer les mêmes opérations des deux côtés de l'égalité."
-]
-},
-
-{
-type:"important",
-title:"📌 À retenir",
-points:[
-"Respecter l'ordre des opérations.",
-"Écrire clairement les calculs.",
-"Vérifier le résultat.",
-"Utiliser les unités lorsqu'il s'agit d'un problème concret."
-]
-},
-
-{
-type:"note",
-title:"📝 Note",
-text:[
-"Les mathématiques deviennent plus faciles avec la pratique. Il est important de comprendre la méthode plutôt que de mémoriser uniquement les réponses."
-]
-}
-
-],
-
-quiz:[
-{
-question:"Combien font 8 × 7 ?",
-options:["54","56","64"],
-answer:1
-},
-{
-question:"Dans la fraction 3/5, quel est le dénominateur ?",
-options:["3","5","8"],
-answer:1
-}
-]
-
+<div class="section exercise">
+<h3>✏️ Exercice</h3>
+<p>Combien font 7 × 6 ?</p>
+<button onclick="answer('math1','42')">Voir la réponse</button>
+<p id="math1" class="answer"></p>
+</div>
+`
 },
 
 en: {
+title:"📐 Mathematics",
+content:`
+<div class="section">
+<h3>📘 Lesson</h3>
+<p>Mathematics helps us solve problems using numbers, calculations and reasoning.</p>
+</div>
 
-title:"Mathematics",
+<div class="section">
+<h3>➕ Example</h3>
+<p>2 + 3 = 5</p>
+<p>4 × 5 = 20</p>
+</div>
 
-sections:[
-
-{
-type:"definition",
-title:"📘 Definition",
-text:[
-"Mathematics is the study of numbers, shapes, quantities, relationships and logical reasoning.",
-"It is used in everyday life, science, economics and technical professions."
-]
-},
-
-{
-title:"1. Basic operations",
-text:[
-"The four basic operations are addition, subtraction, multiplication and division.",
-"Addition combines quantities. Subtraction finds a difference. Multiplication represents repeated quantities. Division means sharing a quantity."
-],
-points:[
-"Addition: 8 + 5 = 13",
-"Subtraction: 15 - 7 = 8",
-"Multiplication: 6 × 4 = 24",
-"Division: 20 ÷ 5 = 4"
-]
-},
-
-{
-title:"2. Fractions",
-text:[
-"A fraction represents a part of a whole.",
-"The number above is called the numerator. The number below is called the denominator."
-],
-points:[
-"1/2 means one part out of two.",
-"3/4 means three parts out of four.",
-"The denominator cannot be zero."
-]
-},
-
-{
-type:"example",
-title:"✏️ Example",
-text:[
-"If a class has 30 students and 15 are girls, the fraction representing the girls is 15/30.",
-"This fraction can be simplified to 1/2."
-]
-},
-
-{
-title:"3. Equations",
-text:[
-"An equation is an equality that usually contains an unknown value.",
-"The goal is to find the value of the unknown that makes the equality true."
-],
-points:[
-"x + 5 = 12 gives x = 7.",
-"2x = 10 gives x = 5.",
-"The same operation must be performed on both sides."
-]
-},
-
-{
-type:"important",
-title:"📌 Key points",
-points:[
-"Follow the order of operations.",
-"Write calculations clearly.",
-"Check your answer.",
-"Use units in real-life problems."
-]
+<div class="section exercise">
+<h3>✏️ Exercise</h3>
+<p>What is 7 × 6?</p>
+<button onclick="answer('math1','42')">Show answer</button>
+<p id="math1" class="answer"></p>
+</div>
+`
 }
-
-],
-
-quiz:[
-{
-question:"What is 8 × 7?",
-options:["54","56","64"],
-answer:1
-},
-{
-question:"In the fraction 3/5, what is the denominator?",
-options:["3","5","8"],
-answer:1
-}
-]
-
-}
-
 },
 
-/* =====================================================
-   TECHNIQUE
-===================================================== */
 
 technique: {
-
 fr: {
+title:"⚡ Technique",
+content:`
+<div class="section">
+<h3>📘 Électricité</h3>
+<p>L'électricité est une forme d'énergie utilisée pour alimenter de nombreux appareils.</p>
+</div>
 
-title:"Technique",
+<div class="section">
+<h3>🔌 Composants</h3>
+<p>Une résistance limite le courant.</p>
+<p>Une diode laisse principalement passer le courant dans un seul sens.</p>
+<p>Un condensateur peut stocker une charge électrique.</p>
+</div>
 
-sections:[
-
-{
-type:"definition",
-title:"📘 Définition",
-text:[
-"Les sciences et métiers techniques regroupent les connaissances permettant de comprendre, installer, utiliser, contrôler et réparer des systèmes techniques.",
-"Dans la filière technique, on retrouve notamment l'électricité, l'électronique, la mécanique et la maintenance."
-]
-},
-
-{
-title:"1. L'électricité",
-text:[
-"L'électricité est liée au déplacement des charges électriques.",
-"Un circuit électrique simple peut contenir une source, des conducteurs, un appareil récepteur et un dispositif de commande."
-],
-points:[
-"La tension se mesure en volts (V).",
-    "Le courant se mesure en ampères (A).",
-"La résistance électrique se mesure en ohms (Ω).",
-"La puissance électrique se mesure en watts (W)."
-]
-},
-
-{
-title:"2. La loi d'Ohm",
-text:[
-"La loi d'Ohm permet de relier la tension, le courant et la résistance dans un circuit électrique.",
-"La formule principale est : U = R × I."
-],
-points:[
-"U représente la tension en volts (V).",
-"R représente la résistance en ohms (Ω).",
-"I représente le courant en ampères (A).",
-"Pour trouver I : I = U / R.",
-"Pour trouver R : R = U / I."
-]
-},
-
-{
-type:"example",
-title:"✏️ Exemple",
-text:[
-"Une résistance de 10 Ω est branchée sur une tension de 20 V.",
-"Le courant est I = U / R = 20 / 10 = 2 A."
-]
-},
-
-{
-title:"3. Sécurité électrique",
-text:[
-"L'électricité peut être dangereuse lorsqu'elle est mal utilisée.",
-"Il faut respecter les règles de sécurité avant toute intervention sur une installation électrique."
-],
-points:[
-"Couper l'alimentation avant une intervention.",
-"Utiliser des outils adaptés et en bon état.",
-"Éviter de manipuler un circuit avec les mains mouillées.",
-"Utiliser les équipements de protection nécessaires.",
-"Respecter les normes et les consignes de sécurité."
-]
-},
-
-{
-type:"important",
-title:"📌 À retenir",
-points:[
-"Tension : volt (V).",
-"Courant : ampère (A).",
-"Résistance : ohm (Ω).",
-"Puissance : watt (W).",
-"L'électricité doit toujours être manipulée avec prudence."
-]
-},
-
-{
-type:"note",
-title:"📝 Note",
-text:[
-"Dans les métiers techniques, la sécurité est aussi importante que la connaissance des formules. Un bon technicien travaille méthodiquement et respecte les règles de sécurité."
-]
-}
-
-],
-
-quiz:[
-{
-question:"Quelle est l'unité de la tension électrique ?",
-options:["Ampère","Volt","Ohm"],
-answer:1
-},
-{
-question:"Quelle formule correspond à la loi d'Ohm ?",
-options:["U = R × I","P = U + I","R = U × I"],
-answer:0
-}
-]
-
+<div class="section exercise">
+<h3>✏️ Exercice</h3>
+<p>Quel composant limite le courant ?</p>
+<button onclick="answer('tech1','La résistance')">Voir la réponse</button>
+<p id="tech1" class="answer"></p>
+</div>
+`
 },
 
 en: {
+title:"⚡ Technical Studies",
+content:`
+<div class="section">
+<h3>📘 Electricity</h3>
+<p>Electricity is a form of energy used to power many devices.</p>
+</div>
 
-title:"Technical Studies",
+<div class="section">
+<h3>🔌 Components</h3>
+<p>A resistor limits current.</p>
+<p>A diode mainly allows current to flow in one direction.</p>
+<p>A capacitor can store electrical charge.</p>
+</div>
 
-sections:[
-
-{
-type:"definition",
-title:"📘 Definition",
-text:[
-"Technical studies include knowledge used to understand, install, operate, control and repair technical systems.",
-"They include areas such as electricity, electronics, mechanics and maintenance."
-]
-},
-
-{
-title:"1. Electricity",
-text:[
-"Electricity is related to the movement of electric charges.",
-"A simple electrical circuit may contain a source, conductors, a receiver and a control device."
-],
-points:[
-"Voltage is measured in volts (V).",
-"Current is measured in amperes (A).",
-"Resistance is measured in ohms (Ω).",
-"Electrical power is measured in watts (W)."
-]
-},
-
-{
-title:"2. Ohm's Law",
-text:[
-"Ohm's Law relates voltage, current and resistance in an electrical circuit.",
-"The main formula is: U = R × I."
-],
-points:[
-"U is voltage in volts (V).",
-"R is resistance in ohms (Ω).",
-"I is current in amperes (A).",
-"To find I: I = U / R.",
-"To find R: R = U / I."
-]
-},
-
-{
-type:"example",
-title:"✏️ Example",
-text:[
-"A 10 Ω resistor is connected to a 20 V voltage.",
-"The current is I = U / R = 20 / 10 = 2 A."
-]
-},
-
-{
-title:"3. Electrical safety",
-text:[
-"Electricity can be dangerous when it is used incorrectly.",
-"Safety rules must always be followed before working on an electrical installation."
-],
-points:[
-"Switch off the power before working.",
-"Use suitable tools in good condition.",
-"Never handle electrical circuits with wet hands.",
-"Use appropriate protective equipment.",
-"Follow safety standards and instructions."
-]
-},
-
-{
-type:"important",
-title:"📌 Key points",
-points:[
-"Voltage: volt (V).",
-"Current: ampere (A).",
-"Resistance: ohm (Ω).",
-"Power: watt (W).",
-"Always handle electricity carefully."
-]
+<div class="section exercise">
+<h3>✏️ Exercise</h3>
+<p>Which component limits current?</p>
+<button onclick="answer('tech1','The resistor')">Show answer</button>
+<p id="tech1" class="answer"></p>
+</div>
+`
 }
-
-],
-
-quiz:[
-{
-question:"What is the unit of electrical voltage?",
-options:["Ampere","Volt","Ohm"],
-answer:1
-},
-{
-question:"Which formula represents Ohm's Law?",
-options:["U = R × I","P = U + I","R = U × I"],
-answer:0
-}
-]
-
-}
-
 },
 
-/* =====================================================
-   ANGLAIS
-===================================================== */
 
 anglais: {
-
 fr: {
+title:"🇬🇧 Anglais",
+content:`
+<div class="section">
+<h3>📘 Vocabulaire</h3>
+<p>Hello = Bonjour</p>
+<p>Good morning = Bonjour</p>
+<p>Thank you = Merci</p>
+<p>School = École</p>
+</div>
 
-title:"Anglais",
+<div class="section">
+<h3>🗣️ Phrase</h3>
+<p>I am a student. = Je suis un élève.</p>
+</div>
 
-sections:[
-
-{
-type:"definition",
-title:"📘 Définition",
-text:[
-"L'anglais est une langue internationale utilisée dans de nombreux pays.",
-"Il est important dans les études, les voyages, le commerce, les technologies et la communication."
-]
-},
-
-{
-title:"1. Les pronoms personnels",
-text:[
-"Les pronoms personnels remplacent les noms dans une phrase."
-],
-points:[
-"I = je",
-"You = tu / vous",
-"He = il",
-"She = elle",
-"It = il / elle pour une chose ou un animal",
-"We = nous",
-"They = ils / elles"
-]
-},
-
-{
-title:"2. Le verbe To Be",
-text:[
-"Le verbe To Be signifie principalement être.",
-"Il est très utilisé pour présenter une personne, donner une information ou décrire une situation."
-],
-points:[
-"I am",
-"You are",
-"He is",
-"She is",
-"We are",
-"They are"
-]
-},
-
-{
-type:"example",
-title:"✏️ Exemple",
-text:[
-"I am a student. = Je suis un élève.",
-"She is happy. = Elle est heureuse.",
-"They are friends. = Ils sont amis."
-]
-},
-
-{
-title:"3. Le présent simple",
-text:[
-"Le présent simple est utilisé pour parler des habitudes, des faits généraux et des actions répétées.",
-"Avec he, she et it, le verbe prend généralement -s."
-],
-points:[
-"I play football.",
-"You play football.",
-"He plays football.",
-"She plays football."
-]
-},
-
-{
-type:"important",
-title:"📌 À retenir",
-points:[
-"Apprendre régulièrement du vocabulaire.",
-"Pratiquer la prononciation.",
-"Lire des phrases simples.",
-"Écouter l'anglais régulièrement.",
-"Pratiquer la conversation."
-]
-}
-
-],
-
-quiz:[
-{
-question:"Comment dit-on « je suis » en anglais ?",
-options:["I are","I am","I is"],
-answer:1
-},
-{
-question:"Quelle phrase est correcte ?",
-options:["He play football.","He plays football.","He playing football."],
-answer:1
-}
-]
-
+<div class="section exercise">
+<h3>✏️ Exercice</h3>
+<p>Que signifie "Thank you" ?</p>
+<button onclick="answer('eng1','Merci')">Voir la réponse</button>
+<p id="eng1" class="answer"></p>
+</div>
+`
 },
 
 en: {
+title:"🇬🇧 English",
+content:`
+<div class="section">
+<h3>📘 Vocabulary</h3>
+<p>Hello = Bonjour</p>
+<p>Thank you = Merci</p>
+<p>School = École</p>
+</div>
 
-title:"English",
-
-sections:[
-
-{
-type:"definition",
-title:"📘 Definition",
-text:[
-"English is an international language used in many countries.",
-"It is important for education, travel, business, technology and communication."
-]
-},
-
-{
-title:"1. Personal pronouns",
-text:[
-"Personal pronouns replace nouns in sentences."
-],
-points:[
-"I",
-"You",
-"He",
-"She",
-"It",
-"We",
-"They"
-]
-},
-
-{
-title:"2. The verb To Be",
-text:[
-"The verb To Be is mainly used to express being or identity.",
-"It is very common in English sentences."
-],
-points:[
-"I am",
-"You are",
-"He is",
-"She is",
-"We are",
-"They are"
-]
-},
-
-{
-type:"example",
-title:"✏️ Example",
-text:[
-"I am a student.",
-"She is happy.",
-"They are friends."
-]
-},
-
-{
-title:"3. Simple present",
-text:[
-"The simple present is used for habits, general facts and repeated actions.",
-"With he, she and it, the verb usually takes -s."
-],
-points:[
-"I play football.",
-"You play football.",
-"He plays football.",
-"She plays football."
-]
-},
-
-{
-type:"important",
-title:"📌 Key points",
-points:[
-"Learn vocabulary regularly.",
-"Practice pronunciation.",
-"Read simple sentences.",
-"Listen to English regularly.",
-"Practice speaking."
-]
+<div class="section exercise">
+<h3>✏️ Exercise</h3>
+<p>What does "Thank you" mean?</p>
+<button onclick="answer('eng1','Merci')">Show answer</button>
+<p id="eng1" class="answer"></p>
+</div>
+`
 }
-
-],
-
-quiz:[
-{
-question:"Which sentence is correct?",
-options:["I are a student.","I am a student.","I is a student."],
-answer:1
-},
-{
-question:"Which form is correct?",
-options:["He play.","He plays.","He playing."],
-answer:1
-}
-]
-
-}
-
 },
 
-/* =====================================================
-   FRANÇAIS
-===================================================== */
 
 francais: {
-
 fr: {
+title:"🇫🇷 Français",
+content:`
+<div class="section">
+<h3>📘 Grammaire</h3>
+<p>Une phrase commence généralement par une majuscule et se termine par un signe de ponctuation.</p>
+</div>
 
-title:"Français",
+<div class="section">
+<h3>📝 Conjugaison</h3>
+<p>Je suis.</p>
+<p>Tu es.</p>
+<p>Il est.</p>
+<p>Nous sommes.</p>
+</div>
 
-sections:[
-
-{
-type:"definition",
-title:"📘 Définition",
-text:[
-"Le français est une langue utilisée pour communiquer à l'oral et à l'écrit.",
-"Une bonne maîtrise du français permet de mieux comprendre les textes et de communiquer clairement."
-]
-},
-
-{
-title:"1. La phrase",
-text:[
-"Une phrase est un ensemble de mots organisé qui possède un sens.",
-"Elle commence généralement par une majuscule et se termine par un signe de ponctuation."
-],
-points:[
-"Le point (.)",
-"Le point d'interrogation (?)",
-"Le point d'exclamation (!)",
-"La virgule (,)"
-]
-},
-
-{
-title:"2. Les classes grammaticales",
-text:[
-"Les mots peuvent appartenir à différentes classes grammaticales."
-],
-points:[
-"Nom : maison, élève, école.",
-"Verbe : manger, travailler, apprendre.",
-"Adjectif : grand, intelligent, rapide.",
-"Pronom : je, tu, il, nous.",
-"Adverbe : rapidement, souvent, très."
-]
-},
-
-{
-title:"3. La conjugaison",
-text:[
-"Conjuguer un verbe signifie modifier sa forme selon la personne, le nombre, le temps et le mode.",
-"Les temps permettent de situer une action dans le présent, le passé ou le futur."
-],
-points:[
-"Présent : Je travaille.",
-"Imparfait : Je travaillais.",
-"Futur : Je travaillerai.",
-"Passé composé : J'ai travaillé."
-]
-},
-
-{
-type:"example",
-title:"✏️ Exemple",
-text:[
-"Verbe « faire » au présent : je fais, tu fais, il fait, nous faisons, vous faites, ils font."
-]
-},
-
-{
-type:"important",
-title:"📌 À retenir",
-points:[
-"Respecter les règles de grammaire.",
-"Accorder les mots correctement.",
-"Utiliser la bonne conjugaison.",
-"Lire régulièrement.",
-"Enrichir son vocabulaire."
-]
-}
-
-],
-
-quiz:[
-{
-question:"Quelle phrase est correcte ?",
-options:[
-"Nous fait nos devoirs.",
-"Nous faisons nos devoirs.",
-"Nous faire nos devoirs."
-],
-answer:1
-},
-{
-question:"Quel est le futur de « finir » avec « tu » ?",
-options:["Tu finissais","Tu finiras","Tu finis"],
-answer:1
-}
-]
-
+<div class="section exercise">
+<h3>✏️ Exercice</h3>
+<p>Complète : Nous ___ à l'école.</p>
+<button onclick="answer('fra1','sommes')">Voir la réponse</button>
+<p id="fra1" class="answer"></p>
+</div>
+`
 },
 
 en: {
+title:"🇫🇷 French",
+content:`
+<div class="section">
+<h3>📘 Grammar</h3>
+<p>A sentence usually starts with a capital letter and ends with punctuation.</p>
+</div>
 
-title:"French",
+<div class="section">
+<h3>📝 Conjugation</h3>
+<p>Je suis = I am</p>
+<p>Nous sommes = We are</p>
+</div>
 
-sections:[
-
-{
-type:"definition",
-title:"📘 Definition",
-text:[
-"French is a language used for spoken and written communication.",
-"Good French skills help people understand texts and communicate clearly."
-]
-},
-
-{
-title:"1. The sentence",
-text:[
-"A sentence is a group of words organized to express a meaning.",
-"It usually begins with a capital letter and ends with punctuation."
-],
-points:[
-"Full stop (.)",
-"Question mark (?)",
-"Exclamation mark (!)",
-"Comma (,)"
-]
-},
-
-{
-title:"2. Grammar categories",
-text:[
-"Words can belong to different grammatical categories."
-],
-points:[
-"Noun",
-"Verb",
-"Adjective",
-"Pronoun",
-"Adverb"
-]
-},
-
-{
-title:"3. Conjugation",
-text:[
-"Conjugation means changing the form of a verb according to the person, number and tense."
-],
-points:[
-"Present",
-"Imperfect",
-"Future",
-"Past"
-]
-},
-
-{
-type:"important",
-title:"📌 Key points",
-points:[
-"Follow grammar rules.",
-"Use correct agreements.",
-"Use the correct verb tense.",
-"Read regularly.",
-"Improve your vocabulary."
-]
+<div class="section exercise">
+<h3>✏️ Exercise</h3>
+<p>Complete: Nous ___ à l'école.</p>
+<button onclick="answer('fra1','sommes')">Show answer</button>
+<p id="fra1" class="answer"></p>
+</div>
+`
 }
-
-],
-
-quiz:[
-{
-question:"Which French sentence is correct?",
-options:[
-"Nous fait nos devoirs.",
-"Nous faisons nos devoirs.",
-"Nous faire nos devoirs."
-],
-answer:1
-}
-]
-
-}
-
 },
 
-/* =====================================================
-   HISTOIRE
-===================================================== */
 
 histoire: {
-
 fr: {
+title:"🏛️ Histoire",
+content:`
+<div class="section">
+<h3>📘 Définition</h3>
+<p>L'histoire étudie les événements du passé et leur influence sur le présent.</p>
+</div>
 
-title:"Histoire",
+<div class="section">
+<h3>🌍 Cameroun</h3>
+<p>Le Cameroun est un pays d'Afrique centrale.</p>
+</div>
 
-sections:[
-
-{
-type:"definition",
-title:"📘 Définition",
-text:[
-"L'histoire étudie les événements du passé, les sociétés et les transformations qui ont marqué l'humanité.",
-"Elle permet de mieux comprendre le présent en étudiant les événements et leurs conséquences."
-]
-},
-
-{
-title:"1. Pourquoi étudier l'histoire ?",
-text:[
-"L'histoire aide les citoyens à comprendre l'évolution des sociétés.",
-"Elle permet également de connaître le patrimoine culturel et les événements importants de son pays."
-],
-points:[
-"Comprendre le passé.",
-"Connaître son patrimoine.",
-"Comprendre les changements politiques et sociaux.",
-"Éviter de répéter certaines erreurs du passé."
-]
-},
-
-{
-title:"2. Histoire du Cameroun",
-text:[
-"Le territoire correspondant au Cameroun actuel a connu de nombreux peuples, royaumes et sociétés avant la période coloniale.",
-"Le pays a ensuite connu les influences et administrations coloniales allemandes, françaises et britanniques dans différentes périodes et régions."
-]
-},
-
-{
-title:"3. Indépendance",
-text:[
-"Le Cameroun français accède à l'indépendance le 1er janvier 1960.",
-"Le Cameroun britannique méridional rejoint ensuite la République du Cameroun en 1961 après un processus politique et un vote organisé sous l'égide des Nations unies."
-]
-},
-
-{
-type:"important",
-title:"📌 À retenir",
-points:[
-"L'histoire étudie le passé.",
-"Les sources historiques peuvent être écrites, orales ou matérielles.",
-"L'histoire du Cameroun comprend des périodes précoloniales, coloniales et postcoloniales.",
-"Connaître son histoire contribue à comprendre son identité et son environnement."
-]
-}
-
-],
-
-quiz:[
-{
-question:"En quelle année le Cameroun français devient-il indépendant ?",
-options:["1955","1960","1970"],
-answer:1
-},
-{
-question:"Que permet principalement l'étude de l'histoire ?",
-options:[
-"Comprendre le passé",
-"Changer les lois de la physique",
-"Calculer une résistance"
-],
-answer:0
-}
-]
-
+<div class="section exercise">
+<h3>✏️ Exercice</h3>
+<p>Dans quelle région du monde se trouve le Cameroun ?</p>
+<button onclick="answer('hist1','Afrique centrale')">Voir la réponse</button>
+<p id="hist1" class="answer"></p>
+</div>
+`
 },
 
 en: {
+title:"🏛️ History",
+content:`
+<div class="section">
+<h3>📘 Definition</h3>
+<p>History studies events from the past and their influence on the present.</p>
+</div>
 
-title:"History",
+<div class="section">
+<h3>🌍 Cameroon</h3>
+<p>Cameroon is a country in Central Africa.</p>
+</div>
 
-sections:[
-
-{
-type:"definition",
-title:"📘 Definition",
-text:[
-"History studies past events, societies and changes that have shaped humanity.",
-"It helps us understand the present by studying events and their consequences."
-]
-},
-
-{
-title:"1. Why study history?",
-text:[
-"History helps citizens understand how societies developed.",
-"It also helps people understand their cultural heritage."
-],
-points:[
-"Understand the past.",
-"Know cultural heritage.",
-"Understand political and social changes.",
-"Learn from past events."
-]
-},
-
-{
-title:"2. History of Cameroon",
-text:[
-"The territory of present-day Cameroon has a long history involving many peoples, kingdoms and societies.",
-"It later experienced German, French and British colonial influence in different periods and regions."
-]
-},
-
-{
-title:"3. Independence",
-text:[
-"French Cameroon became independent on January 1, 1960.",
-"Southern British Cameroon later joined the Republic of Cameroon in 1961 following a political process and a United Nations-organized vote."
-]
-},
-
-{
-type:"important",
-title:"📌 Key points",
-points:[
-"History studies the past.",
-"Historical sources can be written, oral or material.",
-"Cameroon's history includes pre-colonial, colonial and post-colonial periods.",
-"Knowing history helps us understand society."
-]
+<div class="section exercise">
+<h3>✏️ Exercise</h3>
+<p>Where is Cameroon located?</p>
+<button onclick="answer('hist1','Central Africa')">Show answer</button>
+<p id="hist1" class="answer"></p>
+</div>
+`
 }
-
-],
-
-quiz:[
-{
-question:"When did French Cameroon become independent?",
-options:["1955","1960","1970"],
-answer:1
-}
-]
-
-}
-
 },
 
-/* =====================================================
-   ENTREPRENEURIAT
-===================================================== */
 
 entrepreneuriat: {
-
 fr: {
+title:"💼 Entrepreneuriat",
+content:`
+<div class="section">
+<h3>📘 Définition</h3>
+<p>L'entrepreneuriat consiste à créer et développer une activité à partir d'une idée.</p>
+</div>
 
-title:"Entrepreneuriat",
+<div class="section">
+<h3>💡 Exemple</h3>
+<p>Un jeune peut transformer une compétence en petit service ou en entreprise.</p>
+</div>
 
-sections:[
-
-{
-type:"definition",
-title:"📘 Définition",
-text:[
-"L'entrepreneuriat consiste à identifier un besoin ou une opportunité et à créer une activité pour y répondre.",
-"L'entrepreneur organise des ressources, prend des décisions et accepte de gérer les risques liés à son projet."
-]
-},
-
-{
-title:"1. L'idée d'entreprise",
-text:[
-"Une bonne idée d'entreprise doit répondre à un besoin réel.",
-"Avant de commencer, il faut observer son environnement et identifier les problèmes que les clients souhaitent résoudre."
-],
-points:[
-"Identifier un besoin.",
-"Connaître les clients.",
-"Étudier la concurrence.",
-"Déterminer les ressources nécessaires."
-]
-},
-
-{
-title:"2. Le business plan",
-text:[
-"Le business plan est un document qui présente un projet d'entreprise.",
-"Il permet notamment de présenter le produit ou service, les clients, la stratégie et les prévisions financières."
-]
-},
-
-{
-title:"3. Le marketing",
-text:[
-"Le marketing consiste à comprendre les besoins des clients et à présenter une offre adaptée.",
-"La communication peut utiliser les réseaux sociaux, les affiches, le bouche-à-oreille et d'autres moyens."
-]
-},
-
-{
-type:"example",
-title:"✏️ Exemple",
-text:[
-"Un jeune remarque que les élèves de son quartier ont besoin de services d'impression.",
-"Il peut étudier la demande, calculer les coûts, choisir son matériel et proposer un service adapté."
-]
-},
-
-{
-type:"important",
-title:"📌 À retenir",
-points:[
-"Une entreprise doit répondre à un besoin.",
-"Il faut connaître ses clients.",
-"Il faut calculer les coûts.",
-"Une bonne organisation est importante.",
-"La satisfaction du client contribue à la réussite d'une activité."
-]
-}
-
-],
-
-quiz:[
-{
-question:"Que doit principalement rechercher une idée d'entreprise ?",
-options:[
-"Un besoin réel",
-"Un problème impossible",
-"Une dépense inutile"
-],
-answer:0
-},
-{
-question:"À quoi sert un business plan ?",
-options:[
-"À présenter et organiser un projet",
-"À remplacer les clients",
-"À supprimer les dépenses"
-],
-answer:0
-}
-]
-
+<div class="section exercise">
+<h3>✏️ Exercice</h3>
+<p>Qu'est-ce qu'une idée d'entreprise ?</p>
+<button onclick="answer('ent1','Une idée permettant de créer une activité')">Voir la réponse</button>
+<p id="ent1" class="answer"></p>
+</div>
+`
 },
 
 en: {
+title:"💼 Entrepreneurship",
+content:`
+<div class="section">
+<h3>📘 Definition</h3>
+<p>Entrepreneurship means creating and developing an activity from an idea.</p>
+</div>
 
-title:"Entrepreneurship",
-
-sections:[
-
-{
-type:"definition",
-title:"📘 Definition",
-text:[
-"Entrepreneurship involves identifying a need or opportunity and creating an activity to respond to it.",
-"An entrepreneur organizes resources, makes decisions and manages the risks of a project."
-]
-},
-
-{
-title:"1. Business idea",
-text:[
-"A good business idea should respond to a real need.",
-"Before starting, an entrepreneur should study the environment and identify problems customers want to solve."
-],
-points:[
-"Identify a need.",
-"Know the customers.",
-"Study competitors.",
-"Identify required resources."
-]
-},
-
-{
-title:"2. Business plan",
-text:[
-"A business plan is a document that presents a business project.",
-"It can include the product or service, customers, strategy and financial forecasts."
-]
-},
-
-{
-title:"3. Marketing",
-text:[
-"Marketing involves understanding customer needs and presenting an appropriate offer.",
-"Communication can use social networks, posters, word of mouth and other methods."
-]
-},
-
-{
-type:"important",
-title:"📌 Key points",
-points:[
-"A business should solve a need.",
-"Know your customers.",
-"Calculate costs.",
-"Good organization is important.",
-"Customer satisfaction matters."
-]
+<div class="section exercise">
+<h3>✏️ Exercise</h3>
+<p>What is a business idea?</p>
+<button onclick="answer('ent1','An idea for creating an activity')">Show answer</button>
+<p id="ent1" class="answer"></p>
+</div>
+`
 }
-
-],
-
-quiz:[
-{
-question:"What should a business idea mainly address?",
-options:[
-"A real need",
-"An impossible problem",
-"An unnecessary expense"
-],
-answer:0
-}
-]
-
-}
-
 },
 
-/* =====================================================
-   GOUVERNEMENT
-===================================================== */
 
 gouvernement: {
-
 fr: {
+title:"🏛️ Gouvernement",
+content:`
+<div class="section">
+<h3>📘 Définition</h3>
+<p>Le gouvernement participe à la direction et à l'organisation de l'État.</p>
+</div>
 
-title:"Gouvernement et citoyenneté",
+<div class="section">
+<h3>👥 Citoyenneté</h3>
+<p>Les citoyens ont des droits mais aussi des responsabilités.</p>
+</div>
 
-sections:[
-
-{
-type:"definition",
-title:"📘 Définition",
-text:[
-"Le gouvernement désigne l'ensemble des autorités et institutions chargées de diriger l'État et de mettre en œuvre les politiques publiques.",
-"La citoyenneté concerne la participation à la vie de la société ainsi que les droits et responsabilités reconnus par la loi."
-]
-},
-
-{
-title:"1. L'État",
-text:[
-"Un État possède généralement un territoire, une population, des institutions et une autorité politique.",
-"Les institutions organisent le fonctionnement du pays."
-]
-},
-
-{
-title:"2. Les droits et responsabilités",
-text:[
-"Les citoyens disposent de droits protégés par les lois.",
-"Ils ont également des responsabilités envers la société et doivent respecter les lois."
-],
-points:[
-"Respecter les lois.",
-"Respecter les autres.",
-"Participer à la vie de la communauté.",
-"Protéger les biens publics.",
-"Contribuer à la paix sociale."
-]
-},
-
-{
-title:"3. Les institutions",
-text:[
-"Les institutions publiques ont différentes fonctions dans l'organisation de l'État.",
-"Le fonctionnement précis des institutions dépend de la Constitution et des lois du pays."
-]
-},
-
-{
-type:"important",
-title:"📌 À retenir",
-points:[
-"Un État est organisé autour d'institutions.",
-"Les citoyens ont des droits et des responsabilités.",
-"Les lois organisent la vie collective.",
-"Le respect des autres est essentiel à la vie en société."
-]
-}
-
-],
-
-quiz:[
-{
-question:"Que doit respecter un citoyen ?",
-options:[
-"Les lois",
-"Uniquement ses amis",
-"Aucune règle"
-],
-answer:0
-},
-{
-question:"Les institutions servent notamment à :",
-options:[
-"Organiser le fonctionnement de l'État",
-"Supprimer toute règle",
-"Empêcher toute activité"
-],
-answer:0
-}
-]
-
+<div class="section exercise">
+<h3>✏️ Exercice</h3>
+<p>Que doivent respecter les citoyens ?</p>
+<button onclick="answer('gov1','Les lois')">Voir la réponse</button>
+<p id="gov1" class="answer"></p>
+</div>
+`
 },
 
 en: {
+title:"🏛️ Government",
+content:`
+<div class="section">
+<h3>📘 Definition</h3>
+<p>Government participates in directing and organizing the state.</p>
+</div>
 
-title:"Government and Citizenship",
+<div class="section">
+<h3>👥 Citizenship</h3>
+<p>Citizens have rights and responsibilities.</p>
+</div>
 
-sections:[
-
-{
-type:"definition",
-title:"📘 Definition",
-text:[
-"Government refers to the authorities and institutions responsible for directing the state and implementing public policies.",
-"Citizenship concerns participation in society as well as rights and responsibilities established by law."
-]
-},
-
-{
-title:"1. The State",
-text:[
-"A state generally has a territory, population, institutions and political authority.",
-"Institutions organize the functioning of the country."
-]
-},
-
-{
-title:"2. Rights and responsibilities",
-text:[
-"Citizens have rights protected by laws.",
-aws."
-],
-points:[
-"Respect laws.",
-"Respect other people.",
-"Participate in community life.",
-"Protect public property.",
-"Promote peaceful coexistence."
-]
-},
-
-{
-title:"3. Institutions",
-text:[
-"Public institutions have different functions in the organization of the state.",
-"The exact organization of institutions depends on the Constitution and laws of each country."
-]
-},
-
-{
-type:"important",
-title:"📌 Key points",
-points:[
-"A state is organized around institutions.",
-"Citizens have rights and responsibilities.",
-"Laws organize collective life.",
-"Respect for others is important."
-]
+<div class="section exercise">
+<h3>✏️ Exercise</h3>
+<p>What should citizens respect?</p>
+<button onclick="answer('gov1','The laws')">Show answer</button>
+<p id="gov1" class="answer"></p>
+</div>
+`
 }
-
-],
-
-quiz:[
-{
-question:"What should citizens respect?",
-options:[
-"Laws",
-"Only their friends",
-"No rules"
-],
-answer:0
-},
-{
-question:"What do public institutions help to do?",
-options:[
-"Organize the functioning of the state",
-"Remove all rules",
-"Stop all activities"
-],
-answer:0
-}
-]
-
-}
-
 },
 
-/* =====================================================
-   INFORMATIQUE
-===================================================== */
 
 informatique: {
-
 fr: {
+title:"💻 Informatique",
+content:`
+<div class="section">
+<h3>📘 Définition</h3>
+<p>L'informatique concerne le traitement de l'information à l'aide des ordinateurs et des programmes.</p>
+</div>
 
-title:"Informatique",
+<div class="section">
+<h3>🌐 Internet</h3>
+<p>Internet permet à de nombreux appareils de communiquer et d'échanger des informations.</p>
+</div>
 
-sections:[
+<div class="section">
+<h3>💻 Programmation</h3>
+<p>HTML structure une page web, CSS définit son apparence et JavaScript ajoute de l'interactivité.</p>
+</div>
 
-{
-type:"definition",
-title:"📘 Définition",
-text:[
-"L'informatique est le domaine qui concerne le traitement automatique de l'information à l'aide de machines et de programmes.",
-"Elle est utilisée dans l'éducation, les entreprises, la communication, la médecine, l'industrie et de nombreux autres domaines."
-]
-},
-
-{
-title:"1. L'ordinateur",
-text:[
-"Un ordinateur est une machine électronique capable de recevoir, traiter, stocker et restituer des informations.",
-"Il fonctionne grâce à des composants matériels et des logiciels."
-],
-points:[
-"Processeur : exécute les instructions.",
-"Mémoire : conserve temporairement certaines données.",
-"Stockage : conserve les données.",
-"Écran : affiche les informations.",
-"Clavier et souris : permettent l'entrée de données."
-]
-},
-
-{
-title:"2. Les logiciels",
-text:[
-"Un logiciel est un ensemble de programmes permettant à un ordinateur d'effectuer certaines tâches.",
-"Le système d'exploitation permet notamment de gérer les ressources de l'ordinateur et d'exécuter des applications."
-],
-points:[
-"Système d'exploitation.",
-"Navigateur web.",
-"Traitement de texte.",
-"Applications mobiles.",
-"Logiciels de programmation."
-]
-},
-
-{
-title:"3. Internet",
-text:[
-"Internet est un réseau mondial permettant à des appareils de communiquer et d'échanger des informations.",
-"Il permet notamment d'utiliser des sites web, des services de messagerie et des plateformes en ligne."
-]
-},
-
-{
-title:"4. Programmation",
-text:[
-"La programmation consiste à écrire des instructions qu'un ordinateur peut exécuter.",
-"HTML permet notamment de structurer une page web, CSS permet de définir sa présentation et JavaScript permet d'ajouter des comportements interactifs."
-]
-},
-
-{
-type:"important",
-title:"📌 À retenir",
-points:[
-"Le matériel correspond aux composants physiques.",
-"Le logiciel correspond aux programmes.",
-"Internet permet la communication entre de nombreux appareils.",
-"La programmation permet de créer des applications et des sites interactifs.",
-"La sécurité informatique protège les données et les systèmes."
-]
-}
-
-],
-
-quiz:[
-{
-question:"Que signifie HTML principalement ?",
-options:[
-"Un langage de structure de pages web",
-"Un antivirus",
-"Un câble informatique"
-],
-answer:0
-},
-{
-question:"Quel langage permet d'ajouter de l'interactivité à une page web ?",
-options:[
-"HTML uniquement",
-"JavaScript",
-"JPEG"
-],
-answer:1
-}
-]
-
+<div class="section exercise">
+<h3>✏️ Exercice</h3>
+<p>Quel langage ajoute de l'interactivité à une page web ?</p>
+<button onclick="answer('info1','JavaScript')">Voir la réponse</button>
+<p id="info1" class="answer"></p>
+</div>
+`
 },
 
 en: {
+title:"💻 Computer Science",
+content:`
+<div class="section">
+<h3>📘 Definition</h3>
+<p>Computer science deals with information processing using computers and programs.</p>
+</div>
 
-title:"Computer Science",
+<div class="section">
+<h3>🌐 Internet</h3>
+<p>The Internet allows many devices to communicate and exchange information.</p>
+</div>
 
-sections:[
+<div class="section">
+<h3>💻 Programming</h3>
+<p>HTML structures a web page, CSS controls its appearance and JavaScript adds interactivity.</p>
+</div>
 
-{
-type:"definition",
-title:"📘 Definition",
-text:[
-"Computer science deals with the automatic processing of information using machines and programs.",
-"It is used in education, business, communication, medicine, industry and many other fields."
-]
-},
-
-{
-title:"1. The computer",
-text:[
-"A computer is an electronic machine capable of receiving, processing, storing and displaying information.",
-"It works with hardware and software."
-],
-points:[
-"Processor: executes instructions.",
-"Memory: temporarily stores data.",
-"Storage: keeps data.",
-"Screen: displays information.",
-"Keyboard and mouse: allow data input."
-]
-},
-
-{
-title:"2. Software",
-text:[
-"Software is a collection of programs that allows a computer to perform tasks.",
-"An operating system manages computer resources and allows applications to run."
-],
-points:[
-"Operating system.",
-"Web browser.",
-"Word processor.",
-"Mobile applications.",
-"Programming software."
-]
-},
-
-{
-title:"3. Internet",
-text:[
-"The Internet is a worldwide network that allows devices to communicate and exchange information.",
-"It provides access to websites, messaging services and many online platforms."
-]
-},
-
-{
-title:"4. Programming",
-text:[
-"Programming means writing instructions that a computer can execute.",
-"HTML structures web pages, CSS controls their presentation and JavaScript adds interactive behavior."
-]
-},
-
-{
-type:"important",
-title:"📌 Key points",
-points:[
-"Hardware means physical components.",
-"Software means programs.",
-"The Internet connects many devices.",
-"Programming can be used to create applications and interactive websites.",
-"Cybersecurity helps protect data and systems."
-]
+<div class="section exercise">
+<h3>✏️ Exercise</h3>
+<p>Which language adds interactivity to a web page?</p>
+<button onclick="answer('info1','JavaScript')">Show answer</button>
+<p id="info1" class="answer"></p>
+</div>
+`
 }
-
-],
-
-quiz:[
-{
-question:"What is HTML mainly used for?",
-options:[
-"Structuring web pages",
-"Being an antivirus",
-"Being a computer cable"
-],
-answer:0
-},
-{
-question:"Which language adds interactivity to a web page?",
-options:[
-"HTML only",
-"JavaScript",
-"JPEG"
-],
-answer:1
-}
-]
-
-}
-
 }
 
 };
 
 
-/* =====================================================
-   OUVRIR UN COURS
-===================================================== */
+/* =========================
+   LANGUE
+========================= */
+
+let language = "fr";
+
 
 function openLesson(id){
 
-    const lesson = lessons[id];
+    const course = courses[id][language];
 
-    if(!lesson || !lesson[lang]){
-        alert(
-            lang === "fr"
-            ? "Ce cours n'est pas disponible."
-            : "This course is not available."
-        );
-        return;
-    }
+    document.getElementById("lessonTitle").textContent =
+        course.title;
 
-    const current = lesson[lang];
+    document.getElementById("lessonContent").innerHTML =
+        course.content;
 
-    const panel = document.getElementById("lessonPanel");
-    const title = document.getElementById("lessonTitle");
-    const body = document.getElementById("lessonBody");
+    document.getElementById("lesson").style.display =
+        "block";
 
-    title.textContent = current.title;
-
-    body.innerHTML = "";
-
-    current.sections.forEach(function(section){
-
-        const div = document.createElement("div");
-
-        div.className = "lesson-section";
-
-        if(section.type){
-            div.classList.add(section.type);
-        }
-
-        const h3 = document.createElement("h3");
-
-        h3.textContent = section.title;
-
-        div.appendChild(h3);
-
-        if(section.text){
-
-            section.text.forEach(function(paragraph){
-
-                const p = document.createElement("p");
-
-                p.textContent = paragraph;
-
-                div.appendChild(p);
-
-            });
-
-        }
-
-        if(section.points){
-
-            const ul = document.createElement("ul");
-
-            section.points.forEach(function(point){
-
-                const li = document.createElement("li");
-
-                li.textContent = point;
-
-                ul.appendChild(li);
-
-            });
-
-            div.appendChild(ul);
-        }
-
-        body.appendChild(div);
-
+    document.getElementById("lesson").scrollIntoView({
+        behavior:"smooth"
     });
-
-
-    /* ==============================
-       MINI QUIZ
-    ============================== */
-
-    if(current.quiz){
-
-        const quizBox = document.createElement("div");
-
-        quizBox.className = "quiz-box";
-
-        const quizTitle = document.createElement("h3");
-
-        quizTitle.textContent =
-            lang === "fr"
-            ? "🧠 Mini-quiz"
-            : "🧠 Mini Quiz";
-
-        quizBox.appendChild(quizTitle);
-
-
-        current.quiz.forEach(function(q,index){
-
-            const question = document.createElement("div");
-
-            question.className = "quiz-question";
-
-            const questionText = document.createElement("p");
-
-            questionText.textContent =
-                (index + 1) + ". " + q.question;
-
-            question.appendChild(questionText);
-
-
-            q.options.forEach(function(option,optIndex){
-
-                const label = document.createElement("label");
-
-                label.style.display = "block";
-                label.style.margin = "8px 0";
-
-                const radio = document.createElement("input");
-
-                radio.type = "radio";
-
-                radio.name =
-                    "quiz_" + id + "_" + index;
-
-                radio.value = optIndex;
-
-                label.appendChild(radio);
-
-                label.appendChild(
-                    document.createTextNode(" " + option)
-                );
-
-                question.appendChild(label);
-
-            });
-
-            quizBox.appendChild(question);
-
-        });
-
-
-        const quizButton =
-            document.createElement("button");
-
-        quizButton.className = "quiz-btn";
-
-        quizButton.type = "button";
-
-        quizButton.textContent =
-            lang === "fr"
-            ? "Vérifier mes réponses"
-            : "Check my answers";
-
-
-        const result =
-            document.createElement("div");
-
-        result.className = "quiz-result";
-
-
-        quizButton.onclick = function(){
-
-            let score = 0;
-
-            let answered = 0;
-
-            current.quiz.forEach(function(q,index){
-
-                const selected =
-                    document.querySelector(
-                        'input[name="quiz_' +
-                        id +
-                        '_' +
-                        index +
-                        '"]:checked'
-                    );
-
-                if(selected){
-
-                    answered++;
-
-                    if(
-                        Number(selected.value) ===
-                        q.answer
-                    ){
-                        score++;
-                    }
-
-                }
-
-            });
-
-
-            if(answered < current.quiz.length){
-
-                result.textContent =
-                    lang === "fr"
-                    ? "⚠️ Réponds à toutes les questions."
-                    : "⚠️ Answer all questions.";
-
-                return;
-            }
-
-
-            result.textContent =
-                lang === "fr"
-                ? "🎯 Résultat : " +
-                  score +
-                  "/" +
-                  current.quiz.length
-                : "🎯 Score: " +
-                  score +
-                  "/" +
-                  current.quiz.length;
-
-        };
-
-
-        quizBox.appendChild(quizButton);
-
-        quizBox.appendChild(result);
-
-        body.appendChild(quizBox);
-
-    }
-
-
-    panel.style.display = "block";
-
-    setTimeout(function(){
-
-        panel.scrollIntoView({
-            behavior:"smooth",
-            block:"start"
-        });
-
-    },100);
-
 }
 
-
-/* =====================================================
-   FERMER UN COURS
-===================================================== */
 
 function closeLesson(){
 
-    const panel =
-        document.getElementById("lessonPanel");
-
-    if(panel){
-
-        panel.style.display = "none";
-
-    }
+    document.getElementById("lesson").style.display =
+        "none";
 
 }
 
 
-/* =====================================================
+function answer(id,text){
+
+    document.getElementById(id).textContent =
+        "✅ " + text;
+
+}
+
+
+/* =========================
+   RECHERCHE
+========================= */
+
+function searchCourses(){
+
+    const value =
+        document.getElementById("search")
+        .value
+        .toLowerCase();
+
+    document.querySelectorAll(".card").forEach(card => {
+
+        const name =
+            card.dataset.name.toLowerCase();
+
+        card.style.display =
+            name.includes(value) ? "block" : "none";
+
+    });
+
+}
+
+
+/* =========================
    CHANGEMENT DE LANGUE
-===================================================== */
+========================= */
 
-function changeLanguage(newLang){
+function changeLanguage(lang){
 
-    lang = newLang;
+    language = lang;
 
-    document.documentElement.lang = lang;
+    const cards =
+        document.querySelectorAll(".card");
 
+    const titlesFR = [
+        "Mathématiques",
+        "Technique",
+        "Anglais",
+        "Français",
+        "Histoire",
+        "Entrepreneuriat",
+        "Gouvernement",
+        "Informatique"
+    ];
 
-    const pageTitle =
-        document.getElementById("pageTitle");
+    const titlesEN = [
+        "Mathematics",
+        "Technical Studies",
+        "English",
+        "French",
+        "History",
+        "Entrepreneurship",
+        "Government",
+        "Computer Science"
+    ];
 
-    const pageDescription =
-        document.getElementById("pageDescription");
+    const descriptionsFR = [
+        "Calcul, algèbre et raisonnement.",
+        "Électricité, électronique et technologie.",
+        "Vocabulaire, grammaire et communication.",
+        "Grammaire, conjugaison et orthographe.",
+        "Événements historiques et histoire du Cameroun.",
+        "Idées, projets et création d'activité.",
+        "État, institutions, droits et devoirs.",
+        "Ordinateurs, Internet et programmation."
+    ];
 
-    const searchInput =
-        document.getElementById("searchInput");
+    const descriptionsEN = [
+        "Calculation, algebra and reasoning.",
+        "Electricity, electronics and technology.",
+        "Vocabulary, grammar and communication.",
+        "Grammar, conjugation and spelling.",
+        "Historical events and Cameroon history.",
+        "Ideas, projects and business creation.",
+        "State, institutions, rights and duties.",
+        "Computers, Internet and programming."
+    ];
 
-    const footerText =
-        document.getElementById("footerText");
+    cards.forEach((card,index) => {
 
-
-    if(lang === "fr"){
-
-        pageTitle.textContent = "Nos cours";
-
-        pageDescription.textContent =
-            "Apprends, révise et développe tes compétences avec MT Jeunesse.";
-
-        searchInput.placeholder =
-            "🔎 Rechercher une matière...";
-
-        footerText.textContent =
-            "Apprendre aujourd'hui pour construire demain.";
-
-    }else{
-
-        pageTitle.textContent = "Our Courses";
-
-        pageDescription.textContent =
-            "Learn, revise and develop your skills with MT Jeunesse.";
-
-        searchInput.placeholder =
-            "🔎 Search for a subject...";
-
-        footerText.textContent =
-            "Learn today to build tomorrow.";
-
-    }
-
-
-    const titlesFR = {
-
-        math:"Mathématiques",
-        technique:"Technique",
-        anglais:"Anglais",
-        francais:"Français",
-        histoire:"Histoire",
-        entrepreneuriat:"Entrepreneuriat",
-        gouvernement:"Gouvernement",
-        informatique:"Informatique"
-
-    };
-
-
-    const titlesEN = {
-
-        math:"Mathematics",
-        technique:"Technical Studies",
-        anglais:"English",
-        francais:"French",
-        histoire:"History",
-        entrepreneuriat:"Entrepreneurship",
-        gouvernement:"Government",
-        informatique:"Computer Science"
-
-    };
-
-
-    const descriptionsFR = {
-
-        math:
-        "Développe tes compétences en calcul et en raisonnement.",
-
-        technique:
-        "Découvre les bases de l'électricité, de l'électronique et des métiers techniques.",
-
-        anglais:
-        "Améliore ton vocabulaire, ta grammaire et ta communication.",
-
-        francais:
-        "Travaille la grammaire, la conjugaison, l'orthographe et l'expression.",
-
-        histoire:
-        "Découvre les événements importants du passé et l'histoire du Cameroun.",
-
-        entrepreneuriat:
-        "Apprends à transformer une idée en activité organisée.",
-
-        gouvernement:
-        "Comprends l'État, les institutions, les droits et les responsabilités.",
-
-        informatique:
-        "Découvre les ordinateurs, les logiciels, Internet et la programmation."
-
-    };
-
-
-    const descriptionsEN = {
-
-        math:
-        "Develop your skills in calculation and reasoning.",
-
-        technique:
-        "Discover the basics of electricity, electronics and technical professions.",
-
-        anglais:
-        "Improve your vocabulary, grammar and communication.",
-
-        francais:
-        "Work on grammar, conjugation, spelling and expression.",
-
-        histoire:
-        "Discover important events from the past and the history of Cameroon.",
-
-        entrepreneuriat:
-        "Learn how to turn an idea into an organized activity.",
-
-        gouvernement:
-        "Understand the state, institutions, rights and responsibilities.",
-
-        informatique:
-        "Discover computers, software, the Internet and programming."
-
-    };
-
-
-    document
-    .querySelectorAll(".course-card")
-    .forEach(function(card){
-
-        const titleElement =
-            card.querySelector("[data-title]");
-
-        const descriptionElement =
-            card.querySelector("[data-description]");
-
-        const button =
-            card.querySelector(".course-btn");
-
-
-        if(!titleElement ||
-           !descriptionElement ||
-           !button){
-
-            return;
-
-        }
-
-
-        const id =
-            titleElement.getAttribute("data-title");
-
-
-        titleElement.textContent =
+        card.querySelector("h2 span").textContent =
             lang === "fr"
-            ? titlesFR[id]
-            : titlesEN[id];
+            ? titlesFR[index]
+            : titlesEN[index];
 
-
-        descriptionElement.textContent =
+        card.querySelector("p").textContent =
             lang === "fr"
-            ? descriptionsFR[id]
-            : descriptionsEN[id];
+            ? descriptionsFR[index]
+            : descriptionsEN[index];
 
-
-        button.textContent =
+        card.querySelector(".btn").textContent =
             lang === "fr"
             ? "Voir le cours →"
             : "View course →";
 
     });
 
+    document.getElementById("subtitle").textContent =
+        lang === "fr"
+        ? "Apprendre aujourd'hui pour construire demain."
+        : "Learn today to build tomorrow.";
+
+    document.getElementById("search").placeholder =
+        lang === "fr"
+        ? "🔎 Rechercher une matière..."
+        : "🔎 Search for a subject...";
+
+    document.getElementById("footerText").textContent =
+        lang === "fr"
+        ? "Apprendre aujourd'hui pour construire demain."
+        : "Learn today to build tomorrow.";
+
+    closeLesson();
 }
-
-
-/* =====================================================
-   RECHERCHE
-===================================================== */
-
-function searchCourses(){
-
-    const input =
-        document.getElementById("searchInput");
-
-    const search =
-        input.value.toLowerCase().trim();
-
-
-    document
-    .querySelectorAll(".course-card")
-    .forEach(function(card){
-
-        const text =
-            (
-                card.dataset.search ||
-                card.textContent
-            ).toLowerCase();
-
-
-        if(text.includes(search)){
-
-            card.style.display = "";
-
-        }else{
-
-            card.style.display = "none";
-
-        }
-
-    });
-
-}
-
-
-/* =====================================================
-   INITIALISATION
-===================================================== */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function(){
-
-        changeLanguage("fr");
-
-    }
-);
 
 </script>
 
