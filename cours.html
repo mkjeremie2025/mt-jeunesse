@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,8 +6,7 @@
 
 <title>MT Jeunesse - Cours</title>
 
-<meta name="description"
-content="MT Jeunesse - Plateforme éducative pour apprendre, réviser et progresser.">
+<meta name="description" content="MT Jeunesse - Plateforme éducative pour apprendre, réviser et progresser.">
 
 <style>
 * {
@@ -23,10 +21,6 @@ body {
     color: #172033;
     line-height: 1.6;
 }
-
-/* =========================
-   HEADER
-========================= */
 
 header {
     background: linear-gradient(135deg, #071952, #0b4f9c);
@@ -65,10 +59,6 @@ header {
     font-weight: bold;
 }
 
-/* =========================
-   HERO
-========================= */
-
 .hero {
     max-width: 1150px;
     margin: 35px auto 25px;
@@ -87,10 +77,6 @@ header {
     max-width: 700px;
     margin: auto;
 }
-
-/* =========================
-   RECHERCHE
-========================= */
 
 .search-box {
     max-width: 700px;
@@ -112,15 +98,10 @@ header {
     box-shadow: 0 0 0 3px rgba(11,79,156,.12);
 }
 
-/* =========================
-   COURS
-========================= */
-
 .courses {
     max-width: 1150px;
     margin: auto;
     padding: 0 20px 50px;
-
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
@@ -172,10 +153,6 @@ header {
 .course-btn:hover {
     background: #071952;
 }
-
-/* =========================
-   PANNEAU DU COURS
-========================= */
 
 #lessonPanel {
     display: none;
@@ -235,10 +212,6 @@ header {
     margin-bottom: 8px;
 }
 
-/* =========================
-   FOOTER
-========================= */
-
 footer {
     background: #071952;
     color: white;
@@ -249,10 +222,6 @@ footer {
 footer strong {
     color: #ffd43b;
 }
-
-/* =========================
-   MOBILE
-========================= */
 
 @media (max-width: 600px) {
 
@@ -287,10 +256,6 @@ footer strong {
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
-
 <header>
     <div class="header-content">
 
@@ -309,15 +274,9 @@ footer strong {
 </header>
 
 
-<!-- =========================
-     INTRODUCTION
-========================= -->
-
 <section class="hero">
 
-    <h1 id="pageTitle">
-        Nos cours
-    </h1>
+    <h1 id="pageTitle">Nos cours</h1>
 
     <p id="pageDescription">
         Découvre nos cours, apprends à ton rythme et développe tes compétences.
@@ -325,10 +284,6 @@ footer strong {
 
 </section>
 
-
-<!-- =========================
-     RECHERCHE
-========================= -->
 
 <div class="search-box">
 
@@ -342,10 +297,6 @@ footer strong {
 </div>
 
 
-<!-- =========================
-     LISTE DES COURS
-========================= -->
-
 <main class="courses" id="coursesContainer">
 
     <article class="course-card"
@@ -355,11 +306,12 @@ footer strong {
 
         <h2>Mathématiques</h2>
 
-        <p class="card-description">
+        <p>
             Développe tes compétences en calcul et en raisonnement.
         </p>
 
         <button class="course-btn"
+                type="button"
                 onclick="openLesson('math')">
             Voir le cours →
         </button>
@@ -374,11 +326,12 @@ footer strong {
 
         <h2>Technique</h2>
 
-        <p class="card-description">
+        <p>
             Découvre les bases des sciences et métiers techniques.
         </p>
 
         <button class="course-btn"
+                type="button"
                 onclick="openLesson('technique')">
             Voir le cours →
         </button>
@@ -393,11 +346,12 @@ footer strong {
 
         <h2>Anglais</h2>
 
-        <p class="card-description">
+        <p>
             Améliore ton vocabulaire, ta grammaire et ta communication.
         </p>
 
         <button class="course-btn"
+                type="button"
                 onclick="openLesson('anglais')">
             Voir le cours →
         </button>
@@ -412,11 +366,12 @@ footer strong {
 
         <h2>Français</h2>
 
-        <p class="card-description">
+        <p>
             Travaille la grammaire, la conjugaison et l'expression.
         </p>
 
         <button class="course-btn"
+                type="button"
                 onclick="openLesson('francais')">
             Voir le cours →
         </button>
@@ -431,11 +386,12 @@ footer strong {
 
         <h2>Histoire</h2>
 
-        <p class="card-description">
+        <p>
             Découvre les événements importants du passé.
         </p>
 
         <button class="course-btn"
+                type="button"
                 onclick="openLesson('histoire')">
             Voir le cours →
         </button>
@@ -450,11 +406,12 @@ footer strong {
 
         <h2>Entrepreneuriat</h2>
 
-        <p class="card-description">
+        <p>
             Apprends les bases de la création et de la gestion d'une activité.
         </p>
 
         <button class="course-btn"
+                type="button"
                 onclick="openLesson('entrepreneuriat')">
             Voir le cours →
         </button>
@@ -469,11 +426,12 @@ footer strong {
 
         <h2>Gouvernement</h2>
 
-        <p class="card-description">
+        <p>
             Comprends les institutions, l'État et la citoyenneté.
         </p>
 
         <button class="course-btn"
+                type="button"
                 onclick="openLesson('gouvernement')">
             Voir le cours →
         </button>
@@ -488,11 +446,12 @@ footer strong {
 
         <h2>Informatique</h2>
 
-        <p class="card-description">
+        <p>
             Découvre les ordinateurs, les logiciels et la programmation.
         </p>
 
         <button class="course-btn"
+                type="button"
                 onclick="openLesson('informatique')">
             Voir le cours →
         </button>
@@ -502,21 +461,17 @@ footer strong {
 </main>
 
 
-<!-- =========================
-     PANNEAU DE COURS
-========================= -->
-
 <section id="lessonPanel">
 
     <div class="lesson-header">
 
-        <h2 id="lessonTitle">
-            Cours
-        </h2>
+        <h2 id="lessonTitle">Cours</h2>
 
-        <button class="close-btn"
-                onclick="closeLesson()"
-                aria-label="Fermer">
+        <button
+            class="close-btn"
+            type="button"
+            onclick="closeLesson()"
+            aria-label="Fermer">
             ✕
         </button>
 
@@ -526,10 +481,6 @@ footer strong {
 
 </section>
 
-
-<!-- =========================
-     FOOTER
-========================= -->
 
 <footer>
 
@@ -546,16 +497,8 @@ footer strong {
 
 <script>
 
-/* =====================================================
-   CONFIGURATION DE LA LANGUE
-===================================================== */
-
 let lang = "fr";
 
-
-/* =====================================================
-   CONTENU DES COURS
-===================================================== */
 
 const lessons = {
 
@@ -563,12 +506,10 @@ const lessons = {
 
         fr: {
             title: "Mathématiques",
-
             text: [
                 "Les mathématiques permettent de résoudre des problèmes grâce aux nombres, aux calculs et au raisonnement.",
                 "Elles sont utilisées dans la vie quotidienne, les sciences et les métiers techniques."
             ],
-
             points: [
                 "Nombres et opérations",
                 "Fractions",
@@ -580,12 +521,10 @@ const lessons = {
 
         en: {
             title: "Mathematics",
-
             text: [
                 "Mathematics helps us solve problems using numbers, calculations and reasoning.",
                 "It is used in everyday life, science and technical professions."
             ],
-
             points: [
                 "Numbers and operations",
                 "Fractions",
@@ -594,7 +533,6 @@ const lessons = {
                 "Percentages"
             ]
         }
-
     },
 
 
@@ -602,12 +540,10 @@ const lessons = {
 
         fr: {
             title: "Technique",
-
             text: [
                 "Les études techniques développent les connaissances nécessaires pour comprendre, installer, utiliser et réparer différents systèmes.",
                 "Elles sont particulièrement importantes dans les métiers de l'électricité, de l'électronique et de la maintenance."
             ],
-
             points: [
                 "Électricité",
                 "Électronique",
@@ -619,12 +555,10 @@ const lessons = {
 
         en: {
             title: "Technical Studies",
-
             text: [
                 "Technical studies develop the knowledge needed to understand, install, use and repair different systems.",
                 "They are especially important in electricity, electronics and maintenance."
             ],
-
             points: [
                 "Electricity",
                 "Electronics",
@@ -633,7 +567,6 @@ const lessons = {
                 "Workplace safety"
             ]
         }
-
     },
 
 
@@ -641,12 +574,10 @@ const lessons = {
 
         fr: {
             title: "Anglais",
-
             text: [
                 "L'anglais est une langue internationale utilisée dans les études, le travail et la communication.",
                 "Apprendre l'anglais permet d'améliorer sa compréhension et son expression."
             ],
-
             points: [
                 "Vocabulaire",
                 "Grammaire",
@@ -658,12 +589,10 @@ const lessons = {
 
         en: {
             title: "English",
-
             text: [
                 "English is an international language used in education, work and communication.",
                 "Learning English improves communication and understanding."
             ],
-
             points: [
                 "Vocabulary",
                 "Grammar",
@@ -672,7 +601,6 @@ const lessons = {
                 "Comprehension"
             ]
         }
-
     },
 
 
@@ -680,12 +608,10 @@ const lessons = {
 
         fr: {
             title: "Français",
-
             text: [
                 "Le français permet de communiquer clairement à l'oral et à l'écrit.",
                 "Sa maîtrise repose notamment sur la grammaire, la conjugaison, l'orthographe et le vocabulaire."
             ],
-
             points: [
                 "Grammaire",
                 "Conjugaison",
@@ -697,12 +623,10 @@ const lessons = {
 
         en: {
             title: "French",
-
             text: [
                 "French helps people communicate clearly in spoken and written language.",
                 "Learning French includes grammar, conjugation, spelling and vocabulary."
             ],
-
             points: [
                 "Grammar",
                 "Conjugation",
@@ -711,7 +635,6 @@ const lessons = {
                 "Written expression"
             ]
         }
-
     },
 
 
@@ -719,12 +642,10 @@ const lessons = {
 
         fr: {
             title: "Histoire",
-
             text: [
                 "L'histoire étudie les événements du passé et leur influence sur le monde actuel.",
                 "L'histoire du Cameroun permet de comprendre les grandes étapes de la construction du pays."
             ],
-
             points: [
                 "Les peuples du Cameroun",
                 "La colonisation",
@@ -736,12 +657,10 @@ const lessons = {
 
         en: {
             title: "History",
-
             text: [
                 "History studies events from the past and their influence on the present world.",
                 "The history of Cameroon helps us understand the major stages in the development of the country."
             ],
-
             points: [
                 "Peoples of Cameroon",
                 "Colonization",
@@ -750,7 +669,6 @@ const lessons = {
                 "Modern Cameroon"
             ]
         }
-
     },
 
 
@@ -758,12 +676,10 @@ const lessons = {
 
         fr: {
             title: "Entrepreneuriat",
-
             text: [
                 "L'entrepreneuriat consiste à créer et développer une activité afin de répondre à un besoin.",
                 "L'entrepreneur doit être capable d'identifier une opportunité et de prendre des décisions."
             ],
-
             points: [
                 "Idée d'entreprise",
                 "Business plan",
@@ -775,12 +691,10 @@ const lessons = {
 
         en: {
             title: "Entrepreneurship",
-
             text: [
                 "Entrepreneurship involves creating and developing an activity to meet a need.",
                 "An entrepreneur must identify opportunities and make decisions."
             ],
-
             points: [
                 "Business idea",
                 "Business plan",
@@ -789,7 +703,6 @@ const lessons = {
                 "Innovation"
             ]
         }
-
     },
 
 
@@ -797,12 +710,10 @@ const lessons = {
 
         fr: {
             title: "Gouvernement",
-
             text: [
                 "Le gouvernement participe à la direction de l'État et à la mise en œuvre des politiques publiques.",
                 "La citoyenneté permet à chaque personne de comprendre ses droits et ses responsabilités."
             ],
-
             points: [
                 "État",
                 "Institutions",
@@ -814,12 +725,10 @@ const lessons = {
 
         en: {
             title: "Government",
-
             text: [
                 "The government participates in directing the state and implementing public policies.",
                 "Citizenship helps people understand their rights and responsibilities."
             ],
-
             points: [
                 "State",
                 "Institutions",
@@ -828,7 +737,6 @@ const lessons = {
                 "Administration"
             ]
         }
-
     },
 
 
@@ -836,12 +744,10 @@ const lessons = {
 
         fr: {
             title: "Informatique",
-
             text: [
                 "L'informatique concerne le traitement automatique de l'information à l'aide des ordinateurs et des logiciels.",
-                "Elle est aujourd'hui présente dans l'éducation, les entreprises, les communications et de nombreux métiers."
+                "Elle est présente dans l'éducation, les entreprises, les communications et de nombreux métiers."
             ],
-
             points: [
                 "Ordinateurs",
                 "Logiciels",
@@ -853,12 +759,10 @@ const lessons = {
 
         en: {
             title: "Computer Science",
-
             text: [
                 "Computer science deals with the automatic processing of information using computers and software.",
                 "It is used in education, businesses, communication and many professions."
             ],
-
             points: [
                 "Computers",
                 "Software",
@@ -867,25 +771,25 @@ const lessons = {
                 "Cybersecurity"
             ]
         }
-
     }
 
 };
 
 
-/* =====================================================
+/* ==============================
    OUVRIR UN COURS
-===================================================== */
+============================== */
 
 function openLesson(id) {
 
     const lesson = lessons[id];
 
     if (!lesson || !lesson[lang]) {
+
         alert(
             lang === "fr"
-            ? "Ce cours n'est pas encore disponible."
-            : "This course is not available yet."
+                ? "Ce cours n'est pas encore disponible."
+                : "This course is not available yet."
         );
 
         return;
@@ -893,15 +797,22 @@ function openLesson(id) {
 
     const currentLesson = lesson[lang];
 
+    const panel = document.getElementById("lessonPanel");
     const title = document.getElementById("lessonTitle");
     const body = document.getElementById("lessonBody");
-    const panel = document.getElementById("lessonPanel");
+
+    if (!panel || !title || !body) {
+
+        alert("Erreur : panneau du cours introuvable.");
+
+        return;
+    }
 
     title.textContent = currentLesson.title;
 
     body.innerHTML = "";
 
-    currentLesson.text.forEach(paragraph => {
+    currentLesson.text.forEach(function(paragraph) {
 
         const p = document.createElement("p");
 
@@ -916,15 +827,15 @@ function openLesson(id) {
 
     heading.textContent =
         lang === "fr"
-        ? "Points importants"
-        : "Key points";
+            ? "Points importants"
+            : "Key points";
 
     body.appendChild(heading);
 
 
     const list = document.createElement("ul");
 
-    currentLesson.points.forEach(point => {
+    currentLesson.points.forEach(function(point) {
 
         const li = document.createElement("li");
 
@@ -940,4 +851,216 @@ function openLesson(id) {
     panel.style.display = "block";
 
 
-    panel.sc
+    setTimeout(function() {
+
+        panel.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }, 50);
+
+}
+
+
+/* ==============================
+   FERMER LE COURS
+============================== */
+
+function closeLesson() {
+
+    const panel = document.getElementById("lessonPanel");
+
+    if (panel) {
+
+        panel.style.display = "none";
+
+    }
+
+}
+
+
+/* ==============================
+   CHANGEMENT DE LANGUE
+============================== */
+
+function changeLanguage(newLang) {
+
+    lang = newLang;
+
+    if (lang === "fr") {
+
+        document.documentElement.lang = "fr";
+
+        document.getElementById("pageTitle").textContent =
+            "Nos cours";
+
+        document.getElementById("pageDescription").textContent =
+            "Découvre nos cours, apprends à ton rythme et développe tes compétences.";
+
+        document.getElementById("searchInput").placeholder =
+            "🔎 Rechercher une matière...";
+
+    } else {
+
+        document.documentElement.lang = "en";
+
+        document.getElementById("pageTitle").textContent =
+            "Our Courses";
+
+        document.getElementById("pageDescription").textContent =
+            "Discover our courses, learn at your own pace and develop your skills.";
+
+        document.getElementById("searchInput").placeholder =
+            "🔎 Search for a subject...";
+
+    }
+
+    /*
+     * Mettre à jour les textes des cartes
+     */
+    const cards = document.querySelectorAll(".course-card");
+
+    cards.forEach(function(card) {
+
+        const title = card.querySelector("h2");
+        const description = card.querySelector("p");
+        const button = card.querySelector(".course-btn");
+
+        if (!title || !description || !button) return;
+
+        const courseId =
+            button.getAttribute("onclick")
+                .match(/openLesson\('([^']+)'\)/);
+
+        if (!courseId) return;
+
+        const id = courseId[1];
+
+        if (!lessons[id] || !lessons[id][lang]) return;
+
+        const course = lessons[id][lang];
+
+        title.textContent = course.title;
+
+        if (lang === "fr") {
+
+            const descriptions = {
+                math: "Développe tes compétences en calcul et en raisonnement.",
+                technique: "Découvre les bases des sciences et métiers techniques.",
+                anglais: "Améliore ton vocabulaire, ta grammaire et ta communication.",
+                francais: "Travaille la grammaire, la conjugaison et l'expression.",
+                histoire: "Découvre les événements importants du passé.",
+                entrepreneuriat: "Apprends les bases de la création et de la gestion d'une activité.",
+                gouvernement: "Comprends les institutions, l'État et la citoyenneté.",
+                informatique: "Découvre les ordinateurs, les logiciels et la programmation."
+            };
+
+            description.textContent = descriptions[id] || "";
+
+            button.textContent = "Voir le cours →";
+
+        } else {
+
+            const descriptions = {
+                math: "Develop your skills in calculation and reasoning.",
+                technique: "Discover the basics of technical sciences and professions.",
+                anglais: "Improve your vocabulary, grammar and communication.",
+                francais: "Work on grammar, conjugation and expression.",
+                histoire: "Discover important events from the past.",
+                entrepreneuriat: "Learn the basics of creating and managing a business.",
+                gouvernement: "Understand institutions, the state and citizenship.",
+                informatique: "Discover computers, software and programming."
+            };
+
+            description.textContent = descriptions[id] || "";
+
+            button.textContent = "View course →";
+
+        }
+
+    });
+
+
+    /*
+     * Si un cours est déjà ouvert,
+     * le mettre automatiquement dans la nouvelle langue.
+     */
+    const panel = document.getElementById("lessonPanel");
+
+    if (panel && panel.style.display === "block") {
+
+        const currentTitle = document.getElementById("lessonTitle");
+
+        if (currentTitle) {
+
+            const openedCourse = Object.keys(lessons).find(function(id) {
+
+                return lessons[id][lang] &&
+                       lessons[id][lang].title === currentTitle.textContent;
+
+            });
+
+            if (openedCourse) {
+                openLesson(openedCourse);
+            }
+
+        }
+
+    }
+
+}
+
+
+/* ==============================
+   RECHERCHE DES COURS
+============================== */
+
+function searchCourses() {
+
+    const input = document.getElementById("searchInput");
+
+    if (!input) return;
+
+    const search = input.value
+        .toLowerCase()
+        .trim();
+
+    const cards = document.querySelectorAll(".course-card");
+
+    cards.forEach(function(card) {
+
+        const text =
+            (card.dataset.search || "")
+            .toLowerCase();
+
+        if (text.includes(search)) {
+
+            card.style.display = "";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+/* ==============================
+   INITIALISATION
+============================== */
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    changeLanguage("fr");
+
+});
+
+
+</script>
+
+</body>
+</html>
