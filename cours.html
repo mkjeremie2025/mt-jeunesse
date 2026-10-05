@@ -2,868 +2,556 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>MT Jeunesse - Cours</title>
 
 <style>
-*{
-    box-sizing:border-box;
-}
-
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#f4f7fb;
-    color:#222;
-}
-
-header{
-    background:linear-gradient(135deg,#0066ff,#673ab7);
-    color:white;
-    text-align:center;
-    padding:30px 15px;
-}
-
-header h1{
-    margin:0 0 8px;
-    font-size:30px;
-}
-
-header p{
-    margin:0;
-}
-
-.top{
-    max-width:1000px;
-    margin:20px auto;
-    padding:0 15px;
-    display:flex;
-    gap:10px;
-}
-
-#search{
-    flex:1;
-    padding:14px;
-    border:1px solid #ddd;
-    border-radius:10px;
-    font-size:16px;
-}
-
-select{
-    padding:12px;
-    border:1px solid #ddd;
-    border-radius:10px;
-    background:white;
-}
-
-.courses{
-    max-width:1000px;
-    margin:auto;
-    padding:0 15px 30px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:18px;
-}
-
-.card{
-    background:white;
-    border-radius:16px;
-    padding:22px;
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
-    transition:.2s;
-}
-
-.card:hover{
-    transform:translateY(-3px);
-}
-
-.card h2{
-    margin-top:0;
-    font-size:21px;
-}
-
-.card p{
-    color:#666;
-    min-height:45px;
-}
-
-.btn{
-    width:100%;
-    border:0;
-    padding:12px;
-    border-radius:10px;
-    background:#0066ff;
-    color:white;
-    font-size:15px;
-    cursor:pointer;
-}
-
-.btn:hover{
-    background:#004dcc;
-}
-
-/* COURS */
-
-#lesson{
-    display:none;
-    max-width:900px;
-    margin:10px auto 40px;
-    padding:0 15px;
-}
-
-.lesson-box{
-    background:white;
-    border-radius:16px;
-    padding:25px;
-    box-shadow:0 5px 20px rgba(0,0,0,.1);
-}
-
-.lesson-box h2{
-    color:#0066ff;
-}
-
-.section{
-    margin:20px 0;
-    padding:18px;
-    background:#f5f8ff;
-    border-left:4px solid #0066ff;
-    border-radius:8px;
-}
-
-.exercise{
-    background:#fff8e1;
-    border-left:4px solid #ff9800;
-}
-
-.exercise button{
-    background:#ff9800;
-    color:white;
-    border:0;
-    padding:10px 15px;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-.answer{
-    margin-top:10px;
-    font-weight:bold;
-}
-
-.close{
-    background:#222;
-    color:white;
-    border:0;
-    padding:10px 16px;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-footer{
-    text-align:center;
-    background:#111;
-    color:white;
-    padding:20px;
-}
-
-@media(max-width:600px){
-    .top{
-        flex-direction:column;
-    }
-
-    header h1{
-        font-size:25px;
-    }
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#222}
+header{background:linear-gradient(135deg,#0757c8,#00a6ff);color:white;text-align:center;padding:32px 15px}
+header h1{margin:0;font-size:32px}
+main{max-width:1100px;margin:auto;padding:20px}
+.box,.card{background:white;border-radius:14px;padding:20px;box-shadow:0 3px 15px #ddd}
+.box{margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card h3{color:#0757c8;margin-top:0}
+button,select,input{font:inherit}
+button{background:#0757c8;color:white;border:0;border-radius:8px;padding:11px 15px;cursor:pointer}
+button:hover{background:#043d91}
+input,select{padding:12px;border:1px solid #ccc;border-radius:8px}
+input{width:100%;margin:12px 0}
+.course{display:none}
+.lesson{background:#f7f9fc;padding:18px;border-radius:10px;margin:15px 0}
+.formula{background:#eaf2ff;padding:15px;border-radius:10px;font-size:20px;font-weight:bold}
+.example{background:#eef9f0;padding:15px;border-radius:10px}
+.exercise{background:#fff7df;padding:18px;border-radius:10px;margin-top:15px}
+.answer{color:#168238;font-weight:bold}
+.diagram{font-family:monospace;background:#111;color:#fff;padding:15px;border-radius:10px;overflow:auto}
+footer{background:#111;color:white;text-align:center;padding:25px;margin-top:30px}
+.close{float:right;background:#e53935}
+.small{color:#666}
 </style>
 </head>
 
 <body>
 
 <header>
-    <h1>📚 MT Jeunesse</h1>
-    <p id="subtitle">Apprendre aujourd'hui pour construire demain.</p>
+<h1>📚 MT Jeunesse</h1>
+<p>Apprendre aujourd'hui pour construire demain.</p>
 </header>
 
-<div class="top">
+<main>
 
-    <input
-        type="text"
-        id="search"
-        placeholder="🔎 Rechercher une matière..."
-        oninput="searchCourses()"
-    >
+<section class="box">
+<h2>👋 Bienvenue sur MT Jeunesse</h2>
 
-    <select onchange="changeLanguage(this.value)">
-        <option value="fr">🇫🇷 Français</option>
-        <option value="en">🇬🇧 English</option>
-    </select>
+<p>
+MT Jeunesse est une plateforme destinée aux jeunes pour apprendre,
+réviser et s'exercer facilement.
+</p>
+
+<h3>📌 Comment utiliser les cours ?</h3>
+
+<p>
+<strong>1.</strong> Choisis une matière.<br>
+<strong>2.</strong> Choisis un chapitre.<br>
+<strong>3.</strong> Lis la leçon.<br>
+<strong>4.</strong> Regarde les exemples et les formules.<br>
+<strong>5.</strong> Observe le schéma lorsqu'il existe.<br>
+<strong>6.</strong> Fais l'exercice.<br>
+<strong>7.</strong> Vérifie ta réponse.
+</p>
+</section>
+
+<div class="box">
+
+<select id="langue" onchange="changerLangue()">
+<option value="fr">🇫🇷 Français</option>
+<option value="en">🇬🇧 English</option>
+</select>
+
+<input
+id="recherche"
+placeholder="🔎 Rechercher une matière ou un cours..."
+oninput="afficherMatieres()">
 
 </div>
 
-<main class="courses" id="courses">
+<h2>📚 Matières</h2>
 
-    <!-- MATHS -->
-    <div class="card" data-name="mathématiques mathematics">
-        <h2>📐 <span>Mathématiques</span></h2>
-        <p>Calcul, algèbre et raisonnement.</p>
-        <button class="btn" onclick="openLesson('math')">
-            Voir le cours →
-        </button>
-    </div>
+<div id="matieres" class="grid"></div>
 
-    <!-- TECHNIQUE -->
-    <div class="card" data-name="technique technical electricity electronics">
-        <h2>⚡ <span>Technique</span></h2>
-        <p>Électricité, électronique et technologie.</p>
-        <button class="btn" onclick="openLesson('technique')">
-            Voir le cours →
-        </button>
-    </div>
+<section id="cours" class="box course">
 
-    <!-- ANGLAIS -->
-    <div class="card" data-name="anglais english">
-        <h2>🇬🇧 <span>Anglais</span></h2>
-        <p>Vocabulaire, grammaire et communication.</p>
-        <button class="btn" onclick="openLesson('anglais')">
-            Voir le cours →
-        </button>
-    </div>
+<button class="close" onclick="fermerCours()">✕ Fermer</button>
 
-    <!-- FRANCAIS -->
-    <div class="card" data-name="français french grammar">
-        <h2>🇫🇷 <span>Français</span></h2>
-        <p>Grammaire, conjugaison et orthographe.</p>
-        <button class="btn" onclick="openLesson('francais')">
-            Voir le cours →
-        </button>
-    </div>
+<h2 id="titreCours"></h2>
 
-    <!-- HISTOIRE -->
-    <div class="card" data-name="histoire history">
-        <h2>🏛️ <span>Histoire</span></h2>
-        <p>Événements historiques et histoire du Cameroun.</p>
-        <button class="btn" onclick="openLesson('histoire')">
-            Voir le cours →
-        </button>
-    </div>
-
-    <!-- ENTREPRENEURIAT -->
-    <div class="card" data-name="entrepreneuriat entrepreneurship business">
-        <h2>💼 <span>Entrepreneuriat</span></h2>
-        <p>Idées, projets et création d'activité.</p>
-        <button class="btn" onclick="openLesson('entrepreneuriat')">
-            Voir le cours →
-        </button>
-    </div>
-
-    <!-- GOUVERNEMENT -->
-    <div class="card" data-name="gouvernement government citizenship">
-        <h2>🏛️ <span>Gouvernement</span></h2>
-        <p>État, institutions, droits et devoirs.</p>
-        <button class="btn" onclick="openLesson('gouvernement')">
-            Voir le cours →
-        </button>
-    </div>
-
-    <!-- INFORMATIQUE -->
-    <div class="card" data-name="informatique computer science coding">
-        <h2>💻 <span>Informatique</span></h2>
-        <p>Ordinateurs, Internet et programmation.</p>
-        <button class="btn" onclick="openLesson('informatique')">
-            Voir le cours →
-        </button>
-    </div>
-
-</main>
-
-
-<!-- ZONE DU COURS -->
-
-<section id="lesson">
-
-    <div class="lesson-box">
-
-        <button class="close" onclick="closeLesson()">
-            ✕ Fermer
-        </button>
-
-        <h2 id="lessonTitle"></h2>
-
-        <div id="lessonContent"></div>
-
-    </div>
+<div id="contenuCours"></div>
 
 </section>
 
+</main>
 
 <footer>
-    <p>MT Jeunesse © 2026</p>
-    <p id="footerText">
-        Apprendre aujourd'hui pour construire demain.
-    </p>
+<strong>MT Jeunesse © 2026</strong>
+<p>Apprendre aujourd'hui pour construire demain.</p>
 </footer>
 
 
 <script>
 
 /* =========================
-   COURS
+   PROGRAMME MT JEUNESSE
 ========================= */
 
-const courses = {
+const programme={
 
-math: {
-fr: {
-title:"📐 Mathématiques",
-content:`
-<div class="section">
-<h3>📘 Leçon</h3>
-<p>Les mathématiques permettent de résoudre des problèmes à l'aide des nombres, des calculs et du raisonnement.</p>
-</div>
+math:{
+nom:"📐 Mathématiques",
+description:"Calcul, algèbre, géométrie, statistiques et problèmes.",
+chapitres:[
+["Nombres et calculs",
+"Les nombres permettent de compter, comparer et effectuer des opérations.",
+"Exemple : 25 + 15 = 40.",
+"12 × 5 = ?","60"],
+["Fractions",
+"Une fraction représente une partie d'un tout. Elle s'écrit a/b.",
+"Exemple : 1/2 signifie une partie sur deux.",
+"1/2 + 1/2 = ?","1"],
+["Équations",
+"Une équation contient une inconnue qu'il faut déterminer.",
+"Exemple : x + 5 = 12 donc x = 7.",
+"x + 8 = 15. Trouve x.","7"],
+["Géométrie",
+"La géométrie étudie les formes, les longueurs, les angles et les surfaces.",
+"Rectangle : Aire = longueur × largeur.",
+"Rectangle de 5 cm sur 3 cm. Aire = ?","15 cm²"],
+["Statistiques",
+"Les statistiques permettent d'organiser et d'analyser des données.",
+"Exemple : 2, 4, 6. La moyenne est 4.",
+"Moyenne de 2, 4 et 6 ?","4"]
+]},
 
-<div class="section">
-<h3>➕ Exemple</h3>
-<p>2 + 3 = 5</p>
-<p>4 × 5 = 20</p>
-<p>20 ÷ 4 = 5</p>
-</div>
+technique:{
+nom:"⚡ Technique / Électricité",
+description:"Électricité, électronique, circuits et mesures.",
+chapitres:[
+["Courant électrique",
+"Le courant électrique correspond au déplacement des charges électriques dans un circuit.",
+"Un circuit simple peut contenir une source, des conducteurs et une lampe.",
+"Quelle est l'unité du courant ?","Ampère (A)"],
+["Tension électrique",
+"La tension représente une différence de potentiel entre deux points.",
+"Elle se mesure avec un voltmètre.",
+"Quelle est l'unité de la tension ?","Volt (V)"],
+["Loi d'Ohm",
+"La loi d'Ohm relie la tension, la résistance et le courant.",
+"U = R × I",
+"R = 10 Ω et I = 2 A. Trouve U.","20 V"],
+["Puissance électrique",
+"La puissance indique la quantité d'énergie électrique utilisée par unité de temps.",
+"P = U × I",
+"U = 12 V et I = 2 A. Trouve P.","24 W"],
+["Circuit électrique",
+"Un circuit fermé permet au courant de circuler.",
+`+ ─── 💡 ─── −
+|             |
+└─────────────┘`,
+"Que se passe-t-il si le circuit est ouvert ?","Le courant ne circule pas."]
+]},
 
-<div class="section exercise">
-<h3>✏️ Exercice</h3>
-<p>Combien font 7 × 6 ?</p>
-<button onclick="answer('math1','42')">Voir la réponse</button>
-<p id="math1" class="answer"></p>
-</div>
-`
-},
+anglais:{
+nom:"🇬🇧 Anglais",
+description:"Grammar, vocabulary, verbs, reading and communication.",
+chapitres:[
+["Verb To Be",
+"Le verbe To Be signifie principalement être.",
+"I am, You are, He is, She is, We are, They are.",
+"Complete: She ___ happy.","is"],
+["Present Simple",
+"Le présent simple sert notamment à parler des habitudes et des faits.",
+"I go to school every day.",
+"Complete: He ___ football.","plays"],
+["Past Simple",
+"Le past simple permet de parler d'une action passée.",
+"I visited my friend yesterday.",
+"Past of 'go' ?","went"],
+["Vocabulary",
+"Le vocabulaire permet de comprendre et de construire des phrases.",
+"School = école, Book = livre, Teacher = professeur.",
+"Translate : school.","école"],
+["Communication",
+"Une bonne communication utilise des phrases claires et adaptées.",
+"Example: Good morning. How are you?",
+"How do you answer 'How are you?'","I am fine."]
+]},
 
-en: {
-title:"📐 Mathematics",
-content:`
-<div class="section">
-<h3>📘 Lesson</h3>
-<p>Mathematics helps us solve problems using numbers, calculations and reasoning.</p>
-</div>
+francais:{
+nom:"🇫🇷 Français",
+description:"Grammaire, conjugaison, orthographe et expression.",
+chapitres:[
+["Nature des mots",
+"Les mots peuvent être des noms, verbes, adjectifs, pronoms, déterminants, etc.",
+"Exemple : Le jeune garçon court. garçon = nom.",
+"Dans 'Paul mange', quel est le verbe ?","mange"],
+["Conjugaison",
+"Le verbe change selon la personne et le temps.",
+"Présent de être : je suis, tu es, il est.",
+"Conjugue avoir avec nous.","nous avons"],
+["Accord",
+"Les mots doivent respecter les règles d'accord.",
+"Une petite fille / des petites filles.",
+"Complète : des fille___ heureuses.","s"],
+["Orthographe",
+"L'orthographe permet d'écrire correctement les mots.",
+"Exemple : maison, école, travail.",
+"Écris correctement : 'ecole'.","école"],
+["Rédaction",
+"Une rédaction organise les idées dans un texte clair.",
+"Introduction → développement → conclusion.",
+"Que faut-il faire avant d'écrire ?","Organiser ses idées."]
+]},
 
-<div class="section">
-<h3>➕ Example</h3>
-<p>2 + 3 = 5</p>
-<p>4 × 5 = 20</p>
-</div>
+histoire:{
+nom:"📖 Histoire",
+description:"Histoire du Cameroun, de l'Afrique et du monde.",
+chapitres:[
+["Qu'est-ce que l'histoire ?",
+"L'histoire étudie les événements du passé et leur influence sur le présent.",
+"Les sources historiques peuvent être écrites, orales ou matérielles.",
+"Que permet d'étudier l'histoire ?","Le passé"],
+["Afrique",
+"L'Afrique possède une histoire riche avec de nombreux royaumes, peuples et civilisations.",
+"Exemple : les royaumes africains ont développé des systèmes politiques et commerciaux.",
+"Pourquoi étudier l'histoire africaine ?","Pour comprendre son passé."],
+["Cameroun",
+"Le Cameroun possède une histoire marquée par différentes populations, royaumes et périodes coloniales.",
+"Le Cameroun devient indépendant en 1960.",
+"En quelle année le Cameroun devient-il indépendant ?","1960"],
+["Monde",
+"L'histoire mondiale permet de comprendre les grands changements politiques, sociaux et économiques.",
+"Les guerres et les révolutions ont transformé de nombreuses sociétés.",
+"Pourquoi étudier l'histoire mondiale ?","Pour comprendre les changements du monde."]
+]},
 
-<div class="section exercise">
-<h3>✏️ Exercise</h3>
-<p>What is 7 × 6?</p>
-<button onclick="answer('math1','42')">Show answer</button>
-<p id="math1" class="answer"></p>
-</div>
-`
-}
-},
+geographie:{
+nom:"🌍 Géographie",
+description:"Relief, climat, population, cartes et environnement.",
+chapitres:[
+["La Terre",
+"La Terre est notre planète. Elle possède des continents et des océans.",
+"Les continents comprennent l'Afrique, l'Europe, l'Asie, l'Amérique et l'Océanie.",
+"Sur quelle planète vivons-nous ?","La Terre"],
+["Climat",
+"Le climat décrit les conditions atmosphériques observées sur une longue période.",
+"Exemple : climat équatorial.",
+"Quel climat trouve-t-on dans certaines régions du Cameroun ?","Équatorial"],
+["Population",
+"La géographie étudie aussi la répartition des populations.",
+"Les populations sont plus ou moins concentrées selon les régions.",
+"Que signifie population ?","Ensemble des habitants d'un territoire."],
+["Cartographie",
+"Une carte représente un territoire de manière réduite.",
+"Une légende permet de comprendre les symboles d'une carte.",
+"À quoi sert une légende ?","À expliquer les symboles."]
+]},
 
+sciences:{
+nom:"🧪 Sciences",
+description:"Physique, chimie, biologie, corps humain et environnement.",
+chapitres:[
+["Matière",
+"La matière est tout ce qui possède une masse et occupe un espace.",
+"Elle peut être solide, liquide ou gazeuse.",
+"Donne un exemple de matière solide.","Une pierre"],
+["Corps humain",
+"Le corps humain possède plusieurs organes qui assurent différentes fonctions.",
+"Le cœur participe à la circulation du sang.",
+"Quel organe pompe le sang ?","Le cœur"],
+["Énergie",
+"L'énergie permet de produire des mouvements, de la chaleur, de la lumière ou d'autres effets.",
+"Exemples : énergie électrique, solaire et mécanique.",
+"Donne une source d'énergie renouvelable.","Le soleil"],
+["Environnement",
+"L'environnement comprend les éléments naturels et les êtres vivants qui nous entourent.",
+"Protéger l'environnement réduit la pollution.",
+"Donne une façon de protéger l'environnement.","Réduire la pollution."]
+]},
 
-technique: {
-fr: {
-title:"⚡ Technique",
-content:`
-<div class="section">
-<h3>📘 Électricité</h3>
-<p>L'électricité est une forme d'énergie utilisée pour alimenter de nombreux appareils.</p>
-</div>
+entrepreneuriat:{
+nom:"💼 Entrepreneuriat",
+description:"Idée, entreprise, client, budget et gestion.",
+chapitres:[
+["Idée d'entreprise",
+"Une entreprise peut commencer par une idée répondant à un besoin.",
+"Exemple : service de réparation de téléphones.",
+"Que doit résoudre une bonne idée ?","Un besoin"],
+["Client",
+"Le client achète un produit ou utilise un service.",
+"Comprendre les besoins du client aide l'entreprise.",
+"Qui achète un produit ?","Le client"],
+["Budget",
+"Un budget permet de prévoir les recettes et les dépenses.",
+"Recettes - dépenses = résultat.",
+"10000 FCFA de recettes et 6000 FCFA de dépenses. Résultat ?","4000 FCFA"],
+["Marketing",
+"Le marketing permet de faire connaître un produit ou un service.",
+"Exemple : publicité sur les réseaux sociaux.",
+"Pourquoi faire de la publicité ?","Pour faire connaître le produit ou service."]
+]},
 
-<div class="section">
-<h3>🔌 Composants</h3>
-<p>Une résistance limite le courant.</p>
-<p>Une diode laisse principalement passer le courant dans un seul sens.</p>
-<p>Un condensateur peut stocker une charge électrique.</p>
-</div>
+gouvernement:{
+nom:"🏛️ Gouvernement / Éducation civique",
+description:"Citoyenneté, droits, devoirs et institutions.",
+chapitres:[
+["Citoyen",
+"Un citoyen possède des droits et des devoirs.",
+"Respecter les lois fait partie des responsabilités civiques.",
+"Un citoyen possède quoi ?","Des droits et des devoirs."],
+["État",
+"L'État organise la vie publique d'un pays à travers ses institutions.",
+"Les institutions ont différentes responsabilités.",
+"Pourquoi existe-t-il des institutions ?","Pour organiser la vie publique."],
+["Droits",
+"Les droits protègent les personnes et permettent leur participation à la société.",
+"Exemple : droit à l'éducation.",
+"Donne un exemple de droit.","Le droit à l'éducation."],
+["Devoirs",
+"Les devoirs sont les responsabilités que chacun doit respecter.",
+"Respecter les autres et les lois fait partie de la vie citoyenne.",
+"Donne un devoir du citoyen.","Respecter les lois."]
+]},
 
-<div class="section exercise">
-<h3>✏️ Exercice</h3>
-<p>Quel composant limite le courant ?</p>
-<button onclick="answer('tech1','La résistance')">Voir la réponse</button>
-<p id="tech1" class="answer"></p>
-</div>
-`
-},
-
-en: {
-title:"⚡ Technical Studies",
-content:`
-<div class="section">
-<h3>📘 Electricity</h3>
-<p>Electricity is a form of energy used to power many devices.</p>
-</div>
-
-<div class="section">
-<h3>🔌 Components</h3>
-<p>A resistor limits current.</p>
-<p>A diode mainly allows current to flow in one direction.</p>
-<p>A capacitor can store electrical charge.</p>
-</div>
-
-<div class="section exercise">
-<h3>✏️ Exercise</h3>
-<p>Which component limits current?</p>
-<button onclick="answer('tech1','The resistor')">Show answer</button>
-<p id="tech1" class="answer"></p>
-</div>
-`
-}
-},
-
-
-anglais: {
-fr: {
-title:"🇬🇧 Anglais",
-content:`
-<div class="section">
-<h3>📘 Vocabulaire</h3>
-<p>Hello = Bonjour</p>
-<p>Good morning = Bonjour</p>
-<p>Thank you = Merci</p>
-<p>School = École</p>
-</div>
-
-<div class="section">
-<h3>🗣️ Phrase</h3>
-<p>I am a student. = Je suis un élève.</p>
-</div>
-
-<div class="section exercise">
-<h3>✏️ Exercice</h3>
-<p>Que signifie "Thank you" ?</p>
-<button onclick="answer('eng1','Merci')">Voir la réponse</button>
-<p id="eng1" class="answer"></p>
-</div>
-`
-},
-
-en: {
-title:"🇬🇧 English",
-content:`
-<div class="section">
-<h3>📘 Vocabulary</h3>
-<p>Hello = Bonjour</p>
-<p>Thank you = Merci</p>
-<p>School = École</p>
-</div>
-
-<div class="section exercise">
-<h3>✏️ Exercise</h3>
-<p>What does "Thank you" mean?</p>
-<button onclick="answer('eng1','Merci')">Show answer</button>
-<p id="eng1" class="answer"></p>
-</div>
-`
-}
-},
-
-
-francais: {
-fr: {
-title:"🇫🇷 Français",
-content:`
-<div class="section">
-<h3>📘 Grammaire</h3>
-<p>Une phrase commence généralement par une majuscule et se termine par un signe de ponctuation.</p>
-</div>
-
-<div class="section">
-<h3>📝 Conjugaison</h3>
-<p>Je suis.</p>
-<p>Tu es.</p>
-<p>Il est.</p>
-<p>Nous sommes.</p>
-</div>
-
-<div class="section exercise">
-<h3>✏️ Exercice</h3>
-<p>Complète : Nous ___ à l'école.</p>
-<button onclick="answer('fra1','sommes')">Voir la réponse</button>
-<p id="fra1" class="answer"></p>
-</div>
-`
-},
-
-en: {
-title:"🇫🇷 French",
-content:`
-<div class="section">
-<h3>📘 Grammar</h3>
-<p>A sentence usually starts with a capital letter and ends with punctuation.</p>
-</div>
-
-<div class="section">
-<h3>📝 Conjugation</h3>
-<p>Je suis = I am</p>
-<p>Nous sommes = We are</p>
-</div>
-
-<div class="section exercise">
-<h3>✏️ Exercise</h3>
-<p>Complete: Nous ___ à l'école.</p>
-<button onclick="answer('fra1','sommes')">Show answer</button>
-<p id="fra1" class="answer"></p>
-</div>
-`
-}
-},
-
-
-histoire: {
-fr: {
-title:"🏛️ Histoire",
-content:`
-<div class="section">
-<h3>📘 Définition</h3>
-<p>L'histoire étudie les événements du passé et leur influence sur le présent.</p>
-</div>
-
-<div class="section">
-<h3>🌍 Cameroun</h3>
-<p>Le Cameroun est un pays d'Afrique centrale.</p>
-</div>
-
-<div class="section exercise">
-<h3>✏️ Exercice</h3>
-<p>Dans quelle région du monde se trouve le Cameroun ?</p>
-<button onclick="answer('hist1','Afrique centrale')">Voir la réponse</button>
-<p id="hist1" class="answer"></p>
-</div>
-`
-},
-
-en: {
-title:"🏛️ History",
-content:`
-<div class="section">
-<h3>📘 Definition</h3>
-<p>History studies events from the past and their influence on the present.</p>
-</div>
-
-<div class="section">
-<h3>🌍 Cameroon</h3>
-<p>Cameroon is a country in Central Africa.</p>
-</div>
-
-<div class="section exercise">
-<h3>✏️ Exercise</h3>
-<p>Where is Cameroon located?</p>
-<button onclick="answer('hist1','Central Africa')">Show answer</button>
-<p id="hist1" class="answer"></p>
-</div>
-`
-}
-},
-
-
-entrepreneuriat: {
-fr: {
-title:"💼 Entrepreneuriat",
-content:`
-<div class="section">
-<h3>📘 Définition</h3>
-<p>L'entrepreneuriat consiste à créer et développer une activité à partir d'une idée.</p>
-</div>
-
-<div class="section">
-<h3>💡 Exemple</h3>
-<p>Un jeune peut transformer une compétence en petit service ou en entreprise.</p>
-</div>
-
-<div class="section exercise">
-<h3>✏️ Exercice</h3>
-<p>Qu'est-ce qu'une idée d'entreprise ?</p>
-<button onclick="answer('ent1','Une idée permettant de créer une activité')">Voir la réponse</button>
-<p id="ent1" class="answer"></p>
-</div>
-`
-},
-
-en: {
-title:"💼 Entrepreneurship",
-content:`
-<div class="section">
-<h3>📘 Definition</h3>
-<p>Entrepreneurship means creating and developing an activity from an idea.</p>
-</div>
-
-<div class="section exercise">
-<h3>✏️ Exercise</h3>
-<p>What is a business idea?</p>
-<button onclick="answer('ent1','An idea for creating an activity')">Show answer</button>
-<p id="ent1" class="answer"></p>
-</div>
-`
-}
-},
-
-
-gouvernement: {
-fr: {
-title:"🏛️ Gouvernement",
-content:`
-<div class="section">
-<h3>📘 Définition</h3>
-<p>Le gouvernement participe à la direction et à l'organisation de l'État.</p>
-</div>
-
-<div class="section">
-<h3>👥 Citoyenneté</h3>
-<p>Les citoyens ont des droits mais aussi des responsabilités.</p>
-</div>
-
-<div class="section exercise">
-<h3>✏️ Exercice</h3>
-<p>Que doivent respecter les citoyens ?</p>
-<button onclick="answer('gov1','Les lois')">Voir la réponse</button>
-<p id="gov1" class="answer"></p>
-</div>
-`
-},
-
-en: {
-title:"🏛️ Government",
-content:`
-<div class="section">
-<h3>📘 Definition</h3>
-<p>Government participates in directing and organizing the state.</p>
-</div>
-
-<div class="section">
-<h3>👥 Citizenship</h3>
-<p>Citizens have rights and responsibilities.</p>
-</div>
-
-<div class="section exercise">
-<h3>✏️ Exercise</h3>
-<p>What should citizens respect?</p>
-<button onclick="answer('gov1','The laws')">Show answer</button>
-<p id="gov1" class="answer"></p>
-</div>
-`
-}
-},
-
-
-informatique: {
-fr: {
-title:"💻 Informatique",
-content:`
-<div class="section">
-<h3>📘 Définition</h3>
-<p>L'informatique concerne le traitement de l'information à l'aide des ordinateurs et des programmes.</p>
-</div>
-
-<div class="section">
-<h3>🌐 Internet</h3>
-<p>Internet permet à de nombreux appareils de communiquer et d'échanger des informations.</p>
-</div>
-
-<div class="section">
-<h3>💻 Programmation</h3>
-<p>HTML structure une page web, CSS définit son apparence et JavaScript ajoute de l'interactivité.</p>
-</div>
-
-<div class="section exercise">
-<h3>✏️ Exercice</h3>
-<p>Quel langage ajoute de l'interactivité à une page web ?</p>
-<button onclick="answer('info1','JavaScript')">Voir la réponse</button>
-<p id="info1" class="answer"></p>
-</div>
-`
-},
-
-en: {
-title:"💻 Computer Science",
-content:`
-<div class="section">
-<h3>📘 Definition</h3>
-<p>Computer science deals with information processing using computers and programs.</p>
-</div>
-
-<div class="section">
-<h3>🌐 Internet</h3>
-<p>The Internet allows many devices to communicate and exchange information.</p>
-</div>
-
-<div class="section">
-<h3>💻 Programming</h3>
-<p>HTML structures a web page, CSS controls its appearance and JavaScript adds interactivity.</p>
-</div>
-
-<div class="section exercise">
-<h3>✏️ Exercise</h3>
-<p>Which language adds interactivity to a web page?</p>
-<button onclick="answer('info1','JavaScript')">Show answer</button>
-<p id="info1" class="answer"></p>
-</div>
-`
-}
-}
+informatique:{
+nom:"💻 Informatique",
+description:"Ordinateur, Internet, algorithmique et programmation.",
+chapitres:[
+["Ordinateur",
+"Un ordinateur est une machine qui traite et stocke des informations.",
+"Il possède notamment un processeur, une mémoire et des périphériques.",
+"Que traite un ordinateur ?","Des informations"],
+["Internet",
+"Internet est un réseau mondial permettant aux appareils de communiquer.",
+"Le Web est l'un des services accessibles grâce à Internet.",
+"Qu'est-ce qu'Internet ?","Un réseau mondial."],
+["Algorithmique",
+"Un algorithme est une suite d'instructions permettant de résoudre un problème.",
+"Exemple : étape 1 → saisir deux nombres → étape 2 → les additionner.",
+"À quoi sert un algorithme ?","À résoudre un problème."],
+["Programmation",
+"Programmer consiste à donner des instructions à un ordinateur dans un langage.",
+"HTML sert notamment à structurer des pages Web.",
+"Quel langage structure une page Web ?","HTML"],
+["Sécurité",
+"La sécurité informatique consiste à protéger les appareils, les comptes et les données.",
+"Un mot de passe doit rester secret.",
+"Pourquoi protéger son mot de passe ?","Pour protéger son compte."]
+]}
 
 };
 
 
 /* =========================
-   LANGUE
+   AFFICHAGE
 ========================= */
 
-let language = "fr";
+let langue="fr";
+let matiereActuelle="";
+let chapitreActuel=0;
 
+function afficherMatieres(){
 
-function openLesson(id){
+const recherche=document
+.getElementById("recherche")
+.value
+.toLowerCase();
 
-    const course = courses[id][language];
+const zone=document.getElementById("matieres");
 
-    document.getElementById("lessonTitle").textContent =
-        course.title;
+zone.innerHTML="";
 
-    document.getElementById("lessonContent").innerHTML =
-        course.content;
+for(const id in programme){
 
-    document.getElementById("lesson").style.display =
-        "block";
+const m=programme[id];
 
-    document.getElementById("lesson").scrollIntoView({
-        behavior:"smooth"
-    });
+if(
+m.nom.toLowerCase().includes(recherche) ||
+m.description.toLowerCase().includes(recherche)
+){
+
+zone.innerHTML+=`
+<div class="card">
+<h3>${m.nom}</h3>
+<p>${m.description}</p>
+<p class="small">${m.chapitres.length} chapitres disponibles</p>
+<button onclick="ouvrirMatiere('${id}')">
+Voir le cours →
+</button>
+</div>`;
 }
 
-
-function closeLesson(){
-
-    document.getElementById("lesson").style.display =
-        "none";
-
 }
-
-
-function answer(id,text){
-
-    document.getElementById(id).textContent =
-        "✅ " + text;
 
 }
 
 
 /* =========================
-   RECHERCHE
+   OUVRIR UNE MATIÈRE
 ========================= */
 
-function searchCourses(){
+function ouvrirMatiere(id){
 
-    const value =
-        document.getElementById("search")
-        .value
-        .toLowerCase();
+matiereActuelle=id;
 
-    document.querySelectorAll(".card").forEach(card => {
+const m=programme[id];
 
-        const name =
-            card.dataset.name.toLowerCase();
+document.getElementById("titreCours").textContent=m.nom;
 
-        card.style.display =
-            name.includes(value) ? "block" : "none";
+let html=`
+<h3>📚 Programme</h3>
+<p>${m.description}</p>
+`;
 
-    });
+m.chapitres.forEach((c,i)=>{
+
+html+=`
+<div class="lesson">
+<h3>${i+1}. ${c[0]}</h3>
+<button onclick="ouvrirChapitre(${i})">
+Commencer cette leçon →
+</button>
+</div>
+`;
+
+});
+
+document.getElementById("contenuCours").innerHTML=html;
+
+document.getElementById("cours").style.display="block";
+
+document.getElementById("cours").scrollIntoView({
+behavior:"smooth"
+});
 
 }
 
 
 /* =========================
-   CHANGEMENT DE LANGUE
+   OUVRIR LE CHAPITRE
 ========================= */
 
-function changeLanguage(lang){
+function ouvrirChapitre(i){
 
-    language = lang;
+chapitreActuel=i;
 
-    const cards =
-        document.querySelectorAll(".card");
+const c=programme[matiereActuelle].chapitres[i];
 
-    const titlesFR = [
-        "Mathématiques",
-        "Technique",
-        "Anglais",
-        "Français",
-        "Histoire",
-        "Entrepreneuriat",
-        "Gouvernement",
-        "Informatique"
-    ];
+document.getElementById("contenuCours").innerHTML=`
 
-    const titlesEN = [
-        "Mathematics",
-        "Technical Studies",
-        "English",
-        "French",
-        "History",
-        "Entrepreneurship",
-        "Government",
-        "Computer Science"
-    ];
+<button onclick="ouvrirMatiere('${matiereActuelle}')">
+← Retour au programme
+</button>
 
-    const descriptionsFR = [
-        "Calcul, algèbre et raisonnement.",
-        "Électricité, électronique et technologie.",
-        "Vocabulaire, grammaire et communication.",
-        "Grammaire, conjugaison et orthographe.",
-        "Événements historiques et histoire du Cameroun.",
-        "Idées, projets et création d'activité.",
-        "État, institutions, droits et devoirs.",
-        "Ordinateurs, Internet et programmation."
-    ];
+<div class="lesson">
 
-    const descriptionsEN = [
-        "Calculation, algebra and reasoning.",
-        "Electricity, electronics and technology.",
-        "Vocabulary, grammar and communication.",
-        "Grammar, conjugation and spelling.",
-        "Historical events and Cameroon history.",
-        "Ideas, projects and business creation.",
-        "State, institutions, rights and duties.",
-        "Computers, Internet and programming."
-    ];
+<h3>📖 Leçon</h3>
 
-    cards.forEach((card,index) => {
+<p>${c[1]}</p>
 
-        card.querySelector("h2 span").textContent =
-            lang === "fr"
-            ? titlesFR[index]
-            : titlesEN[index];
+<h3>💡 Exemple</h3>
 
-        card.querySelector("p").textContent =
-            lang === "fr"
-            ? descriptionsFR[index]
-            : descriptionsEN[index];
+<div class="example">
+${c[2]}
+</div>
 
-        card.querySelector(".btn").textContent =
-            lang === "fr"
-            ? "Voir le cours →"
-            : "View course →";
+<h3>📐 Formule / schéma</h3>
 
-    });
+<div class="formula">
+${matiereActuelle==="technique" && i===2
+?"U = R × I"
+:"À retenir : comprends la leçon avant de passer à l'exercice."}
+</div>
 
-    document.getElementById("subtitle").textContent =
-        lang === "fr"
-        ? "Apprendre aujourd'hui pour construire demain."
-        : "Learn today to build tomorrow.";
+${c[2].includes("──")
+?`<div class="diagram">${c[2]}</div>`:""}
 
-    document.getElementById("search").placeholder =
-        lang === "fr"
-        ? "🔎 Rechercher une matière..."
-        : "🔎 Search for a subject...";
+<div class="exercise">
 
-    document.getElementById("footerText").textContent =
-        lang === "fr"
-        ? "Apprendre aujourd'hui pour construire demain."
-        : "Learn today to build tomorrow.";
+<h3>✏️ Exercice</h3>
 
-    closeLesson();
+<p>${c[3]}</p>
+
+<button onclick="voirReponse()">
+Vérifier la réponse
+</button>
+
+<p id="reponse" class="answer"></p>
+
+</div>
+
+<br>
+
+<button onclick="prochainChapitre()">
+Leçon suivante →
+</button>
+
+</div>
+`;
+
 }
+
+
+function voirReponse(){
+
+const c=programme[matiereActuelle].chapitres[chapitreActuel];
+
+document.getElementById("reponse").textContent=
+"✅ Réponse : "+c[4];
+
+}
+
+
+function prochainChapitre(){
+
+const total=programme[matiereActuelle].chapitres.length;
+
+if(chapitreActuel+1<total){
+
+ouvrirChapitre(chapitreActuel+1);
+
+}else{
+
+alert("🎉 Bravo ! Tu as terminé cette matière.");
+
+}
+
+}
+
+
+function fermerCours(){
+
+document.getElementById("cours").style.display="none";
+
+}
+
+
+function changerLangue(){
+
+langue=document.getElementById("langue").value;
+
+alert(
+langue==="en"
+?"The English version is being prepared progressively."
+:"Version française sélectionnée."
+);
+
+}
+
+
+/* DÉMARRAGE */
+
+afficherMatieres();
 
 </script>
 
