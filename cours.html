@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MT Jeunesse - Cours</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#f4f7fb;color:#172033}
+header{background:#07111f;color:white;padding:20px;text-align:center}
+.logo{font-size:28px;font-weight:bold}
+.logo span{color:#4d8dff}
+.slogan{color:#aebbd0;margin-top:5px}
+nav{margin-top:18px}
+nav button{background:#10233b;color:white;border:1px solid #294463;padding:9px 12px;margin:4px;border-radius:7px;cursor:pointer}
+nav button:hover{background:#0b5cff}
+.language{margin-top:15px;background:#0b5cff;color:white;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:bold}
+.hero{background:linear-gradient(135deg,#07111f,#0b5cff);color:white;text-align:center;padding:65px 20px}
+.hero h1{font-size:42px;margin-bottom:15px}
+.hero p{max-width:700px;margin:auto;color:#d5deeb}
+.container{max-width:1150px;margin:auto;padding:60px 20px}
+.title{text-align:center;margin-bottom:35px}
+.title h2{font-size:34px;margin-bottom:10px}
+.title p{color:#687386}
+.search{width:100%;padding:14px;border:1px solid #ccd5e2;border-radius:9px;margin-bottom:30px;font-size:16px}
+.courses{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.course{background:white;border:1px solid #e0e6ef;border-radius:15px;padding:25px;cursor:pointer;transition:.2s}
+.course:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,.08)}
+.icon{font-size:38px;margin-bottom:12px}
+.course h3{margin-bottom:10px}
+.course p{color:#687386;line-height:1.6}
+.open{display:inline-block;margin-top:15px;color:#0b5cff;font-weight:bold}
+.lesson{display:none;background:white;border:1px solid #d7e3f8;border-radius:15px;padding:30px;margin-top:30px}
+.lesson.show{display:block}
+.lesson h2{margin-bottom:15px}
+.lesson p{color:#586579;line-height:1.8;margin-bottom:15px}
+.lesson ul{margin-left:25px;line-height:2;margin-bottom:18px}
+.check{margin-top:10px;padding:16px;background:#f4f7fb;border-radius:12px}
+.check h3{margin-bottom:10px}
+.check button{display:block;width:100%;text-align:left;margin:6px 0;padding:10px;border:1px solid #d0d8e6;border-radius:8px;background:white;cursor:pointer}
+.check button.good{background:#157347;color:white;border-color:#157347}
+.check button.bad{background:#a33b3b;color:white;border-color:#a33b3b}
+.close{margin-top:20px;padding:10px 16px;background:#07111f;color:white;border:none;border-radius:7px;cursor:pointer}
+footer{background:#030912;color:white;text-align:center;padding:40px 20px}
+footer p{color:#9caabd;margin-top:8px}
+@media(max-width:850px){.courses{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.courses{grid-template-columns:1fr}.hero h1{font-size:34px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">MT <span>Jeunesse</span></div>
+<div class="slogan">Apprendre • Créer • Entreprendre • Innover</div>
+<nav>
+<button onclick="location.href='index.html'">Accueil</button>
+<button onclick="location.href='cours.html'">Cours</button>
+<button onclick="location.href='quiz.html'">Quiz</button>
+</nav>
+<button class="language" onclick="changeLanguage()" id="langBtn">🇬🇧 English</button>
+</header>
+
+<section class="hero">
+<h1 id="heroTitle">📚 Les cours MT Jeunesse</h1>
+<p id="heroText">Choisis une matière et commence à apprendre.</p>
+</section>
+
+<main class="container">
+<div class="title">
+<h2 id="courseTitle">Toutes les matières</h2>
+<p id="courseSubtitle">Des cours simples pour apprendre et progresser.</p>
+</div>
+<input type="text" class="search" id="search" placeholder="🔎 Rechercher un cours..." onkeyup="searchCourses()">
+<div class="courses" id="courses">
+<div class="course" onclick="openLesson('maths')"><div class="icon">📐</div><h3 data-fr="Mathématiques" data-en="Mathematics">Mathématiques</h3><p data-fr="Algèbre, géométrie, calcul et exercices." data-en="Algebra, geometry, calculations and exercises.">Algèbre, géométrie, calcul et exercices.</p><span class="open" data-fr="Voir le cours →" data-en="View course →">Voir le cours →</span></div>
+<div class="course" onclick="openLesson('technique')"><div class="icon">⚡</div><h3 data-fr="Technique" data-en="Technical Studies">Technique</h3><p data-fr="Électricité, électronique, électrotechnique et machines." data-en="Electricity, electronics, electrotechnics and machines.">Électricité, électronique, électrotechnique et machines.</p><span class="open" data-fr="Voir le cours →" data-en="View course →">Voir le cours →</span></div>
+<div class="course" onclick="openLesson('anglais')"><div class="icon">🇬🇧</div><h3 data-fr="Anglais" data-en="English">Anglais</h3><p data-fr="Vocabulaire, grammaire, conjugaison et communication." data-en="Vocabulary, grammar, conjugation and communication.">Vocabulaire, grammaire, conjugaison et communication.</p><span class="open" data-fr="Voir le cours →" data-en="View course →">Voir le cours →</span></div>
+<div class="course" onclick="openLesson('francais')"><div class="icon">🇫🇷</div><h3 data-fr="Français" data-en="French">Français</h3><p data-fr="Grammaire, conjugaison, vocabulaire et expression." data-en="Grammar, conjugation, vocabulary and expression.">Grammaire, conjugaison, vocabulaire et expression.</p><span class="open" data-fr="Voir le cours →" data-en="View course →">Voir le cours →</span></div>
+<div class="course" onclick="openLesson('histoire')"><div class="icon">🇨🇲</div><h3 data-fr="Histoire" data-en="History">Histoire</h3><p data-fr="Histoire du Cameroun, de l'Afrique et du monde." data-en="History of Cameroon, Africa and the world.">Histoire du Cameroun, de l'Afrique et du monde.</p><span class="open" data-fr="Voir le cours →" data-en="View course →">Voir le cours →</span></div>
+<div class="course" onclick="openLesson('entrepreneuriat')"><div class="icon">💼</div><h3 data-fr="Entrepreneuriat" data-en="Entrepreneurship">Entrepreneuriat</h3><p data-fr="Idée de projet, business, marketing, vente et gestion." data-en="Project ideas, business, marketing, sales and management.">Idée de projet, business, marketing, vente et gestion.</p><span class="open" data-fr="Voir le cours →" data-en="View course →">Voir le cours →</span></div>
+<div class="course" onclick="openLesson('gouvernement')"><div class="icon">🏛️</div><h3 data-fr="Gouvernement" data-en="Government">Gouvernement</h3><p data-fr="Institutions, administration et fonctionnement de l'État." data-en="Institutions, administration and how the state works.">Institutions, administration et fonctionnement de l'État.</p><span class="open" data-fr="Voir le cours →" data-en="View course →">Voir le cours →</span></div>
+<div class="course" onclick="openLesson('politique')"><div class="icon">⚖️</div><h3 data-fr="Politique et citoyenneté" data-en="Politics and citizenship">Politique et citoyenneté</h3><p data-fr="Droits, devoirs, institutions et participation citoyenne." data-en="Rights, duties, institutions and civic participation.">Droits, devoirs, institutions et participation citoyenne.</p><span class="open" data-fr="Voir le cours →" data-en="View course →">Voir le cours →</span></div>
+<div class="course" onclick="openLesson('informatique')"><div class="icon">💻</div><h3 data-fr="Informatique" data-en="Computer Science">Informatique</h3><p data-fr="Ordinateurs, programmation, Internet et création de sites." data-en="Computers, programming, Internet and website creation.">Ordinateurs, programmation, Internet et création de sites.</p><span class="open" data-fr="Voir le cours →" data-en="View course →">Voir le cours →</span></div>
+<div class="course" onclick="openLesson('sciences')"><div class="icon">🔬</div><h3 data-fr="Sciences" data-en="Science">Sciences</h3><p data-fr="Physique, chimie, biologie et connaissances scientifiques." data-en="Physics, chemistry, biology and scientific knowledge.">Physique, chimie, biologie et connaissances scientifiques.</p><span class="open" data-fr="Voir le cours →" data-en="View course →">Voir le cours →</span></div>
+<div class="course" onclick="openLesson('culture')"><div class="icon">🌍</div><h3 data-fr="Culture générale" data-en="General Knowledge">Culture générale</h3><p data-fr="Pays, capitales, découvertes et connaissances du monde." data-en="Countries, capitals, discoveries and world knowledge.">Pays, capitales, découvertes et connaissances du monde.</p><span class="open" data-fr="Voir le cours →" data-en="View course →">Voir le cours →</span></div>
+<div class="course" onclick="openLesson('articles')"><div class="icon">📰</div><h3 data-fr="Articles" data-en="Articles">Articles</h3><p data-fr="Actualités éducatives, découvertes et sujets intéressants." data-en="Educational news, discoveries and interesting topics.">Actualités éducatives, découvertes et sujets intéressants.</p><span class="open" data-fr="Lire →" data-en="Read →">Lire →</span></div>
+<div class="course" onclick="openLesson('projets')"><div class="icon">🚀</div><h3 data-fr="Projets et innovation" data-en="Projects and innovation">Projets et innovation</h3><p data-fr="Transforme tes idées en projets concrets." data-en="Turn your ideas into practical projects.">Transforme tes idées en projets concrets.</p><span class="open" data-fr="Découvrir →" data-en="Discover →">Découvrir →</span></div>
+</div>
+<div class="lesson" id="lesson">
+<h2 id="lessonTitle"></h2>
+<div id="lessonBody"></div>
+<ul id="lessonList"></ul>
+<div class="check" id="check"></div>
+<button class="close" onclick="closeLesson()" id="closeBtn">Fermer</button>
+</div>
+</main>
+<footer>
+<strong>MT Jeunesse</strong>
+<p>Apprendre aujourd'hui. Construire demain.</p>
+<p>Créateur : M K Jérémie</p>
+<p>© 2026 MT Jeunesse — Tous droits réservés.</p>
+</footer>
+<script>
+var lang = "fr";
+var lessons = {
+maths:{fr:{title:"📐 Mathématiques",paras:["Un pourcentage compare une partie à 100. 25 % de 200, c'est 200 x 25 / 100 = 50.","L'aire d'un rectangle se calcule avec longueur x largeur. L'aire d'un triangle se calcule avec base x hauteur / 2.","Pour vérifier un calcul, refais-le dans l'autre sens. Si 18 + 7 = 25, alors 25 - 7 doit redonner 18."],items:["Pourcentage = partie x 100 / total","Aire du rectangle = L x l","Aire du triangle = base x hauteur / 2","Une équation garde le même résultat des deux côtés"],quiz:{q:"25 % de 80 égale ?",opts:["15","20","25","40"],ok:1}},en:{title:"📐 Mathematics",paras:["A percentage compares a part with 100. 25% of 200 is 200 x 25 / 100 = 50.","The area of a rectangle is length x width. The area of a triangle is base x height / 2.","To check a calculation, do it backwards. If 18 + 7 = 25, then 25 - 7 must give 18."],items:["Percentage = part x 100 / total","Rectangle area = L x w","Triangle area = base x height / 2","An equation keeps the same result on both sides"],quiz:{q:"What is 25% of 80?",opts:["15","20","25","40"],ok:1}}},
+technique:{fr:{title:"⚡ Technique",paras:["Dans un circuit simple, la tension pousse le courant. La résistance freine ce courant.","Un condensateur stocke une charge électrique. Une diode laisse passer le courant surtout dans un seul sens.","Avant de toucher une installation, on coupe l'alimentation. On ne travaille jamais sur un fil dont on ne connaît pas l'état."],items:["Tension, courant, résistance","Condensateur = stocke une charge","Diode = sens du courant","Sécurité : couper avant d'intervenir"],quiz:{q:"Quel composant stocke surtout une charge électrique ?",opts:["Diode","Condensateur","Transformateur","Interrupteur"],ok:1}},en:{title:"⚡ Technical Studies",paras:["In a simple circuit, voltage pushes current. Resistance slows that current.","A capacitor stores electric charge. A diode lets current pass mainly in one direction.","Before touching an installation, switch the power off. Never work on a wire whose state you do not know."],items:["Voltage, current, resistance","Capacitor = stores charge","Diode = direction of current","Safety: switch off before working"],quiz:{q:"Which component mainly stores electric charge?",opts:["Diode","Capacitor","Transformer","Switch"],ok:1}}},
+anglais:{fr:{title:"🇬🇧 Anglais",paras:["I am sert au présent pour je. Yesterday place l'action dans le passé. Tomorrow place l'action dans le futur.","Pour se présenter : My name is..., I am ... years old, I live in...","Un verbe irrégulier ne prend pas toujours -ed au passé. Go devient went. See devient saw."],items:["I am / I was / I will be","My name is...","Go, went / See, saw","Hello, please, thank you"],quiz:{q:"Quel est le passé de go ?",opts:["goed","went","gone","going"],ok:1}},en:{title:"🇬🇧 English",paras:["I am is the present form for I. Yesterday places the action in the past. Tomorrow places it in the future.","To introduce yourself: My name is..., I am ... years old, I live in...","An irregular verb does not always take -ed in the past. Go becomes went. See becomes saw."],items:["I am / I was / I will be","My name is...","Go, went / See, saw","Hello, please, thank you"],quiz:{q:"What is the past of go?",opts:["goed","went","gone","going"],ok:1}}},
+francais:{fr:{title:"🇫🇷 Français",paras:["Une phrase commence par une majuscule et se termine par un point, un point d'interrogation ou un point d'exclamation.","Au présent, je finis, tu finis, il finit. Le sujet et le verbe doivent aller ensemble.","Pour vérifier une dictée, relis une fois pour le sens, puis une fois seulement pour les accords."],items:["Majuscule et point","Accord sujet-verbe","Présent de finir : je finis","Relire en deux passages"],quiz:{q:"Quelle phrase est correcte ?",opts:["les eleves arrive.","Les élèves arrivent.","les Élèves arrives","Les élève arrive."],ok:1}},en:{title:"🇫🇷 French",paras:["A sentence starts with a capital letter and ends with a period, a question mark or an exclamation mark.","In the present, je finis, tu finis, il finit. The subject and the verb must match.","To check a dictation, read once for meaning, then once only for agreements."],items:["Capital letter and period","Subject-verb agreement","Present of finir: je finis","Read twice, for two different checks"],quiz:{q:"Which sentence is correct?",opts:["les eleves arrive.","Les élèves arrivent.","les Élèves arrives","Les élève arrive."],ok:1}}},
+histoire:{fr:{title:"🇨🇲 Histoire du Cameroun",paras:["Le Cameroun est un pays d'Afrique centrale. Yaoundé est la capitale politique. Douala est la grande ville économique. Le français et l'anglais sont les deux langues officielles.","Avant 1916, une grande partie du territoire est sous administration allemande. Après la Première Guerre mondiale, il est placé sous administration française et britannique.","Le 1er janvier 1960, la partie sous administration française devient indépendante. Ahmadou Ahidjo devient le premier président. Le 1er octobre 1961, la partie sud du Cameroun britannique rejoint le Cameroun indépendant.","En 1972, un référendum transforme l'État fédéral en République unie. Le pays compte aujourd'hui dix régions."],items:["Capitale : Yaoundé","Indépendance : 1er janvier 1960","Réunification : 1er octobre 1961","Premier président : Ahmadou Ahidjo","1972 : République unie"],quiz:{q:"En quelle année le Cameroun devient-il indépendant ?",opts:["1946","1960","1972","1990"],ok:1}},en:{title:"🇨🇲 History of Cameroon",paras:["Cameroon is a country in Central Africa. Yaoundé is the political capital. Douala is the main economic city. French and English are the two official languages.","Before 1916, a large part of the territory was under German administration. After the First World War, it was placed under French and British administration.","On 1 January 1960, the part under French administration became independent. Ahmadou Ahidjo became the first president. On 1 October 1961, the southern part of British Cameroon joined independent Cameroon.","In 1972, a referendum turned the federal state into a United Republic. The country now has ten regions."],items:["Capital: Yaoundé","Independence: 1 January 1960","Reunification: 1 October 1961","First president: Ahmadou Ahidjo","1972: United Republic"],quiz:{q:"In which year did Cameroon become independent?",opts:["1946","1960","1972","1990"],ok:1}}},
+entrepreneuriat:{fr:{title:"💼 Entrepreneuriat",paras:["Une idée utile commence par un problème réel. Qui a ce problème, et quand ?","Avant de parler d'argent ou de logo, décris la solution en une phrase. Puis demande à 3 personnes si elles s'en serviraient.","Un petit test vaut mieux qu'un long plan. Cette semaine, fais une version simple et note ce qui marche."],items:["Problème clair","Solution en une phrase","Demander à 3 personnes","Tester petit"],quiz:{q:"Par quoi commence une idée utile ?",opts:["Par un logo","Par un problème réel","Par un bureau","Par un nom compliqué"],ok:1}},en:{title:"💼 Entrepreneurship",paras:["A useful idea starts with a real problem. Who has that problem, and when?","Before talking about money or a logo, describe the solution in one sentence. Then ask 3 people if they would use it.","A small test is better than a long plan. This week, make a simple version and note what works."],items:["A clear problem","A one-sentence solution","Ask 3 people","Test small"],quiz:{q:"What does a useful idea start with?",opts:["A logo","A real problem","An office","A complicated name"],ok:1}}},
+gouvernement:{fr:{title:"🏛️ Gouvernement",paras:["L'État organise des services publics : école, santé, routes, sécurité.","Le Cameroun a un président, un gouvernement et une assemblée. Chacun a un rôle différent.","Une administration applique les règles. Elle ne les invente pas toute seule."],items:["Services publics","Président et gouvernement","Assemblée","Administration"],quiz:{q:"Quel service est un service public ?",opts:["Une boutique privée","L'école publique","Un logo","Un jeu"],ok:1}},en:{title:"🏛️ Government",paras:["The state organizes public services: school, health, roads, safety.","Cameroon has a president, a government and an assembly. Each one has a different role.","An administration applies the rules. It does not invent all of them alone."],items:["Public services","President and government","Assembly","Administration"],quiz:{q:"Which one is a public service?",opts:["A private shop","A public school","A logo","A game"],ok:1}}},
+politique:{fr:{title:"⚖️ Politique et citoyenneté",paras:["Un citoyen a des droits, comme aller à l'école et être protégé par la loi. Il a aussi des devoirs, comme respecter les autres et les règles communes.","Participer, c'est s'informer, donner son avis avec respect et prendre soin de son quartier.","On peut être en désaccord sans insulter. Un argument clair vaut mieux qu'une injure."],items:["Droits","Devoirs","S'informer","Désaccord respectueux"],quiz:{q:"Quel exemple est un devoir du citoyen ?",opts:["Insulter","Respecter les règles communes","Ignorer les autres","Casser un bien public"],ok:1}},en:{title:"⚖️ Politics and citizenship",paras:["A citizen has rights, such as going to school and being protected by the law. A citizen also has duties, such as respecting others and shared rules.","Taking part means getting informed, giving an opinion with respect and looking after your neighborhood.","You can disagree without insulting. A clear argument is better than an insult."],items:["Rights","Duties","Get informed","Respectful disagreement"],quiz:{q:"Which example is a citizen's duty?",opts:["Insulting","Respecting shared rules","Ignoring others","Damaging a public place"],ok:1}}},
+informatique:{fr:{title:"💻 Informatique",paras:["Un ordinateur reçoit des données, les traite, puis affiche un résultat.","HTML décrit le contenu d'une page : un titre, un paragraphe, un bouton. CSS change l'apparence.","Internet relie des ordinateurs. Une adresse comme mtj-education indique où trouver une page."],items:["Entrée, traitement, sortie","HTML = contenu","CSS = apparence","Une adresse mène à une page"],quiz:{q:"À quoi sert HTML ?",opts:["À décrire le contenu d'une page","À stocker une charge","À calculer une aire","À couper le courant"],ok:0}},en
