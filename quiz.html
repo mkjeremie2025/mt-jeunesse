@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MT Jeunesse | Quiz</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#07111f;color:#fff;line-height:1.6}
+header{text-align:center;padding:20px}
+.logo{font-size:28px;font-weight:bold}
+.logo span{color:#4d8dff}
+nav{margin-top:16px}
+nav a{display:inline-block;margin:4px;padding:9px 12px;border:1px solid #294463;border-radius:7px;color:#fff;text-decoration:none;background:#10233b}
+nav a:hover{background:#0b5cff}
+.box{max-width:760px;margin:30px auto 50px;padding:0 16px}
+h1{text-align:center;margin-bottom:8px}
+.lead{text-align:center;color:#aebbd0;margin-bottom:24px}
+.question{background:#0e1d31;border:1px solid #203653;border-radius:14px;padding:20px;margin-bottom:16px}
+.question h2{font-size:18px;margin-bottom:12px}
+.answer{display:block;width:100%;text-align:left;margin:8px 0;padding:12px;border-radius:8px;border:1px solid #304965;background:#13243a;color:#fff;cursor:pointer}
+.answer.selected{background:#0b5cff;border-color:#0b5cff}
+.answer.good{background:#157347;border-color:#157347}
+.answer.bad{background:#a33b3b;border-color:#a33b3b}
+.actions{text-align:center}
+.btn{border:none;border-radius:9px;padding:12px 18px;margin:6px;font-weight:bold;cursor:pointer}
+.btn-primary{background:#0b5cff;color:#fff}
+.btn-light{background:#fff;color:#172033}
+.result{display:none;background:#fff;color:#172033;border-radius:14px;padding:22px;text-align:center;margin-top:18px}
+.result.show{display:block}
+footer{text-align:center;color:#8e9bb0;padding:24px}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">MT <span>Jeunesse</span></div>
+<nav>
+<a href="index.html">Accueil</a>
+<a href="cours.html">Cours</a>
+<a href="quiz.html">Quiz</a>
+</nav>
+</header>
+<main class="box">
+<h1>Quiz MT Jeunesse</h1>
+<p class="lead">Réponds aux 5 questions, puis affiche ton score.</p>
+<div id="quiz"></div>
+<div class="actions">
+<button class="btn btn-primary" onclick="showScore()">Voir mon score</button>
+<button class="btn btn-light" onclick="resetQuiz()">Recommencer</button>
+</div>
+<div class="result" id="result">
+<h2 id="scoreTitle"></h2>
+<p id="scoreText"></p>
+</div>
+</main>
+<footer>Créateur : M K Jérémie · © 2026 MT Jeunesse</footer>
+<script>
+var questions = [
+{q:"1. Quelle est la capitale du Cameroun ?", opts:["Douala","Yaoundé","Bertoua","Bafoussam"], ok:1},
+{q:"2. Que signifie HTML ?", opts:["HyperText Markup Language","High Technology Machine Language","Home Tool Management Language","Hyper Transfer Main Link"], ok:0},
+{q:"3. Quel composant stocke surtout une charge électrique ?", opts:["Diode","Condensateur","Transformateur","Résistance"], ok:1},
+{q:"4. En quelle année le Cameroun devient-il indépendant ?", opts:["1946","1960","1972","1990"], ok:1},
+{q:"5. Par quoi commence une idée utile ?", opts:["Par un logo","Par un problème réel","Par un bureau","Par un nom compliqué"], ok:1}
+];
+var picks = {};
+function render(){
+  var box = document.getElementById("quiz");
+  box.innerHTML = "";
+  for (var i = 0; i < questions.length; i++) {
+    var block = document.createElement("div");
+    block.className = "question";
+    var title = document.createElement("h2");
+    title.textContent = questions[i].q;
+    block.appendChild(title);
+    for (var j = 0; j < questions[i].opts.length; j++) {
+      var btn = document.createElement("button");
+      btn.className = "answer";
+      btn.textContent = String.fromCharCode(65+j) + ". " + questions[i].opts[j];
+      if (picks[i] === j) btn.classList.add("selected");
+      btn.setAttribute("data-q", i);
+      btn.setAttribute("data-j", j);
+      btn.onclick = function(){ choose(this); };
+      block.appendChild(btn);
+    }
+    box.appendChild(block);
+  }
+  document.getElementById("result").classList.remove("show");
+}
+function choose(btn){
+  picks[btn.getAttribute("data-q")] = Number(btn.getAttribute("data-j"));
+  render();
+}
+function showScore(){
+  if (Object.keys(picks).length < questions.length) {
+    document.getElementById("scoreTitle").textContent = "Réponds d'abord aux 5 questions.";
+    document.getElementById("scoreText").textContent = "";
+    document.getElementById("result").classList.add("show");
+    return;
+  }
+  var score = 0;
+  var blocks = document.querySelectorAll(".question");
+  for (var i = 0; i < blocks.length; i++) {
+    var buttons = blocks[i].querySelectorAll(".answer");
+    for (var j = 0; j < buttons.length; j++) {
+      buttons[j].disabled = true;
+      if (j === questions[i].ok) buttons[j].classList.add("good");
+      else if (picks[i] === j) buttons[j].classList.add("bad");
+    }
+    if (picks[i] === questions[i].ok) score++;
+  }
+  document.getElementById("scoreTitle").textContent = "Ton score : " + score + " / " + questions.length;
+  document.getElementById("scoreText").textContent = score >= 4 ? "Très bien. Ouvre un cours et retiens un fait." : "Relis le cours Histoire, puis recommence.";
+  document.getElementById("result").classList.add("show");
+}
+function resetQuiz(){ picks = {}; render(); }
+render();
+</script>
+</body>
+</html>
