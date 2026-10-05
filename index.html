@@ -3,8 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="MT Jeunesse - Apprendre, créer, entreprendre et innover.">
+
+<meta name="description" content="MT Jeunesse - Apprendre, Créer, Entreprendre et Innover.">
 <meta name="theme-color" content="#07111f">
+
+<link rel="manifest" href="manifest.json">
+
 <title>MT Jeunesse | Apprendre • Créer • Entreprendre • Innover</title>
 
 <style>
@@ -25,7 +29,6 @@ body {
     line-height: 1.6;
 }
 
-/* HEADER */
 header {
     background: #07111f;
     color: white;
@@ -97,10 +100,8 @@ nav button:hover {
     font-weight: bold;
 }
 
-/* HERO */
 .hero {
-    background:
-        linear-gradient(135deg, #07111f 0%, #0c2340 55%, #0b5cff 150%);
+    background: linear-gradient(135deg, #07111f 0%, #0c2340 55%, #0b5cff 150%);
     color: white;
     padding: 90px 20px;
 }
@@ -168,7 +169,6 @@ nav button:hover {
     color: #172033;
 }
 
-/* SECTIONS */
 .section {
     max-width: 1150px;
     margin: auto;
@@ -191,7 +191,6 @@ nav button:hover {
     margin: auto;
 }
 
-/* CARDS */
 .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -241,7 +240,6 @@ nav button:hover {
     font-weight: bold;
 }
 
-/* ABOUT */
 .about {
     background: white;
 }
@@ -262,7 +260,6 @@ nav button:hover {
     margin-bottom: 12px;
 }
 
-/* FEATURES */
 .features {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -292,7 +289,6 @@ nav button:hover {
     font-size: 14px;
 }
 
-/* QUIZ */
 .quiz-section {
     background: #07111f;
     color: white;
@@ -366,7 +362,29 @@ nav button:hover {
     margin-bottom: 8px;
 }
 
-/* FOOTER */
+.install-box {
+    max-width: 900px;
+    margin: 40px auto 0;
+    padding: 30px;
+    background: #0e1d31;
+    border: 1px solid #203653;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.install-box h2 {
+    margin-bottom: 10px;
+}
+
+.install-box p {
+    color: #aebbd0;
+}
+
+#installButton {
+    display: none;
+    margin-top: 20px;
+}
+
 footer {
     background: #030912;
     color: white;
@@ -399,8 +417,8 @@ footer p {
     color: white;
 }
 
-/* RESPONSIVE */
 @media (max-width: 900px) {
+
     .header-container {
         flex-direction: column;
     }
@@ -415,6 +433,7 @@ footer p {
 }
 
 @media (max-width: 600px) {
+
     .header-container {
         padding: 13px 12px;
     }
@@ -461,22 +480,23 @@ footer p {
 
 <body>
 
-<!-- HEADER -->
 <header>
+
     <div class="header-container">
 
         <div class="logo-area" onclick="goHome()">
             <div class="logo">MT <span>Jeunesse</span></div>
+
             <div class="slogan-small">
                 Apprendre • Créer • Entreprendre • Innover
             </div>
         </div>
 
         <nav>
-            <button onclick="goHome()" data-fr="Accueil" data-en="Home">Accueil</button>
-            <button onclick="goTo('programmes')" data-fr="Programmes" data-en="Programs">Programmes</button>
-            <button onclick="goTo('apropos')" data-fr="À propos" data-en="About">À propos</button>
-            <button onclick="goTo('quiz')" data-fr="Quiz" data-en="Quiz">Quiz</button>
+            <button onclick="goHome()">Accueil</button>
+            <button onclick="goTo('programmes')">Programmes</button>
+            <button onclick="goTo('apropos')">À propos</button>
+            <button onclick="goTo('quiz')">Quiz</button>
         </nav>
 
         <button class="language-btn" onclick="changeLanguage()">
@@ -484,10 +504,10 @@ footer p {
         </button>
 
     </div>
+
 </header>
 
 
-<!-- HERO -->
 <section class="hero" id="accueil">
 
     <div class="hero-container">
@@ -502,15 +522,7 @@ footer p {
             Entreprendre.
         </h1>
 
-        <p data-fr="
-            Une plateforme pensée pour les jeunes qui veulent apprendre,
-            développer leurs compétences, découvrir la technologie,
-            entreprendre et construire leur avenir.
-        " data-en="
-            A platform designed for young people who want to learn,
-            develop their skills, discover technology,
-            build businesses and create their future.
-        ">
+        <p id="heroText">
             Une plateforme pensée pour les jeunes qui veulent apprendre,
             développer leurs compétences, découvrir la technologie,
             entreprendre et construire leur avenir.
@@ -518,15 +530,13 @@ footer p {
 
         <div class="hero-buttons">
 
-            <button class="btn btn-primary" onclick="goTo('programmes')"
-                data-fr="Découvrir les programmes"
-                data-en="Discover programs">
+            <button class="btn btn-primary"
+                    onclick="goTo('programmes')">
                 Découvrir les programmes
             </button>
 
-            <button class="btn btn-light" onclick="goTo('quiz')"
-                data-fr="Tester mes connaissances"
-                data-en="Test my knowledge">
+            <button class="btn btn-light"
+                    onclick="goTo('quiz')">
                 Tester mes connaissances
             </button>
 
@@ -537,137 +547,116 @@ footer p {
 </section>
 
 
-<!-- PROGRAMMES -->
 <section class="section" id="programmes">
 
     <div class="section-title">
-        <h2 data-fr="Explore ton potentiel" data-en="Explore your potential">
+
+        <h2 id="programmesTitle">
             Explore ton potentiel
         </h2>
 
-        <p data-fr="
-            Découvre différents domaines pour développer tes connaissances
-            et préparer ton avenir.
-        " data-en="
-            Discover different fields to develop your knowledge
-            and prepare for your future.
-        ">
+        <p>
             Découvre différents domaines pour développer tes connaissances
             et préparer ton avenir.
         </p>
+
     </div>
 
 
     <div class="cards">
 
         <div class="card" onclick="showMessage('Jeunesse')">
+
             <div class="icon">👥</div>
-            <h3 data-fr="Jeunesse" data-en="Youth">Jeunesse</h3>
-            <p data-fr="
-                Motivation, développement personnel, projets et compétences
-                pour préparer ton avenir.
-            " data-en="
-                Motivation, personal development, projects and skills
-                to prepare for your future.
-            ">
+
+            <h3>Jeunesse</h3>
+
+            <p>
                 Motivation, développement personnel, projets et compétences
                 pour préparer ton avenir.
             </p>
-            <span class="card-link" data-fr="Découvrir →" data-en="Discover →">
-                Découvrir →
-            </span>
+
+            <span class="card-link">Découvrir →</span>
+
         </div>
 
 
         <div class="card" onclick="showMessage('Éducation')">
+
             <div class="icon">📚</div>
-            <h3 data-fr="Éducation" data-en="Education">Éducation</h3>
-            <p data-fr="
-                Cours, révisions, connaissances générales et préparation
-                scolaire.
-            " data-en="
-                Lessons, revision, general knowledge and academic preparation.
-            ">
+
+            <h3>Éducation</h3>
+
+            <p>
                 Cours, révisions, connaissances générales et préparation
                 scolaire.
             </p>
-            <span class="card-link" data-fr="Découvrir →" data-en="Discover →">
-                Découvrir →
-            </span>
+
+            <span class="card-link">Découvrir →</span>
+
         </div>
 
 
         <div class="card" onclick="showMessage('Technologie')">
+
             <div class="icon">💻</div>
-            <h3 data-fr="Technologie" data-en="Technology">Technologie</h3>
-            <p data-fr="
-                Informatique, programmation, numérique, électronique
-                et nouvelles technologies.
-            " data-en="
-                Computing, programming, digital skills, electronics
-                and new technologies.
-            ">
+
+            <h3>Technologie</h3>
+
+            <p>
                 Informatique, programmation, numérique, électronique
                 et nouvelles technologies.
             </p>
-            <span class="card-link" data-fr="Découvrir →" data-en="Discover →">
-                Découvrir →
-            </span>
+
+            <span class="card-link">Découvrir →</span>
+
         </div>
 
 
         <div class="card" onclick="showMessage('Entrepreneuriat')">
+
             <div class="icon">💼</div>
-            <h3 data-fr="Entrepreneuriat" data-en="Entrepreneurship">
-                Entrepreneuriat
-            </h3>
-            <p data-fr="
-                Idées de business, marketing, vente, gestion et création
-                de projets.
-            " data-en="
-                Business ideas, marketing, sales, management and project creation.
-            ">
+
+            <h3>Entrepreneuriat</h3>
+
+            <p>
                 Idées de business, marketing, vente, gestion et création
                 de projets.
             </p>
-            <span class="card-link" data-fr="Découvrir →" data-en="Discover →">
-                Découvrir →
-            </span>
+
+            <span class="card-link">Découvrir →</span>
+
         </div>
 
 
         <div class="card" onclick="showMessage('Histoire')">
+
             <div class="icon">🇨🇲</div>
-            <h3 data-fr="Histoire" data-en="History">Histoire</h3>
-            <p data-fr="
-                Découvre l'histoire du Cameroun, de l'Afrique et du monde.
-            " data-en="
-                Discover the history of Cameroon, Africa and the world.
-            ">
+
+            <h3>Histoire</h3>
+
+            <p>
                 Découvre l'histoire du Cameroun, de l'Afrique et du monde.
             </p>
-            <span class="card-link" data-fr="Découvrir →" data-en="Discover →">
-                Découvrir →
-            </span>
+
+            <span class="card-link">Découvrir →</span>
+
         </div>
 
 
         <div class="card" onclick="showMessage('Le monde')">
+
             <div class="icon">🌍</div>
-            <h3 data-fr="Le monde" data-en="The world">Le monde</h3>
-            <p data-fr="
-                Culture, sciences, géographie, découvertes et connaissances
-                sur le monde.
-            " data-en="
-                Culture, science, geography, discoveries and knowledge
-                about the world.
-            ">
+
+            <h3>Le monde</h3>
+
+            <p>
                 Culture, sciences, géographie, découvertes et connaissances
                 sur le monde.
             </p>
-            <span class="card-link" data-fr="Découvrir →" data-en="Discover →">
-                Découvrir →
-            </span>
+
+            <span class="card-link">Découvrir →</span>
+
         </div>
 
     </div>
@@ -675,38 +664,21 @@ footer p {
 </section>
 
 
-<!-- À PROPOS -->
 <section class="about" id="apropos">
 
     <div class="section">
 
         <div class="about-box">
 
-            <h2 data-fr="Notre mission" data-en="Our mission">
-                Notre mission
-            </h2>
+            <h2>Notre mission</h2>
 
-            <p data-fr="
-                MT Jeunesse a pour objectif d'aider les jeunes à apprendre,
-                développer leurs compétences et transformer leurs idées
-                en projets.
-            " data-en="
-                MT Jeunesse aims to help young people learn,
-                develop their skills and turn their ideas
-                into projects.
-            ">
+            <p>
                 MT Jeunesse a pour objectif d'aider les jeunes à apprendre,
                 développer leurs compétences et transformer leurs idées
                 en projets.
             </p>
 
-            <p data-fr="
-                Nous voulons créer un espace simple, moderne et accessible
-                où chaque jeune peut découvrir quelque chose de nouveau.
-            " data-en="
-                We want to create a simple, modern and accessible space
-                where every young person can discover something new.
-            ">
+            <p>
                 Nous voulons créer un espace simple, moderne et accessible
                 où chaque jeune peut découvrir quelque chose de nouveau.
             </p>
@@ -718,47 +690,38 @@ footer p {
 </section>
 
 
-<!-- CARACTÉRISTIQUES -->
 <section class="section">
 
     <div class="section-title">
-        <h2 data-fr="Pourquoi MT Jeunesse ?" data-en="Why MT Jeunesse?">
-            Pourquoi MT Jeunesse ?
-        </h2>
+
+        <h2>Pourquoi MT Jeunesse ?</h2>
+
     </div>
 
     <div class="features">
 
         <div class="feature">
             <div class="feature-icon">📖</div>
-            <h3 data-fr="Apprendre" data-en="Learn">Apprendre</h3>
-            <p data-fr="Développe tes connaissances." data-en="Develop your knowledge.">
-                Développe tes connaissances.
-            </p>
+            <h3>Apprendre</h3>
+            <p>Développe tes connaissances.</p>
         </div>
 
         <div class="feature">
             <div class="feature-icon">💡</div>
-            <h3 data-fr="Créer" data-en="Create">Créer</h3>
-            <p data-fr="Transforme tes idées en projets." data-en="Turn your ideas into projects.">
-                Transforme tes idées en projets.
-            </p>
+            <h3>Créer</h3>
+            <p>Transforme tes idées en projets.</p>
         </div>
 
         <div class="feature">
             <div class="feature-icon">🚀</div>
-            <h3 data-fr="Entreprendre" data-en="Build">Entreprendre</h3>
-            <p data-fr="Découvre l'esprit entrepreneurial." data-en="Discover entrepreneurship.">
-                Découvre l'esprit entrepreneurial.
-            </p>
+            <h3>Entreprendre</h3>
+            <p>Découvre l'esprit entrepreneurial.</p>
         </div>
 
         <div class="feature">
             <div class="feature-icon">🌟</div>
-            <h3 data-fr="Innover" data-en="Innovate">Innover</h3>
-            <p data-fr="Imagine les solutions de demain." data-en="Imagine tomorrow's solutions.">
-                Imagine les solutions de demain.
-            </p>
+            <h3>Innover</h3>
+            <p>Imagine les solutions de demain.</p>
         </div>
 
     </div>
@@ -766,7 +729,6 @@ footer p {
 </section>
 
 
-<!-- QUIZ -->
 <section class="quiz-section" id="quiz">
 
     <div class="section">
@@ -775,15 +737,9 @@ footer p {
 
             <div class="quiz-header">
 
-                <h2 data-fr="🧠 Quiz MT Jeunesse" data-en="🧠 MT Jeunesse Quiz">
-                    🧠 Quiz MT Jeunesse
-                </h2>
+                <h2>🧠 Quiz MT Jeunesse</h2>
 
-                <p data-fr="
-                    Teste tes connaissances et découvre ton score.
-                " data-en="
-                    Test your knowledge and discover your score.
-                ">
+                <p>
                     Teste tes connaissances et découvre ton score.
                 </p>
 
@@ -792,23 +748,21 @@ footer p {
 
             <div class="question">
 
-                <h3>
-                    1. Quelle est la capitale du Cameroun ?
-                </h3>
+                <h3>1. Quelle est la capitale du Cameroun ?</h3>
 
-                <button class="answer" onclick="answer(this, false)">
+                <button class="answer" onclick="answer(this,false)">
                     A. Douala
                 </button>
 
-                <button class="answer" onclick="answer(this, true)">
+                <button class="answer" onclick="answer(this,true)">
                     B. Yaoundé
                 </button>
 
-                <button class="answer" onclick="answer(this, false)">
+                <button class="answer" onclick="answer(this,false)">
                     C. Bertoua
                 </button>
 
-                <button class="answer" onclick="answer(this, false)">
+                <button class="answer" onclick="answer(this,false)">
                     D. Bafoussam
                 </button>
 
@@ -817,23 +771,21 @@ footer p {
 
             <div class="question">
 
-                <h3>
-                    2. Que signifie HTML ?
-                </h3>
+                <h3>2. Que signifie HTML ?</h3>
 
-                <button class="answer" onclick="answer(this, true)">
+                <button class="answer" onclick="answer(this,true)">
                     A. HyperText Markup Language
                 </button>
 
-                <button class="answer" onclick="answer(this, false)">
+                <button class="answer" onclick="answer(this,false)">
                     B. High Technology Machine Language
                 </button>
 
-                <button class="answer" onclick="answer(this, false)">
+                <button class="answer" onclick="answer(this,false)">
                     C. Home Tool Management Language
                 </button>
 
-                <button class="answer" onclick="answer(this, false)">
+                <button class="answer" onclick="answer(this,false)">
                     D. Hyper Transfer Main Link
                 </button>
 
@@ -847,29 +799,16 @@ footer p {
                     pour stocker une charge électrique ?
                 </h3>
 
-                <button class="answer" onclick="answer(this, false)">
+                <button class="answer" onclick="answer(this,false)">
                     A. Diode
                 </button>
 
-                <button class="answer" onclick="answer(this, true)">
+                <button class="answer" onclick="answer(this,true)">
                     B. Condensateur
                 </button>
 
-                <button class="answer" onclick="answer(this, false)">
+                <button class="answer" onclick="answer(this,false)">
                     C. Transformateur
                 </button>
 
-                <button class="answer" onclick="answer(this, false)">
-                    D. Interrupteur
-                </button>
-
-            </div>
-
-
-            <div class="question">
-
-                <h3>
-                    4. Quel est l'objectif principal d'un entrepreneur ?
-                </h3>
-
-                <button cla
+                <button class="
